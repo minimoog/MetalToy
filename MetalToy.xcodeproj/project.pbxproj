@@ -14,6 +14,8 @@
 		5241E9A21F49E55000107886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E9A01F49E55000107886 /* LaunchScreen.storyboard */; };
 		5241E9AD1F49E55000107886 /* MetalToyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9AC1F49E55000107886 /* MetalToyTests.swift */; };
 		5241E9B81F49E55000107886 /* MetalToyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9B71F49E55000107886 /* MetalToyUITests.swift */; };
+		5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C61F49F0A600107886 /* Metal.framework */; };
+		5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C81F49F0B000107886 /* MetalKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		5241E9B31F49E55000107886 /* MetalToyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalToyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241E9B71F49E55000107886 /* MetalToyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalToyUITests.swift; sourceTree = "<group>"; };
 		5241E9B91F49E55000107886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5241E9C61F49F0A600107886 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		5241E9C81F49F0B000107886 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */,
+				5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +87,7 @@
 				5241E9AB1F49E55000107886 /* MetalToyTests */,
 				5241E9B61F49E55000107886 /* MetalToyUITests */,
 				5241E9951F49E55000107886 /* Products */,
+				5241E9C51F49F0A600107886 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +130,15 @@
 				5241E9B91F49E55000107886 /* Info.plist */,
 			);
 			path = MetalToyUITests;
+			sourceTree = "<group>";
+		};
+		5241E9C51F49F0A600107886 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5241E9C81F49F0B000107886 /* MetalKit.framework */,
+				5241E9C61F49F0A600107886 /* Metal.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,6 +532,7 @@
 				5241E9BE1F49E55000107886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5241E9BF1F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToyTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +541,7 @@
 				5241E9C11F49E55000107886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5241E9C21F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToyUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +550,7 @@
 				5241E9C41F49E55000107886 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
