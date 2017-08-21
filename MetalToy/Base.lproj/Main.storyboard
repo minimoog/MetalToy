@@ -48,6 +48,9 @@
                             <constraint firstItem="c9P-IM-let" firstAttribute="top" secondItem="4kN-GS-zyd" secondAttribute="top" id="P5M-d2-29B"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mtkView" destination="c9P-IM-let" id="xTM-bV-2OI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
