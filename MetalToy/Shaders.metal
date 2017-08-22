@@ -24,28 +24,26 @@ typedef struct
 // Vertex Function
 vertex RasterizerData
 vertexShader(uint               vertexID                [[vertex_id]],
-             constant   Vertex  *vertices               [[buffer(0)]],
-             constant   float2  *viewportSizePointer    [[buffer(1)]])
+             constant   Vertex  *vertices               [[buffer(0)]])
 {
     RasterizerData out;
     
-    // Initialize our output clip space position
     out.clipSpacePosition = float4(0.0, 0.0, 0.0, 1.0);
     
     float2 pixelSpacePosition = vertices[vertexID].position;
     
-    float2 viewportSize = *viewportSizePointer;
-    
-    out.clipSpacePosition.xy = pixelSpacePosition / (viewportSize / 2.0);
+    out.clipSpacePosition.xy = pixelSpacePosition;
     out.color = vertices[vertexID].color;
     
     return out;
 }
 
 // Fragment function
-fragment float4 fragmentShader(RasterizerData in [[stage_in]])
+fragment float4 fragmentShader(RasterizerData in [[stage_in]],
+                               constant   float2  *resolution    [[buffer(0)]])
 {
-    // We return the color we just set which will be written to our color attachment.
-    return in.color;
+    float2 uv = in.clipSpacePosition.xy / *resolution;
+    
+    return float4(uv, 0.0, 1.0);
 }
 

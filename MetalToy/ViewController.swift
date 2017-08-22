@@ -26,9 +26,12 @@ struct Vertex {
 class ViewController: UIViewController, MTKViewDelegate {
 
     let vertices: [Vertex] = [
-        Vertex(x:  250, y: -250, r: 1, g: 0, b: 0, a: 1),
-        Vertex(x: -250, y: -250, r: 0, g: 1, b: 0, a: 1),
-        Vertex(x:    0, y:  250, r: 0, g: 0, b: 1, a: 1)
+        Vertex(x: -1, y:  -1, r: 1, g: 0, b: 0, a: 1),
+        Vertex(x:  1, y:  -1, r: 0, g: 1, b: 0, a: 1),
+        Vertex(x:  1, y:   1, r: 0, g: 0, b: 1, a: 1),
+        Vertex(x: -1, y:  -1, r: 0, g: 0, b: 0, a: 1),
+        Vertex(x:  1, y:   1, r: 0, g: 1, b: 0, a: 1),
+        Vertex(x: -1, y:   1, r: 0, g: 0, b: 1, a: 1)
     ]
     
     var vertexData: [Float] = []
@@ -100,8 +103,8 @@ class ViewController: UIViewController, MTKViewDelegate {
         renderEncoder.setViewport(MTLViewport(originX: 0.0, originY: 0.0, width: Double(viewPortData[0]), height: Double(viewPortData[1]), znear: -1.0, zfar: 1.0))
         renderEncoder.setRenderPipelineState(pipelineState)
         renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
-        renderEncoder.setVertexBuffer(viewPortBuffer, offset: 0, at: 1)
-        renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 3, instanceCount: 1)
+        renderEncoder.setFragmentBuffer(viewPortBuffer, offset: 0, at: 0)
+        renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6, instanceCount: 2)
         renderEncoder.endEncoding()
         
         commandBuffer.present(drawable)
