@@ -13,25 +13,21 @@ import MetalKit
 struct Vertex {
     let x: Float
     let y: Float
-    let r: Float
-    let g: Float
-    let b: Float
-    let a: Float
     
     func toFloatArray() -> [Float] {
-        return [x, y, r, g, b, a]
+        return [x, y]
     }
 }
 
 class ViewController: UIViewController, MTKViewDelegate {
 
     let vertices: [Vertex] = [
-        Vertex(x: -1, y:  -1, r: 1, g: 0, b: 0, a: 1),
-        Vertex(x:  1, y:  -1, r: 0, g: 1, b: 0, a: 1),
-        Vertex(x:  1, y:   1, r: 0, g: 0, b: 1, a: 1),
-        Vertex(x: -1, y:  -1, r: 0, g: 0, b: 0, a: 1),
-        Vertex(x:  1, y:   1, r: 0, g: 1, b: 0, a: 1),
-        Vertex(x: -1, y:   1, r: 0, g: 0, b: 1, a: 1)
+        Vertex(x: -1, y:  -1),
+        Vertex(x:  1, y:  -1),
+        Vertex(x:  1, y:   1),
+        Vertex(x: -1, y:  -1),
+        Vertex(x:  1, y:   1),
+        Vertex(x: -1, y:   1)
     ]
     
     var vertexData: [Float] = []

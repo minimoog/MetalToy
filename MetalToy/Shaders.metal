@@ -12,13 +12,11 @@ using namespace metal;
 typedef struct
 {
     packed_float2 position;
-    packed_float4 color;
 } Vertex;
 
 typedef struct
 {
     float4 clipSpacePosition [[position]];
-    float4 color;
 } RasterizerData;
 
 // Vertex Function
@@ -33,7 +31,6 @@ vertexShader(uint               vertexID                [[vertex_id]],
     float2 pixelSpacePosition = vertices[vertexID].position;
     
     out.clipSpacePosition.xy = pixelSpacePosition;
-    out.color = vertices[vertexID].color;
     
     return out;
 }
