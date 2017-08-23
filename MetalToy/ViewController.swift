@@ -46,6 +46,10 @@ class ViewController: UIViewController, MTKViewDelegate {
     var commandQueue: MTLCommandQueue! = nil
     var vertexBuffer: MTLBuffer!
     var viewPortBuffer: MTLBuffer!
+    var timeBuffer: MTLBuffer!
+    
+    var startTime: Double = 0;
+    var numFrames = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +68,8 @@ class ViewController: UIViewController, MTKViewDelegate {
         
         let viewPortDataSize = viewPortData.count * MemoryLayout.size(ofValue: viewPortData[0])
         viewPortBuffer = device.makeBuffer(bytes: viewPortData, length: viewPortDataSize, options: [])
+        
+        timeBuffer = device.makeBuffer(length: MemoryLayout<Float>.stride, options: [])
         
         let defaultLibrary = device.newDefaultLibrary()
         let vertexProgram = defaultLibrary?.makeFunction(name: "vertexShader")
@@ -89,6 +95,14 @@ class ViewController: UIViewController, MTKViewDelegate {
     func draw(in view: MTKView) {
         guard let drawable = view.currentDrawable else { return }
         
+        if (numFrames == 0) { startTime = CACurrentMediaTime() }
+        
+        let currentTime = CACurrentMediaTime()
+        let timeToShader = Float(currentTime - startTime)
+        
+        //fill the buffer with time
+        timeBuffer.contents().copyBytes(from: [timeToShader], count: MemoryLayout<Float>.stride)
+        
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
         renderPassDescriptor.colorAttachments[0].loadAction = .clear
@@ -100,11 +114,14 @@ class ViewController: UIViewController, MTKViewDelegate {
         renderEncoder.setRenderPipelineState(pipelineState)
         renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
         renderEncoder.setFragmentBuffer(viewPortBuffer, offset: 0, at: 0)
+        renderEncoder.setFragmentBuffer(timeBuffer, offset: 0, at: 1)
         renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6, instanceCount: 2)
         renderEncoder.endEncoding()
         
         commandBuffer.present(drawable)
         commandBuffer.commit()
+        
+        numFrames += 1
     }
     
     override func didReceiveMemoryWarning() {

@@ -37,10 +37,11 @@ vertexShader(uint               vertexID                [[vertex_id]],
 
 // Fragment function
 fragment float4 fragmentShader(FragmentData in [[stage_in]],
-                               constant   float2  *resolution    [[buffer(0)]])
+                               constant   float2  *resolution    [[buffer(0)]],
+                               constant   float   *time          [[buffer(1)]])
 {
     float2 uv = in.fragCoord.xy / *resolution;
     
-    return float4(uv, 0.0, 1.0);
+    return float4(uv, 0.5 + 0.5 * sin(*time), 1.0);
 }
 
