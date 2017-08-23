@@ -16,30 +16,30 @@ typedef struct
 
 typedef struct
 {
-    float4 clipSpacePosition [[position]];
-} RasterizerData;
+    float4 fragCoord [[position]];
+} FragmentData;
 
 // Vertex Function
-vertex RasterizerData
+vertex FragmentData
 vertexShader(uint               vertexID                [[vertex_id]],
              constant   Vertex  *vertices               [[buffer(0)]])
 {
-    RasterizerData out;
+    FragmentData out;
     
-    out.clipSpacePosition = float4(0.0, 0.0, 0.0, 1.0);
+    out.fragCoord = float4(0.0, 0.0, 0.0, 1.0);
     
     float2 pixelSpacePosition = vertices[vertexID].position;
     
-    out.clipSpacePosition.xy = pixelSpacePosition;
+    out.fragCoord.xy = pixelSpacePosition;
     
     return out;
 }
 
 // Fragment function
-fragment float4 fragmentShader(RasterizerData in [[stage_in]],
+fragment float4 fragmentShader(FragmentData in [[stage_in]],
                                constant   float2  *resolution    [[buffer(0)]])
 {
-    float2 uv = in.clipSpacePosition.xy / *resolution;
+    float2 uv = in.fragCoord.xy / *resolution;
     
     return float4(uv, 0.0, 1.0);
 }
