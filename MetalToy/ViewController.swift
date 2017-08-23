@@ -71,16 +71,21 @@ class ViewController: UIViewController, MTKViewDelegate {
         
         timeBuffer = device.makeBuffer(length: MemoryLayout<Float>.stride, options: [])
         
-        let defaultLibrary = device.newDefaultLibrary()
-        let vertexProgram = defaultLibrary?.makeFunction(name: "vertexShader")
-        let fragmentProgram = defaultLibrary?.makeFunction(name: "fragmentShader")
-        
-        let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
-        pipelineStateDescriptor.vertexFunction = vertexProgram
-        pipelineStateDescriptor.fragmentFunction = fragmentProgram
-        pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
-        
-        pipelineState = try! device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+        do {
+            let library = try device.makeLibrary(source: DefaultVertexShader + DefaultFragmentShader, options: nil)
+            let vertexProgram = library.makeFunction(name: "vertexShader")
+            let fragmentProgram = library.makeFunction(name: "fragmentShader")
+            
+            let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
+            pipelineStateDescriptor.vertexFunction = vertexProgram
+            pipelineStateDescriptor.fragmentFunction = fragmentProgram
+            pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+            
+            pipelineState = try! device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+
+        } catch {
+            print(error)
+        }
         
         commandQueue = device.makeCommandQueue()
     }

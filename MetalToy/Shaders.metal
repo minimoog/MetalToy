@@ -19,10 +19,9 @@ typedef struct
     float4 fragCoord [[position]];
 } FragmentData;
 
-// Vertex Function
 vertex FragmentData
-vertexShader(uint               vertexID                [[vertex_id]],
-             constant   Vertex  *vertices               [[buffer(0)]])
+vertexShader(uint               vertexID    [[vertex_id]],
+             constant   Vertex  *vertices   [[buffer(0)]])
 {
     FragmentData out;
     
@@ -35,10 +34,11 @@ vertexShader(uint               vertexID                [[vertex_id]],
     return out;
 }
 
-// Fragment function
-fragment float4 fragmentShader(FragmentData in [[stage_in]],
-                               constant   float2  *resolution    [[buffer(0)]],
-                               constant   float   *time          [[buffer(1)]])
+//--------------------------------------------------
+
+fragment float4 fragmentShader(FragmentData     in          [[stage_in]],
+                               constant float2  *resolution [[buffer(0)]],
+                               constant float   *time       [[buffer(1)]])
 {
     float2 uv = in.fragCoord.xy / *resolution;
     
