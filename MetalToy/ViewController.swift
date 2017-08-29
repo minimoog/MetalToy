@@ -76,17 +76,21 @@ class ViewController: UIViewController, MTKViewDelegate {
         
         timeBuffer = device.makeBuffer(length: MemoryLayout<Float>.stride, options: [])
         
-        do {
-            let pipelineStateDescriptor = try loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: DefaultFragmentShader)
-            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
-
-        } catch {
-            print(error)
-        }
+        setRenderPipeline(fragmentShader: DefaultFragmentShader)
         
         commandQueue = device.makeCommandQueue()
         
         codeView.text = DefaultFragmentShader
+    }
+    
+    func setRenderPipeline(fragmentShader: String) {
+        do {
+            let pipelineStateDescriptor = try loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: fragmentShader)
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+            
+        } catch {
+            print(error)
+        }
     }
     
     func loadShaders(device: MTLDevice, vertexShader: String, fragmentShader: String) throws -> MTLRenderPipelineDescriptor {
