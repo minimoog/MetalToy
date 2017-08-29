@@ -41,6 +41,8 @@ class ViewController: UIViewController, MTKViewDelegate {
         }
     }
     
+    @IBOutlet weak var codeView: UITextView!
+    
     var device: MTLDevice! = nil
     var pipelineState: MTLRenderPipelineState! = nil
     var commandQueue: MTLCommandQueue! = nil
@@ -88,6 +90,8 @@ class ViewController: UIViewController, MTKViewDelegate {
         }
         
         commandQueue = device.makeCommandQueue()
+        
+        codeView.text = DefaultFragmentShader
     }
 
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
