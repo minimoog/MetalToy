@@ -110,6 +110,9 @@ class ViewController: UIViewController, MTKViewDelegate {
         if sender.currentTitle == "Play" {
             sender.setTitle("Pause", for: .normal)
             mtkView.isPaused = false
+            
+            setRenderPipeline(fragmentShader: codeView.text)
+            
         } else {
             sender.setTitle("Play", for: .normal)
             mtkView.isPaused = true
