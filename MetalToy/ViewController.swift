@@ -60,6 +60,9 @@ class ViewController: UIViewController, MTKViewDelegate {
         device = MTLCreateSystemDefaultDevice()
         mtkView.device = device
         
+        //start paused
+        mtkView.isPaused = true
+        
         //arrange the vertex array
         for vertex in vertices {
             vertexData += vertex.toFloatArray()
@@ -92,6 +95,16 @@ class ViewController: UIViewController, MTKViewDelegate {
         commandQueue = device.makeCommandQueue()
         
         codeView.text = DefaultFragmentShader
+    }
+    
+    @IBAction func onPlayPauseButtonClicked(_ sender: UIButton) {
+        if sender.currentTitle == "Play" {
+            sender.setTitle("Pause", for: .normal)
+            mtkView.isPaused = false
+        } else {
+            sender.setTitle("Play", for: .normal)
+            mtkView.isPaused = true
+        }
     }
 
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
