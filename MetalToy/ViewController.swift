@@ -77,16 +77,8 @@ class ViewController: UIViewController, MTKViewDelegate {
         timeBuffer = device.makeBuffer(length: MemoryLayout<Float>.stride, options: [])
         
         do {
-            let library = try device.makeLibrary(source: DefaultVertexShader + DefaultFragmentShader, options: nil)
-            let vertexProgram = library.makeFunction(name: "vertexShader")
-            let fragmentProgram = library.makeFunction(name: "fragmentShader")
-            
-            let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
-            pipelineStateDescriptor.vertexFunction = vertexProgram
-            pipelineStateDescriptor.fragmentFunction = fragmentProgram
-            pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
-            
-            pipelineState = try! device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+            let pipelineStateDescriptor = try loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: DefaultFragmentShader)
+            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
 
         } catch {
             print(error)
@@ -95,6 +87,19 @@ class ViewController: UIViewController, MTKViewDelegate {
         commandQueue = device.makeCommandQueue()
         
         codeView.text = DefaultFragmentShader
+    }
+    
+    func loadShaders(device: MTLDevice, vertexShader: String, fragmentShader: String) throws -> MTLRenderPipelineDescriptor {
+        let library = try device.makeLibrary(source: vertexShader + fragmentShader, options: nil)
+        let vertexProgram = library.makeFunction(name: "vertexShader")
+        let fragmentProgram = library.makeFunction(name: "fragmentShader")
+        
+        let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
+        pipelineStateDescriptor.vertexFunction = vertexProgram
+        pipelineStateDescriptor.fragmentFunction = fragmentProgram
+        pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+        
+        return pipelineStateDescriptor
     }
     
     @IBAction func onPlayPauseButtonClicked(_ sender: UIButton) {
