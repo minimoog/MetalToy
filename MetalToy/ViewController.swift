@@ -131,6 +131,11 @@ class ViewController: UIViewController, MTKViewDelegate {
         
         if (numFrames == 0) { startTime = CACurrentMediaTime() }
         
+        //ios 11 MTKView bug or not, drawableSizeWillChange is not called, so we need here the viewport sizes
+        viewPortData[0] = Float(view.drawableSize.width)
+        viewPortData[1] = Float(view.drawableSize.height)
+        viewPortBuffer.contents().copyBytes(from: viewPortData, count: viewPortData.count * MemoryLayout<Float>.stride)
+        
         let currentTime = CACurrentMediaTime()
         let timeToShader = Float(currentTime - startTime)
         
