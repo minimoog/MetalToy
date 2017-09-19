@@ -148,17 +148,17 @@ class ViewController: UIViewController, MTKViewDelegate {
         renderPassDescriptor.colorAttachments[0].clearColor = MTLClearColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         
         let commandBuffer = commandQueue.makeCommandBuffer()
-        let renderEncoder = commandBuffer.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
-        renderEncoder.setViewport(MTLViewport(originX: 0.0, originY: 0.0, width: Double(viewPortData[0]), height: Double(viewPortData[1]), znear: -1.0, zfar: 1.0))
-        renderEncoder.setRenderPipelineState(pipelineState)
-        renderEncoder.setVertexBuffer(vertexBuffer, offset: 0, at: 0)
-        renderEncoder.setFragmentBuffer(viewPortBuffer, offset: 0, at: 0)
-        renderEncoder.setFragmentBuffer(timeBuffer, offset: 0, at: 1)
-        renderEncoder.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6, instanceCount: 2)
-        renderEncoder.endEncoding()
+        let renderEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+        renderEncoder?.setViewport(MTLViewport(originX: 0.0, originY: 0.0, width: Double(viewPortData[0]), height: Double(viewPortData[1]), znear: -1.0, zfar: 1.0))
+        renderEncoder?.setRenderPipelineState(pipelineState)
+        renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        renderEncoder?.setFragmentBuffer(viewPortBuffer, offset: 0, index: 0)
+        renderEncoder?.setFragmentBuffer(timeBuffer, offset: 0, index: 1)
+        renderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6, instanceCount: 2)
+        renderEncoder?.endEncoding()
         
-        commandBuffer.present(drawable)
-        commandBuffer.commit()
+        commandBuffer?.present(drawable)
+        commandBuffer?.commit()
         
         numFrames += 1
     }
