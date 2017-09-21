@@ -55,6 +55,11 @@
 		5241E9C81F49F0B000107886 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		5241E9CA1F4A234300107886 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		5264C0351F4E3610001B9EEC /* Shaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
+		528199FC1F7479DE000C62A0 /* Arrangement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
+		528199FD1F7479DE000C62A0 /* HandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleView.swift; sourceTree = "<group>"; };
+		528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		52819A001F7479DE000C62A0 /* Snapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapped.swift; sourceTree = "<group>"; };
+		52819A021F7479DE000C62A0 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +121,7 @@
 				5241E9A31F49E55000107886 /* Info.plist */,
 				5241E9CA1F4A234300107886 /* Shaders.metal */,
 				5264C0351F4E3610001B9EEC /* Shaders.swift */,
+				528199FB1F7479DE000C62A0 /* SplitKit */,
 			);
 			path = MetalToy;
 			sourceTree = "<group>";
@@ -145,6 +151,18 @@
 				5241E9C61F49F0A600107886 /* Metal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		528199FB1F7479DE000C62A0 /* SplitKit */ = {
+			isa = PBXGroup;
+			children = (
+				528199FC1F7479DE000C62A0 /* Arrangement.swift */,
+				528199FD1F7479DE000C62A0 /* HandleView.swift */,
+				528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */,
+				52819A001F7479DE000C62A0 /* Snapped.swift */,
+				52819A021F7479DE000C62A0 /* SplitViewController.swift */,
+			);
+			path = SplitKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

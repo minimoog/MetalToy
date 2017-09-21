@@ -9,6 +9,7 @@
 import UIKit
 import Metal
 import MetalKit
+import SplitKit
 
 struct Vertex {
     let x: Float
