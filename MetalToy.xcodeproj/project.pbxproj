@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FC1F7479DE000C62A0 /* Arrangement.swift */; };
+		521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FD1F7479DE000C62A0 /* HandleView.swift */; };
+		521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */; };
+		521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52819A001F7479DE000C62A0 /* Snapped.swift */; };
+		521BF4901F79C53600ABCAED /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52819A021F7479DE000C62A0 /* SplitViewController.swift */; };
 		5241E9981F49E55000107886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9971F49E55000107886 /* AppDelegate.swift */; };
-		5241E99A1F49E55000107886 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9991F49E55000107886 /* ViewController.swift */; };
+		5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9991F49E55000107886 /* CodeViewController.swift */; };
 		5241E99D1F49E55000107886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99B1F49E55000107886 /* Main.storyboard */; };
 		5241E99F1F49E55000107886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99E1F49E55000107886 /* Assets.xcassets */; };
 		5241E9A21F49E55000107886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E9A01F49E55000107886 /* LaunchScreen.storyboard */; };
@@ -17,6 +22,8 @@
 		5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C61F49F0A600107886 /* Metal.framework */; };
 		5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C81F49F0B000107886 /* MetalKit.framework */; };
 		5241E9CB1F4A234300107886 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9CA1F4A234300107886 /* Shaders.metal */; };
+		525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C061F79BA0900FADC46 /* MetalViewController.swift */; };
+		525F0C091F79C08300FADC46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C081F79C08300FADC46 /* ViewController.swift */; };
 		5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264C0351F4E3610001B9EEC /* Shaders.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +47,7 @@
 /* Begin PBXFileReference section */
 		5241E9941F49E55000107886 /* MetalToy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalToy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241E9971F49E55000107886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5241E9991F49E55000107886 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5241E9991F49E55000107886 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		5241E99C1F49E55000107886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5241E99E1F49E55000107886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5241E9A11F49E55000107886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,6 +61,8 @@
 		5241E9C61F49F0A600107886 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		5241E9C81F49F0B000107886 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		5241E9CA1F4A234300107886 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
+		525F0C061F79BA0900FADC46 /* MetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
+		525F0C081F79C08300FADC46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5264C0351F4E3610001B9EEC /* Shaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
 		528199FC1F7479DE000C62A0 /* Arrangement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 		528199FD1F7479DE000C62A0 /* HandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleView.swift; sourceTree = "<group>"; };
@@ -114,14 +123,20 @@
 			isa = PBXGroup;
 			children = (
 				5241E9971F49E55000107886 /* AppDelegate.swift */,
-				5241E9991F49E55000107886 /* ViewController.swift */,
+				525F0C081F79C08300FADC46 /* ViewController.swift */,
+				5241E9991F49E55000107886 /* CodeViewController.swift */,
+				525F0C061F79BA0900FADC46 /* MetalViewController.swift */,
 				5241E99B1F49E55000107886 /* Main.storyboard */,
 				5241E99E1F49E55000107886 /* Assets.xcassets */,
 				5241E9A01F49E55000107886 /* LaunchScreen.storyboard */,
 				5241E9A31F49E55000107886 /* Info.plist */,
 				5241E9CA1F4A234300107886 /* Shaders.metal */,
 				5264C0351F4E3610001B9EEC /* Shaders.swift */,
-				528199FB1F7479DE000C62A0 /* SplitKit */,
+				528199FC1F7479DE000C62A0 /* Arrangement.swift */,
+				528199FD1F7479DE000C62A0 /* HandleView.swift */,
+				528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */,
+				52819A001F7479DE000C62A0 /* Snapped.swift */,
+				52819A021F7479DE000C62A0 /* SplitViewController.swift */,
 			);
 			path = MetalToy;
 			sourceTree = "<group>";
@@ -151,18 +166,6 @@
 				5241E9C61F49F0A600107886 /* Metal.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		528199FB1F7479DE000C62A0 /* SplitKit */ = {
-			isa = PBXGroup;
-			children = (
-				528199FC1F7479DE000C62A0 /* Arrangement.swift */,
-				528199FD1F7479DE000C62A0 /* HandleView.swift */,
-				528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */,
-				52819A001F7479DE000C62A0 /* Snapped.swift */,
-				52819A021F7479DE000C62A0 /* SplitViewController.swift */,
-			);
-			path = SplitKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,10 +308,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525F0C091F79C08300FADC46 /* ViewController.swift in Sources */,
 				5241E9CB1F4A234300107886 /* Shaders.metal in Sources */,
-				5241E99A1F49E55000107886 /* ViewController.swift in Sources */,
+				521BF4901F79C53600ABCAED /* SplitViewController.swift in Sources */,
+				521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */,
+				5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */,
+				525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */,
+				521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */,
 				5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */,
 				5241E9981F49E55000107886 /* AppDelegate.swift in Sources */,
+				521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */,
+				521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,72 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="92Z-gh-zJp">
     <device id="ipad10_5" orientation="landscape">
-        <adaptation id="fullscreen"/>
+        <adaptation id="splitview1_2"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Menlo.ttc">
+            <string>Menlo-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Metal View Controller-->
+        <scene sceneID="ttc-k4-c9G">
+            <objects>
+                <viewController storyboardIdentifier="MetalViewController" id="OsE-9k-1M1" customClass="MetalViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WR3-dB-iwg"/>
+                        <viewControllerLayoutGuide type="bottom" id="IhV-5k-0Wb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UHL-UV-XWH">
+                        <rect key="frame" x="0.0" y="0.0" width="551" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="25O-GC-V7a">
+                                <rect key="frame" x="20" y="20" width="511" height="511"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="25O-GC-V7a" secondAttribute="height" multiplier="1:1" id="TYM-zK-vO7"/>
+                                </constraints>
+                            </mtkView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="25O-GC-V7a" firstAttribute="trailing" secondItem="UHL-UV-XWH" secondAttribute="trailingMargin" id="14O-Ox-sA4"/>
+                            <constraint firstItem="25O-GC-V7a" firstAttribute="leading" secondItem="UHL-UV-XWH" secondAttribute="leadingMargin" id="Qse-n9-lb6"/>
+                            <constraint firstItem="25O-GC-V7a" firstAttribute="top" secondItem="WR3-dB-iwg" secondAttribute="bottom" id="s6m-jR-YgL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mtkView" destination="25O-GC-V7a" id="T82-kg-EWL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luS-ci-BrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="-550"/>
+        </scene>
+        <!--Code View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CodeViewController" id="BYZ-38-t0r" userLabel="Code View Controller" customClass="CodeViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <rect key="frame" x="0.0" y="0.0" width="551" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4kN-GS-zyd">
-                                <rect key="frame" x="558" y="20" width="534" height="756"/>
+                                <rect key="frame" x="20" y="20" width="511" height="756"/>
                                 <color key="backgroundColor" red="0.90212279681714702" green="0.90212279681714702" blue="0.90212279681714702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="11"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blu-X4-6WK">
-                                <rect key="frame" x="802" y="784" width="46" height="30"/>
+                                <rect key="frame" x="252.5" y="784" width="46" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="c3o-PT-6Dw"/>
+                                    <constraint firstAttribute="width" constant="46" id="wdw-2c-VFL"/>
                                 </constraints>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <action selector="onPlayPauseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l7a-rC-vn0"/>
+                                    <action selector="onPlayPauseButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XBH-Ow-xKQ"/>
                                 </connections>
                             </button>
-                            <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="c9P-IM-let">
-                                <rect key="frame" x="20" y="20" width="530" height="530"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="c9P-IM-let" secondAttribute="height" multiplier="1:1" id="H72-J0-6HW"/>
-                                </constraints>
-                            </mtkView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="blu-X4-6WK" firstAttribute="centerX" secondItem="4kN-GS-zyd" secondAttribute="centerX" id="ElF-Je-Lwa"/>
-                            <constraint firstItem="c9P-IM-let" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Gts-hZ-KyW"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c9P-IM-let" secondAttribute="bottom" constant="284" id="R4p-Pt-GAj"/>
-                            <constraint firstItem="4kN-GS-zyd" firstAttribute="leading" secondItem="c9P-IM-let" secondAttribute="trailing" constant="8" id="YFS-1T-Pvl"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="c9P-IM-let" secondAttribute="leading" id="eqo-Cv-K1v"/>
-                            <constraint firstItem="blu-X4-6WK" firstAttribute="top" secondItem="4kN-GS-zyd" secondAttribute="bottom" constant="8" symbolic="YES" id="esG-IZ-p1C"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="blu-X4-6WK" secondAttribute="bottom" constant="20" id="kd1-54-VqZ"/>
-                            <constraint firstItem="4kN-GS-zyd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uMa-mo-Mh0"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4kN-GS-zyd" secondAttribute="trailing" id="zRX-IQ-XZc"/>
+                            <constraint firstAttribute="bottom" secondItem="blu-X4-6WK" secondAttribute="bottom" constant="20" symbolic="YES" id="TL3-sv-f4b"/>
+                            <constraint firstItem="4kN-GS-zyd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="V0a-vm-TSE"/>
+                            <constraint firstItem="4kN-GS-zyd" firstAttribute="centerX" secondItem="blu-X4-6WK" secondAttribute="centerX" id="o3n-Cx-qUY"/>
+                            <constraint firstItem="blu-X4-6WK" firstAttribute="top" secondItem="4kN-GS-zyd" secondAttribute="bottom" constant="8" symbolic="YES" id="pyF-Ju-tX4"/>
+                            <constraint firstItem="4kN-GS-zyd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sNe-A2-UkV"/>
+                            <constraint firstItem="4kN-GS-zyd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="veW-2T-EEc"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="codeView" destination="4kN-GS-zyd" id="vjN-3f-4Qd"/>
-                        <outlet property="mtkView" destination="c9P-IM-let" id="xTM-bV-2OI"/>
+                        <outlet property="codeView" destination="4kN-GS-zyd" id="lId-od-vEX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117.62589928057554" y="123.74100719424462"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bq5-ex-psQ">
+            <objects>
+                <viewController id="92Z-gh-zJp" customClass="ViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LF6-oZ-6nq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tru-bj-Lmi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GPI-mP-27A">
+                        <rect key="frame" x="0.0" y="0.0" width="551" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tIP-Uc-f2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="776"/>
         </scene>
     </scenes>
 </document>
