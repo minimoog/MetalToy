@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         addChildViewController(splitController)
         
         splitController.view.frame = self.view.bounds
-        splitController.view.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.RawValue(UInt8(UIViewAutoresizing.flexibleWidth.rawValue) | UInt8(UIViewAutoresizing.flexibleHeight.rawValue))) //???
+        splitController.view.autoresizingMask = UIViewAutoresizing(rawValue: UIViewAutoresizing.flexibleWidth.rawValue | UIViewAutoresizing.flexibleHeight.rawValue)
         
         view.addSubview(splitController.view)
         splitController.didMove(toParentViewController: self)
@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         
         var metalViewController = storyboard?.instantiateViewController(withIdentifier: "MetalViewController") as? MetalViewController
         var codeViewController = storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController
+        
+        codeViewController?.metalViewController = metalViewController
         
         splitController.firstChild = metalViewController
         splitController.secondChild = codeViewController

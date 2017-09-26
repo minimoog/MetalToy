@@ -59,7 +59,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         mtkView.device = device
         
         //start paused
-        //mtkView.isPaused = true
+        mtkView.isPaused = true
         
         //arrange the vertex array
         for vertex in vertices {

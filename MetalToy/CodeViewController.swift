@@ -11,6 +11,7 @@ import UIKit
 class CodeViewController: UIViewController {
     
     @IBOutlet weak var codeView: UITextView!
+    weak var metalViewController: MetalViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +23,17 @@ class CodeViewController: UIViewController {
     @IBAction func onPlayPauseButtonClicked(_ sender: UIButton) {
         if sender.currentTitle == "Play" {
             sender.setTitle("Pause", for: .normal)
-            //mtkView.isPaused = false
             
-            //setRenderPipeline(fragmentShader: codeView.text)
-            
+            if let metalViewController = metalViewController {
+                metalViewController.mtkView.isPaused = false
+                metalViewController.setRenderPipeline(fragmentShader: codeView.text)
+            }
         } else {
             sender.setTitle("Play", for: .normal)
-            //mtkView.isPaused = true
+            
+            if let metalViewController = metalViewController {
+                metalViewController.mtkView.isPaused = true
+            }
         }
     }
     
