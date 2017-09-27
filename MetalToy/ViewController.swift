@@ -31,6 +31,10 @@ class ViewController: UIViewController {
         
         splitController.firstChild = metalViewController
         splitController.secondChild = codeViewController
+        
+        let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
+        
+        navigationItem.rightBarButtonItems = [playBarItem]
     }
     
     override func didReceiveMemoryWarning() {

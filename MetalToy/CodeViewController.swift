@@ -20,16 +20,16 @@ class CodeViewController: UIViewController {
         codeView.text = DefaultFragmentShader
     }
     
-    @IBAction func onPlayPauseButtonClicked(_ sender: UIButton) {
-        if sender.currentTitle == "Play" {
-            sender.setTitle("Pause", for: .normal)
+    @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
+        if sender.title == "Play" {
+            sender.title = "Pause"
             
             if let metalViewController = metalViewController {
                 metalViewController.mtkView.isPaused = false
                 metalViewController.setRenderPipeline(fragmentShader: codeView.text)
             }
         } else {
-            sender.setTitle("Play", for: .normal)
+            sender.title = "Play"
             
             if let metalViewController = metalViewController {
                 metalViewController.mtkView.isPaused = true
