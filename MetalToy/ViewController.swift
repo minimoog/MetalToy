@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var splitController = SplitViewController()
+        let splitController = SplitViewController()
         addChildViewController(splitController)
         
         splitController.view.frame = self.view.bounds
