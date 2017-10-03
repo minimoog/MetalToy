@@ -72,6 +72,7 @@
                     </view>
                     <connections>
                         <outlet property="codeView" destination="4kN-GS-zyd" id="lId-od-vEX"/>
+                        <outlet property="keyboardHeightLayoutConstraint" destination="srT-ww-YRL" id="Uby-Mn-EWC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
