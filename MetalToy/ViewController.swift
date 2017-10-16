@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SplitKit
+//import SplitKit
 
 class ViewController: UIViewController {
     

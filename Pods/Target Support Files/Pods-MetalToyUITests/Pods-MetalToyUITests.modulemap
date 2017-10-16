@@ -1,0 +1,6 @@
+framework module Pods_MetalToyUITests {
+  umbrella header "Pods-MetalToyUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Highlightr
 
 class CodeViewController: UIViewController {
     
@@ -18,7 +19,12 @@ class CodeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        codeView.text = DefaultFragmentShader
+        let highlightr = Highlightr()
+        highlightr?.setTheme(to: "paraiso-dark")
+        let highlightedCode = highlightr?.highlight(DefaultFragmentShader)
+        
+        //codeView.text = DefaultFragmentShader
+        codeView.attributedText = highlightedCode
         
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
