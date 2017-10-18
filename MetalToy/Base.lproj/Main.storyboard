@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Menlo.ttc">
-            <string>Menlo-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Metal View Controller-->
         <scene sceneID="ttc-k4-c9G">
@@ -53,27 +48,9 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4kN-GS-zyd">
-                                <rect key="frame" x="20" y="40" width="1072" height="774"/>
-                                <color key="backgroundColor" red="0.90212279681714702" green="0.90212279681714702" blue="0.90212279681714702" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="11"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="4kN-GS-zyd" firstAttribute="leading" secondItem="tBs-2A-rYT" secondAttribute="leading" constant="20" id="62C-GO-md0"/>
-                            <constraint firstItem="4kN-GS-zyd" firstAttribute="top" secondItem="tBs-2A-rYT" secondAttribute="top" constant="20" id="nuP-KL-nXg"/>
-                            <constraint firstItem="tBs-2A-rYT" firstAttribute="bottom" secondItem="4kN-GS-zyd" secondAttribute="bottom" constant="20" id="srT-ww-YRL"/>
-                            <constraint firstItem="tBs-2A-rYT" firstAttribute="trailing" secondItem="4kN-GS-zyd" secondAttribute="trailing" constant="20" id="wQF-In-aes"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="tBs-2A-rYT"/>
                     </view>
-                    <connections>
-                        <outlet property="codeView" destination="4kN-GS-zyd" id="lId-od-vEX"/>
-                        <outlet property="keyboardHeightLayoutConstraint" destination="srT-ww-YRL" id="Uby-Mn-EWC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
