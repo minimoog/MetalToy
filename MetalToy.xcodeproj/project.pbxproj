@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095DA47442A4219A932EB505 /* Pods_MetalToyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE662F48A7284B25CDF2A1C9 /* Pods_MetalToyUITests.framework */; };
-		341D5FB6CA358EA28588FC6C /* Pods_MetalToyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD31015A5343CF6913A4092 /* Pods_MetalToyTests.framework */; };
 		521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FC1F7479DE000C62A0 /* Arrangement.swift */; };
 		521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FD1F7479DE000C62A0 /* HandleView.swift */; };
 		521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */; };
 		521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52819A001F7479DE000C62A0 /* Snapped.swift */; };
 		521BF4901F79C53600ABCAED /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52819A021F7479DE000C62A0 /* SplitViewController.swift */; };
+		5237D00C1FA2993700460C19 /* MetalHighlightTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237D00B1FA2993700460C19 /* MetalHighlightTextStorage.swift */; };
 		5241E9981F49E55000107886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9971F49E55000107886 /* AppDelegate.swift */; };
 		5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9991F49E55000107886 /* CodeViewController.swift */; };
 		5241E99D1F49E55000107886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99B1F49E55000107886 /* Main.storyboard */; };
@@ -27,7 +26,6 @@
 		525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C061F79BA0900FADC46 /* MetalViewController.swift */; };
 		525F0C091F79C08300FADC46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C081F79C08300FADC46 /* ViewController.swift */; };
 		5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264C0351F4E3610001B9EEC /* Shaders.swift */; };
-		5C388E79A44FA39D3076F346 /* Pods_MetalToy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87099E729DAE435E014FAA1 /* Pods_MetalToy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AC446459A1B0B57324E3F58 /* Pods-MetalToyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5237D00B1FA2993700460C19 /* MetalHighlightTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalHighlightTextStorage.swift; sourceTree = "<group>"; };
 		5241E9941F49E55000107886 /* MetalToy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalToy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241E9971F49E55000107886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5241E9991F49E55000107886 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
@@ -73,14 +71,6 @@
 		528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		52819A001F7479DE000C62A0 /* Snapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapped.swift; sourceTree = "<group>"; };
 		52819A021F7479DE000C62A0 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		5CD31015A5343CF6913A4092 /* Pods_MetalToyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalToyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8144D16F0AEBB3DDFEBF161F /* Pods-MetalToy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy.debug.xcconfig"; sourceTree = "<group>"; };
-		A87099E729DAE435E014FAA1 /* Pods_MetalToy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalToy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABADE934C9E6D350D11DF861 /* Pods-MetalToyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AE662F48A7284B25CDF2A1C9 /* Pods_MetalToyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalToyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBAB7FF2FD844657D31F53D1 /* Pods-MetalToy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToy.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy.release.xcconfig"; sourceTree = "<group>"; };
-		C0057BD5AB2428F240C1F7D8 /* Pods-MetalToyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F24D125EFD8560BCE32BFD99 /* Pods-MetalToyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +80,6 @@
 			files = (
 				5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */,
 				5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */,
-				5C388E79A44FA39D3076F346 /* Pods_MetalToy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				341D5FB6CA358EA28588FC6C /* Pods_MetalToyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				095DA47442A4219A932EB505 /* Pods_MetalToyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +108,6 @@
 				5241E9B61F49E55000107886 /* MetalToyUITests */,
 				5241E9951F49E55000107886 /* Products */,
 				5241E9C51F49F0A600107886 /* Frameworks */,
-				54E601647C7247B35D3F71A9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +139,7 @@
 				528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */,
 				52819A001F7479DE000C62A0 /* Snapped.swift */,
 				52819A021F7479DE000C62A0 /* SplitViewController.swift */,
+				5237D00B1FA2993700460C19 /* MetalHighlightTextStorage.swift */,
 			);
 			path = MetalToy;
 			sourceTree = "<group>";
@@ -180,24 +167,8 @@
 			children = (
 				5241E9C81F49F0B000107886 /* MetalKit.framework */,
 				5241E9C61F49F0A600107886 /* Metal.framework */,
-				A87099E729DAE435E014FAA1 /* Pods_MetalToy.framework */,
-				5CD31015A5343CF6913A4092 /* Pods_MetalToyTests.framework */,
-				AE662F48A7284B25CDF2A1C9 /* Pods_MetalToyUITests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		54E601647C7247B35D3F71A9 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8144D16F0AEBB3DDFEBF161F /* Pods-MetalToy.debug.xcconfig */,
-				BBAB7FF2FD844657D31F53D1 /* Pods-MetalToy.release.xcconfig */,
-				ABADE934C9E6D350D11DF861 /* Pods-MetalToyTests.debug.xcconfig */,
-				F24D125EFD8560BCE32BFD99 /* Pods-MetalToyTests.release.xcconfig */,
-				0AC446459A1B0B57324E3F58 /* Pods-MetalToyUITests.debug.xcconfig */,
-				C0057BD5AB2428F240C1F7D8 /* Pods-MetalToyUITests.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,12 +178,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5241E9BC1F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToy" */;
 			buildPhases = (
-				C9DF49EA2F082BE4580015F7 /* [CP] Check Pods Manifest.lock */,
 				5241E9901F49E55000107886 /* Sources */,
 				5241E9911F49E55000107886 /* Frameworks */,
 				5241E9921F49E55000107886 /* Resources */,
-				EF2A6EADFF3503C66CC8E7DB /* [CP] Embed Pods Frameworks */,
-				A6D0FDCE47DC911076258721 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,12 +195,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5241E9BF1F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToyTests" */;
 			buildPhases = (
-				E356B9728955C412807A4B14 /* [CP] Check Pods Manifest.lock */,
 				5241E9A41F49E55000107886 /* Sources */,
 				5241E9A51F49E55000107886 /* Frameworks */,
 				5241E9A61F49E55000107886 /* Resources */,
-				18AD48FDA6FB00235DD763BE /* [CP] Embed Pods Frameworks */,
-				A40B212F86EBC11D2A7B7201 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,12 +213,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5241E9C21F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToyUITests" */;
 			buildPhases = (
-				734698F07D072A24B6120C8A /* [CP] Check Pods Manifest.lock */,
 				5241E9AF1F49E55000107886 /* Sources */,
 				5241E9B01F49E55000107886 /* Frameworks */,
 				5241E9B11F49E55000107886 /* Resources */,
-				A9F82FAB5EA3BF521C945CB7 /* [CP] Embed Pods Frameworks */,
-				0EA8F3E84404F7B1FEEFA9A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -344,156 +306,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0EA8F3E84404F7B1FEEFA9A1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		18AD48FDA6FB00235DD763BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		734698F07D072A24B6120C8A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MetalToyUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A40B212F86EBC11D2A7B7201 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6D0FDCE47DC911076258721 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A9F82FAB5EA3BF521C945CB7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9DF49EA2F082BE4580015F7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MetalToy-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E356B9728955C412807A4B14 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MetalToyTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF2A6EADFF3503C66CC8E7DB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Highlightr/Highlightr.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Highlightr.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		5241E9901F49E55000107886 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -510,6 +322,7 @@
 				5241E9981F49E55000107886 /* AppDelegate.swift in Sources */,
 				521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */,
 				521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */,
+				5237D00C1FA2993700460C19 /* MetalHighlightTextStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,7 +486,6 @@
 		};
 		5241E9BD1F49E55000107886 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8144D16F0AEBB3DDFEBF161F /* Pods-MetalToy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
@@ -689,7 +501,6 @@
 		};
 		5241E9BE1F49E55000107886 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBAB7FF2FD844657D31F53D1 /* Pods-MetalToy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
@@ -705,7 +516,6 @@
 		};
 		5241E9C01F49E55000107886 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABADE934C9E6D350D11DF861 /* Pods-MetalToyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -722,7 +532,6 @@
 		};
 		5241E9C11F49E55000107886 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F24D125EFD8560BCE32BFD99 /* Pods-MetalToyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -739,7 +548,6 @@
 		};
 		5241E9C31F49E55000107886 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC446459A1B0B57324E3F58 /* Pods-MetalToyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
@@ -755,7 +563,6 @@
 		};
 		5241E9C41F49E55000107886 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0057BD5AB2428F240C1F7D8 /* Pods-MetalToyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9XA2D6V342;

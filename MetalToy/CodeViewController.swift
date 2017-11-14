@@ -7,22 +7,24 @@
 //
 
 import UIKit
-import Highlightr
 
 class CodeViewController: UIViewController {
     
     var codeView: UITextView?
     weak var metalViewController: MetalViewController?
     
-    let textStorage = CodeAttributedString()
+    //let textStorage = CodeAttributedString()
+    var textStorage = MetalHighlightTextStorage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        textStorage.language = "cpp"
+        //let attrs = [NSAttributedStringKey.font : UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        //let attrsString = NSAttributedString(string: note.contents, attributes: attrs)
         let layoutManager = NSLayoutManager()
         textStorage.addLayoutManager(layoutManager)
+        textStorage.update()
         
         let textContainer = NSTextContainer(size: view.bounds.size)
         layoutManager.addTextContainer(textContainer)

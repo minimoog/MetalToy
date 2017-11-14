@@ -1,6 +1,0 @@
-framework module Pods_MetalToy {
-  umbrella header "Pods-MetalToy-umbrella.h"
-
-  export *
-  module * { export * }
-}
