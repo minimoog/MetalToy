@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension String {
+    func substring(with nsrange: NSRange) -> Substring? {
+        guard let range = Range(nsrange, in: self) else { return nil }
+        return self[range]
+    }
+}
+
 class MetalHighlightTextStorage: NSTextStorage {
     let backingStore = NSMutableAttributedString()
     var replacements: [String: [NSAttributedStringKey: Any]]!
@@ -41,7 +48,7 @@ class MetalHighlightTextStorage: NSTextStorage {
     }
     
     override func setAttributes(_ attrs: [NSAttributedStringKey : Any]?, range: NSRange) {
-        print("setAttributes")
+        print("setAttributes: range: \(range)  attr: \(String(describing: attrs))")
         
         beginEditing()
         backingStore.setAttributes(attrs, range: range)
@@ -50,17 +57,27 @@ class MetalHighlightTextStorage: NSTextStorage {
     }
     
     func applyStylesToRange(searchRange: NSRange) {
-        let normalAttrs = [NSAttributedStringKey.font : UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        let normalAttrs = [NSAttributedStringKey.font : UIFont(name: "Menlo-Regular", size: 12) as Any]
+        self.setAttributes(normalAttrs, range: NSMakeRange(0, length))
         
-        for (pattern, attributes) in replacements {
-            let regex = try? NSRegularExpression(pattern: pattern, options: NSRegularExpression.Options(rawValue: 0))
-            regex?.enumerateMatches(in: backingStore.string, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: searchRange) {
-                match, flags, stop in
-                
-                if let matchRange = match?.range(at: 0) {
-                    self.addAttributes(attributes, range: matchRange)
-                }
-            }
+        guard let substring = backingStore.string.substring(with: searchRange) else { return }
+        
+        var begin = 0
+        
+        while true {
+            let start = substring.index(substring.startIndex, offsetBy: begin)
+            let end = substring.index(substring.endIndex, offsetBy: 0)
+        
+            guard let range = substring.range(of: "float4", options: .literal, range:start..<end, locale: nil) else { break }
+            
+            let lower = range.lowerBound.encodedOffset
+            let upper = range.upperBound.encodedOffset
+            
+            let redTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.red]
+            
+            self.addAttributes(redTextAttributes, range: NSMakeRange(lower, upper - lower))
+            
+            begin = upper
         }
     }
     
