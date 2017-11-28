@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Highlightr
 
 class CodeViewController: UIViewController {
     

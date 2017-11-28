@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095DA47442A4219A932EB505 /* Pods_MetalToyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE662F48A7284B25CDF2A1C9 /* Pods_MetalToyUITests.framework */; };
-		341D5FB6CA358EA28588FC6C /* Pods_MetalToyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CD31015A5343CF6913A4092 /* Pods_MetalToyTests.framework */; };
 		521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FC1F7479DE000C62A0 /* Arrangement.swift */; };
 		521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FD1F7479DE000C62A0 /* HandleView.swift */; };
 		521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */; };
@@ -27,7 +25,92 @@
 		525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C061F79BA0900FADC46 /* MetalViewController.swift */; };
 		525F0C091F79C08300FADC46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C081F79C08300FADC46 /* ViewController.swift */; };
 		5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264C0351F4E3610001B9EEC /* Shaders.swift */; };
-		5C388E79A44FA39D3076F346 /* Pods_MetalToy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A87099E729DAE435E014FAA1 /* Pods_MetalToy.framework */; };
+		52E7C42B1FC7851200087B15 /* CodeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C31F1FC7851100087B15 /* CodeAttributedString.swift */; };
+		52E7C42C1FC7851200087B15 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C3201FC7851100087B15 /* Highlightr.swift */; };
+		52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C3221FC7851100087B15 /* HTMLUtils.swift */; };
+		52E7C42F1FC7851200087B15 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C3231FC7851100087B15 /* Theme.swift */; };
+		52E7C4311FC7851200087B15 /* vs.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3271FC7851100087B15 /* vs.min.css */; };
+		52E7C4321FC7851200087B15 /* atelier-seaside-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3281FC7851100087B15 /* atelier-seaside-dark.min.css */; };
+		52E7C4331FC7851200087B15 /* brown-paper.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3291FC7851100087B15 /* brown-paper.min.css */; };
+		52E7C4341FC7851200087B15 /* atelier-plateau-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C32A1FC7851100087B15 /* atelier-plateau-light.min.css */; };
+		52E7C4351FC7851200087B15 /* school-book.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C32B1FC7851100087B15 /* school-book.min.css */; };
+		52E7C4361FC7851200087B15 /* xcode.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C32C1FC7851100087B15 /* xcode.min.css */; };
+		52E7C4371FC7851200087B15 /* atelier-sulphurpool-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C32D1FC7851100087B15 /* atelier-sulphurpool-dark.min.css */; };
+		52E7C4381FC7851200087B15 /* tomorrow-night-blue.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C32E1FC7851100087B15 /* tomorrow-night-blue.min.css */; };
+		52E7C4391FC7851200087B15 /* vs2015.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C32F1FC7851100087B15 /* vs2015.min.css */; };
+		52E7C43A1FC7851200087B15 /* atelier-heath-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3301FC7851100087B15 /* atelier-heath-dark.min.css */; };
+		52E7C43B1FC7851200087B15 /* paraiso-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3311FC7851100087B15 /* paraiso-light.min.css */; };
+		52E7C43C1FC7851200087B15 /* rainbow.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3321FC7851100087B15 /* rainbow.min.css */; };
+		52E7C43D1FC7851200087B15 /* qtcreator_light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3331FC7851100087B15 /* qtcreator_light.min.css */; };
+		52E7C43E1FC7851200087B15 /* kimbie.dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3341FC7851100087B15 /* kimbie.dark.min.css */; };
+		52E7C43F1FC7851200087B15 /* atelier-heath-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3351FC7851100087B15 /* atelier-heath-light.min.css */; };
+		52E7C4401FC7851200087B15 /* far.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3361FC7851100087B15 /* far.min.css */; };
+		52E7C4411FC7851200087B15 /* atelier-dune-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3371FC7851100087B15 /* atelier-dune-dark.min.css */; };
+		52E7C4421FC7851200087B15 /* kimbie.light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3381FC7851100087B15 /* kimbie.light.min.css */; };
+		52E7C4431FC7851200087B15 /* railscasts.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3391FC7851100087B15 /* railscasts.min.css */; };
+		52E7C4441FC7851200087B15 /* solarized-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C33A1FC7851100087B15 /* solarized-dark.min.css */; };
+		52E7C4451FC7851200087B15 /* atelier-estuary-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C33B1FC7851100087B15 /* atelier-estuary-light.min.css */; };
+		52E7C4461FC7851200087B15 /* xt256.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C33C1FC7851100087B15 /* xt256.min.css */; };
+		52E7C4471FC7851200087B15 /* mono-blue.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C33D1FC7851200087B15 /* mono-blue.min.css */; };
+		52E7C4481FC7851200087B15 /* ocean.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C33E1FC7851200087B15 /* ocean.min.css */; };
+		52E7C4491FC7851200087B15 /* github-gist.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C33F1FC7851200087B15 /* github-gist.min.css */; };
+		52E7C44A1FC7851200087B15 /* atelier-seaside-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3401FC7851200087B15 /* atelier-seaside-light.min.css */; };
+		52E7C44B1FC7851200087B15 /* tomorrow-night-eighties.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3411FC7851200087B15 /* tomorrow-night-eighties.min.css */; };
+		52E7C44C1FC7851200087B15 /* atom-one-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3421FC7851200087B15 /* atom-one-dark.min.css */; };
+		52E7C44D1FC7851200087B15 /* qtcreator_dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3431FC7851200087B15 /* qtcreator_dark.min.css */; };
+		52E7C44E1FC7851200087B15 /* atelier-savanna-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3441FC7851200087B15 /* atelier-savanna-dark.min.css */; };
+		52E7C44F1FC7851200087B15 /* color-brewer.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3451FC7851200087B15 /* color-brewer.min.css */; };
+		52E7C4501FC7851200087B15 /* pojoaque.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3461FC7851200087B15 /* pojoaque.min.css */; };
+		52E7C4511FC7851200087B15 /* routeros.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3471FC7851200087B15 /* routeros.min.css */; };
+		52E7C4521FC7851200087B15 /* atelier-forest-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3481FC7851200087B15 /* atelier-forest-dark.min.css */; };
+		52E7C4531FC7851200087B15 /* tomorrow-night.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3491FC7851200087B15 /* tomorrow-night.min.css */; };
+		52E7C4541FC7851200087B15 /* obsidian.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C34A1FC7851200087B15 /* obsidian.min.css */; };
+		52E7C4551FC7851200087B15 /* atelier-lakeside-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C34B1FC7851200087B15 /* atelier-lakeside-dark.min.css */; };
+		52E7C4561FC7851200087B15 /* gruvbox-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C34C1FC7851200087B15 /* gruvbox-light.min.css */; };
+		52E7C4571FC7851200087B15 /* idea.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C34D1FC7851200087B15 /* idea.min.css */; };
+		52E7C4581FC7851200087B15 /* tomorrow.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C34E1FC7851200087B15 /* tomorrow.min.css */; };
+		52E7C4591FC7851200087B15 /* atelier-forest-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C34F1FC7851200087B15 /* atelier-forest-light.min.css */; };
+		52E7C45A1FC7851200087B15 /* arduino-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3501FC7851200087B15 /* arduino-light.min.css */; };
+		52E7C45B1FC7851200087B15 /* gruvbox-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3511FC7851200087B15 /* gruvbox-dark.min.css */; };
+		52E7C45C1FC7851200087B15 /* dracula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3521FC7851200087B15 /* dracula.min.css */; };
+		52E7C45D1FC7851200087B15 /* magula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3531FC7851200087B15 /* magula.min.css */; };
+		52E7C45E1FC7851200087B15 /* arta.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3541FC7851200087B15 /* arta.min.css */; };
+		52E7C45F1FC7851200087B15 /* purebasic.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3551FC7851200087B15 /* purebasic.min.css */; };
+		52E7C4601FC7851200087B15 /* hopscotch.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3561FC7851200087B15 /* hopscotch.min.css */; };
+		52E7C4611FC7851200087B15 /* github.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3571FC7851200087B15 /* github.min.css */; };
+		52E7C4621FC7851200087B15 /* dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3581FC7851200087B15 /* dark.min.css */; };
+		52E7C4631FC7851200087B15 /* atom-one-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3591FC7851200087B15 /* atom-one-light.min.css */; };
+		52E7C4641FC7851200087B15 /* monokai.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C35A1FC7851200087B15 /* monokai.min.css */; };
+		52E7C4651FC7851200087B15 /* docco.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C35B1FC7851200087B15 /* docco.min.css */; };
+		52E7C4661FC7851200087B15 /* default.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C35C1FC7851200087B15 /* default.min.css */; };
+		52E7C4671FC7851200087B15 /* ascetic.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C35D1FC7851200087B15 /* ascetic.min.css */; };
+		52E7C4681FC7851200087B15 /* atelier-cave-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C35E1FC7851200087B15 /* atelier-cave-light.min.css */; };
+		52E7C4691FC7851200087B15 /* atelier-sulphurpool-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C35F1FC7851200087B15 /* atelier-sulphurpool-light.min.css */; };
+		52E7C46A1FC7851200087B15 /* atelier-plateau-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3601FC7851200087B15 /* atelier-plateau-dark.min.css */; };
+		52E7C46B1FC7851200087B15 /* darkula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3611FC7851200087B15 /* darkula.min.css */; };
+		52E7C46C1FC7851200087B15 /* atelier-cave-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3621FC7851200087B15 /* atelier-cave-dark.min.css */; };
+		52E7C46D1FC7851200087B15 /* ir-black.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3631FC7851200087B15 /* ir-black.min.css */; };
+		52E7C46E1FC7851200087B15 /* solarized-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3641FC7851200087B15 /* solarized-light.min.css */; };
+		52E7C46F1FC7851200087B15 /* tomorrow-night-bright.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3651FC7851200087B15 /* tomorrow-night-bright.min.css */; };
+		52E7C4701FC7851200087B15 /* atelier-savanna-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3661FC7851200087B15 /* atelier-savanna-light.min.css */; };
+		52E7C4711FC7851200087B15 /* foundation.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3671FC7851200087B15 /* foundation.min.css */; };
+		52E7C4721FC7851200087B15 /* codepen-embed.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3681FC7851200087B15 /* codepen-embed.min.css */; };
+		52E7C4731FC7851200087B15 /* atelier-estuary-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3691FC7851200087B15 /* atelier-estuary-dark.min.css */; };
+		52E7C4741FC7851200087B15 /* googlecode.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C36A1FC7851200087B15 /* googlecode.min.css */; };
+		52E7C4751FC7851200087B15 /* atelier-dune-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C36B1FC7851200087B15 /* atelier-dune-light.min.css */; };
+		52E7C4761FC7851200087B15 /* paraiso-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C36C1FC7851200087B15 /* paraiso-dark.min.css */; };
+		52E7C4771FC7851200087B15 /* brown-papersq.png in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C36D1FC7851200087B15 /* brown-papersq.png */; };
+		52E7C4781FC7851200087B15 /* zenburn.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C36E1FC7851200087B15 /* zenburn.min.css */; };
+		52E7C4791FC7851200087B15 /* androidstudio.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C36F1FC7851200087B15 /* androidstudio.min.css */; };
+		52E7C47A1FC7851200087B15 /* grayscale.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3701FC7851200087B15 /* grayscale.min.css */; };
+		52E7C47B1FC7851200087B15 /* sunburst.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3711FC7851200087B15 /* sunburst.min.css */; };
+		52E7C47C1FC7851200087B15 /* agate.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3721FC7851200087B15 /* agate.min.css */; };
+		52E7C47D1FC7851200087B15 /* hybrid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3731FC7851200087B15 /* hybrid.min.css */; };
+		52E7C47E1FC7851200087B15 /* darcula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3741FC7851200087B15 /* darcula.min.css */; };
+		52E7C47F1FC7851200087B15 /* atelier-lakeside-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3751FC7851200087B15 /* atelier-lakeside-light.min.css */; };
+		52E7C4801FC7851200087B15 /* monokai-sublime.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3761FC7851200087B15 /* monokai-sublime.min.css */; };
+		52E7C4811FC7851200087B15 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3781FC7851200087B15 /* LICENSE */; };
+		52E7C5321FC7851200087B15 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C42A1FC7851200087B15 /* highlight.min.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +131,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AC446459A1B0B57324E3F58 /* Pods-MetalToyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5241E9941F49E55000107886 /* MetalToy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalToy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241E9971F49E55000107886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5241E9991F49E55000107886 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
@@ -73,14 +155,92 @@
 		528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		52819A001F7479DE000C62A0 /* Snapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapped.swift; sourceTree = "<group>"; };
 		52819A021F7479DE000C62A0 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		5CD31015A5343CF6913A4092 /* Pods_MetalToyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalToyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8144D16F0AEBB3DDFEBF161F /* Pods-MetalToy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy.debug.xcconfig"; sourceTree = "<group>"; };
-		A87099E729DAE435E014FAA1 /* Pods_MetalToy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalToy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABADE934C9E6D350D11DF861 /* Pods-MetalToyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AE662F48A7284B25CDF2A1C9 /* Pods_MetalToyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MetalToyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBAB7FF2FD844657D31F53D1 /* Pods-MetalToy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToy.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy.release.xcconfig"; sourceTree = "<group>"; };
-		C0057BD5AB2428F240C1F7D8 /* Pods-MetalToyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests.release.xcconfig"; sourceTree = "<group>"; };
-		F24D125EFD8560BCE32BFD99 /* Pods-MetalToyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MetalToyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests.release.xcconfig"; sourceTree = "<group>"; };
+		52E7C31F1FC7851100087B15 /* CodeAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeAttributedString.swift; sourceTree = "<group>"; };
+		52E7C3201FC7851100087B15 /* Highlightr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
+		52E7C3221FC7851100087B15 /* HTMLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
+		52E7C3231FC7851100087B15 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		52E7C3271FC7851100087B15 /* vs.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vs.min.css; sourceTree = "<group>"; };
+		52E7C3281FC7851100087B15 /* atelier-seaside-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3291FC7851100087B15 /* brown-paper.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "brown-paper.min.css"; sourceTree = "<group>"; };
+		52E7C32A1FC7851100087B15 /* atelier-plateau-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-light.min.css"; sourceTree = "<group>"; };
+		52E7C32B1FC7851100087B15 /* school-book.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "school-book.min.css"; sourceTree = "<group>"; };
+		52E7C32C1FC7851100087B15 /* xcode.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xcode.min.css; sourceTree = "<group>"; };
+		52E7C32D1FC7851100087B15 /* atelier-sulphurpool-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-dark.min.css"; sourceTree = "<group>"; };
+		52E7C32E1FC7851100087B15 /* tomorrow-night-blue.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-blue.min.css"; sourceTree = "<group>"; };
+		52E7C32F1FC7851100087B15 /* vs2015.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vs2015.min.css; sourceTree = "<group>"; };
+		52E7C3301FC7851100087B15 /* atelier-heath-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3311FC7851100087B15 /* paraiso-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-light.min.css"; sourceTree = "<group>"; };
+		52E7C3321FC7851100087B15 /* rainbow.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = rainbow.min.css; sourceTree = "<group>"; };
+		52E7C3331FC7851100087B15 /* qtcreator_light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_light.min.css; sourceTree = "<group>"; };
+		52E7C3341FC7851100087B15 /* kimbie.dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.dark.min.css; sourceTree = "<group>"; };
+		52E7C3351FC7851100087B15 /* atelier-heath-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-light.min.css"; sourceTree = "<group>"; };
+		52E7C3361FC7851100087B15 /* far.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = far.min.css; sourceTree = "<group>"; };
+		52E7C3371FC7851100087B15 /* atelier-dune-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3381FC7851100087B15 /* kimbie.light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.light.min.css; sourceTree = "<group>"; };
+		52E7C3391FC7851100087B15 /* railscasts.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = railscasts.min.css; sourceTree = "<group>"; };
+		52E7C33A1FC7851100087B15 /* solarized-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-dark.min.css"; sourceTree = "<group>"; };
+		52E7C33B1FC7851100087B15 /* atelier-estuary-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-light.min.css"; sourceTree = "<group>"; };
+		52E7C33C1FC7851100087B15 /* xt256.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xt256.min.css; sourceTree = "<group>"; };
+		52E7C33D1FC7851200087B15 /* mono-blue.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "mono-blue.min.css"; sourceTree = "<group>"; };
+		52E7C33E1FC7851200087B15 /* ocean.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ocean.min.css; sourceTree = "<group>"; };
+		52E7C33F1FC7851200087B15 /* github-gist.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "github-gist.min.css"; sourceTree = "<group>"; };
+		52E7C3401FC7851200087B15 /* atelier-seaside-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-light.min.css"; sourceTree = "<group>"; };
+		52E7C3411FC7851200087B15 /* tomorrow-night-eighties.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-eighties.min.css"; sourceTree = "<group>"; };
+		52E7C3421FC7851200087B15 /* atom-one-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3431FC7851200087B15 /* qtcreator_dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_dark.min.css; sourceTree = "<group>"; };
+		52E7C3441FC7851200087B15 /* atelier-savanna-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3451FC7851200087B15 /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
+		52E7C3461FC7851200087B15 /* pojoaque.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = pojoaque.min.css; sourceTree = "<group>"; };
+		52E7C3471FC7851200087B15 /* routeros.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = routeros.min.css; sourceTree = "<group>"; };
+		52E7C3481FC7851200087B15 /* atelier-forest-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3491FC7851200087B15 /* tomorrow-night.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night.min.css"; sourceTree = "<group>"; };
+		52E7C34A1FC7851200087B15 /* obsidian.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = obsidian.min.css; sourceTree = "<group>"; };
+		52E7C34B1FC7851200087B15 /* atelier-lakeside-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-dark.min.css"; sourceTree = "<group>"; };
+		52E7C34C1FC7851200087B15 /* gruvbox-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-light.min.css"; sourceTree = "<group>"; };
+		52E7C34D1FC7851200087B15 /* idea.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = idea.min.css; sourceTree = "<group>"; };
+		52E7C34E1FC7851200087B15 /* tomorrow.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = tomorrow.min.css; sourceTree = "<group>"; };
+		52E7C34F1FC7851200087B15 /* atelier-forest-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-light.min.css"; sourceTree = "<group>"; };
+		52E7C3501FC7851200087B15 /* arduino-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "arduino-light.min.css"; sourceTree = "<group>"; };
+		52E7C3511FC7851200087B15 /* gruvbox-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3521FC7851200087B15 /* dracula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dracula.min.css; sourceTree = "<group>"; };
+		52E7C3531FC7851200087B15 /* magula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = magula.min.css; sourceTree = "<group>"; };
+		52E7C3541FC7851200087B15 /* arta.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = arta.min.css; sourceTree = "<group>"; };
+		52E7C3551FC7851200087B15 /* purebasic.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = purebasic.min.css; sourceTree = "<group>"; };
+		52E7C3561FC7851200087B15 /* hopscotch.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hopscotch.min.css; sourceTree = "<group>"; };
+		52E7C3571FC7851200087B15 /* github.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.min.css; sourceTree = "<group>"; };
+		52E7C3581FC7851200087B15 /* dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dark.min.css; sourceTree = "<group>"; };
+		52E7C3591FC7851200087B15 /* atom-one-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-light.min.css"; sourceTree = "<group>"; };
+		52E7C35A1FC7851200087B15 /* monokai.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = monokai.min.css; sourceTree = "<group>"; };
+		52E7C35B1FC7851200087B15 /* docco.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = docco.min.css; sourceTree = "<group>"; };
+		52E7C35C1FC7851200087B15 /* default.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.min.css; sourceTree = "<group>"; };
+		52E7C35D1FC7851200087B15 /* ascetic.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ascetic.min.css; sourceTree = "<group>"; };
+		52E7C35E1FC7851200087B15 /* atelier-cave-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-light.min.css"; sourceTree = "<group>"; };
+		52E7C35F1FC7851200087B15 /* atelier-sulphurpool-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-light.min.css"; sourceTree = "<group>"; };
+		52E7C3601FC7851200087B15 /* atelier-plateau-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3611FC7851200087B15 /* darkula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkula.min.css; sourceTree = "<group>"; };
+		52E7C3621FC7851200087B15 /* atelier-cave-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-dark.min.css"; sourceTree = "<group>"; };
+		52E7C3631FC7851200087B15 /* ir-black.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "ir-black.min.css"; sourceTree = "<group>"; };
+		52E7C3641FC7851200087B15 /* solarized-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-light.min.css"; sourceTree = "<group>"; };
+		52E7C3651FC7851200087B15 /* tomorrow-night-bright.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-bright.min.css"; sourceTree = "<group>"; };
+		52E7C3661FC7851200087B15 /* atelier-savanna-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-light.min.css"; sourceTree = "<group>"; };
+		52E7C3671FC7851200087B15 /* foundation.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = foundation.min.css; sourceTree = "<group>"; };
+		52E7C3681FC7851200087B15 /* codepen-embed.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "codepen-embed.min.css"; sourceTree = "<group>"; };
+		52E7C3691FC7851200087B15 /* atelier-estuary-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-dark.min.css"; sourceTree = "<group>"; };
+		52E7C36A1FC7851200087B15 /* googlecode.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = googlecode.min.css; sourceTree = "<group>"; };
+		52E7C36B1FC7851200087B15 /* atelier-dune-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-light.min.css"; sourceTree = "<group>"; };
+		52E7C36C1FC7851200087B15 /* paraiso-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-dark.min.css"; sourceTree = "<group>"; };
+		52E7C36D1FC7851200087B15 /* brown-papersq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brown-papersq.png"; sourceTree = "<group>"; };
+		52E7C36E1FC7851200087B15 /* zenburn.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = zenburn.min.css; sourceTree = "<group>"; };
+		52E7C36F1FC7851200087B15 /* androidstudio.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = androidstudio.min.css; sourceTree = "<group>"; };
+		52E7C3701FC7851200087B15 /* grayscale.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = grayscale.min.css; sourceTree = "<group>"; };
+		52E7C3711FC7851200087B15 /* sunburst.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = sunburst.min.css; sourceTree = "<group>"; };
+		52E7C3721FC7851200087B15 /* agate.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = agate.min.css; sourceTree = "<group>"; };
+		52E7C3731FC7851200087B15 /* hybrid.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hybrid.min.css; sourceTree = "<group>"; };
+		52E7C3741FC7851200087B15 /* darcula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darcula.min.css; sourceTree = "<group>"; };
+		52E7C3751FC7851200087B15 /* atelier-lakeside-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-light.min.css"; sourceTree = "<group>"; };
+		52E7C3761FC7851200087B15 /* monokai-sublime.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "monokai-sublime.min.css"; sourceTree = "<group>"; };
+		52E7C3781FC7851200087B15 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		52E7C42A1FC7851200087B15 /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +250,6 @@
 			files = (
 				5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */,
 				5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */,
-				5C388E79A44FA39D3076F346 /* Pods_MetalToy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +257,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				341D5FB6CA358EA28588FC6C /* Pods_MetalToyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +264,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				095DA47442A4219A932EB505 /* Pods_MetalToyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +278,6 @@
 				5241E9B61F49E55000107886 /* MetalToyUITests */,
 				5241E9951F49E55000107886 /* Products */,
 				5241E9C51F49F0A600107886 /* Frameworks */,
-				54E601647C7247B35D3F71A9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,6 +309,7 @@
 				528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */,
 				52819A001F7479DE000C62A0 /* Snapped.swift */,
 				52819A021F7479DE000C62A0 /* SplitViewController.swift */,
+				52E7C31D1FC7851100087B15 /* Highlightr */,
 			);
 			path = MetalToy;
 			sourceTree = "<group>";
@@ -180,24 +337,133 @@
 			children = (
 				5241E9C81F49F0B000107886 /* MetalKit.framework */,
 				5241E9C61F49F0A600107886 /* Metal.framework */,
-				A87099E729DAE435E014FAA1 /* Pods_MetalToy.framework */,
-				5CD31015A5343CF6913A4092 /* Pods_MetalToyTests.framework */,
-				AE662F48A7284B25CDF2A1C9 /* Pods_MetalToyUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		54E601647C7247B35D3F71A9 /* Pods */ = {
+		52E7C31D1FC7851100087B15 /* Highlightr */ = {
 			isa = PBXGroup;
 			children = (
-				8144D16F0AEBB3DDFEBF161F /* Pods-MetalToy.debug.xcconfig */,
-				BBAB7FF2FD844657D31F53D1 /* Pods-MetalToy.release.xcconfig */,
-				ABADE934C9E6D350D11DF861 /* Pods-MetalToyTests.debug.xcconfig */,
-				F24D125EFD8560BCE32BFD99 /* Pods-MetalToyTests.release.xcconfig */,
-				0AC446459A1B0B57324E3F58 /* Pods-MetalToyUITests.debug.xcconfig */,
-				C0057BD5AB2428F240C1F7D8 /* Pods-MetalToyUITests.release.xcconfig */,
+				52E7C31E1FC7851100087B15 /* Classes */,
+				52E7C3241FC7851100087B15 /* Assets */,
 			);
-			name = Pods;
+			path = Highlightr;
+			sourceTree = "<group>";
+		};
+		52E7C31E1FC7851100087B15 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				52E7C31F1FC7851100087B15 /* CodeAttributedString.swift */,
+				52E7C3201FC7851100087B15 /* Highlightr.swift */,
+				52E7C3221FC7851100087B15 /* HTMLUtils.swift */,
+				52E7C3231FC7851100087B15 /* Theme.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		52E7C3241FC7851100087B15 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				52E7C3261FC7851100087B15 /* styles */,
+				52E7C3771FC7851200087B15 /* Highlighter */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		52E7C3261FC7851100087B15 /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				52E7C3271FC7851100087B15 /* vs.min.css */,
+				52E7C3281FC7851100087B15 /* atelier-seaside-dark.min.css */,
+				52E7C3291FC7851100087B15 /* brown-paper.min.css */,
+				52E7C32A1FC7851100087B15 /* atelier-plateau-light.min.css */,
+				52E7C32B1FC7851100087B15 /* school-book.min.css */,
+				52E7C32C1FC7851100087B15 /* xcode.min.css */,
+				52E7C32D1FC7851100087B15 /* atelier-sulphurpool-dark.min.css */,
+				52E7C32E1FC7851100087B15 /* tomorrow-night-blue.min.css */,
+				52E7C32F1FC7851100087B15 /* vs2015.min.css */,
+				52E7C3301FC7851100087B15 /* atelier-heath-dark.min.css */,
+				52E7C3311FC7851100087B15 /* paraiso-light.min.css */,
+				52E7C3321FC7851100087B15 /* rainbow.min.css */,
+				52E7C3331FC7851100087B15 /* qtcreator_light.min.css */,
+				52E7C3341FC7851100087B15 /* kimbie.dark.min.css */,
+				52E7C3351FC7851100087B15 /* atelier-heath-light.min.css */,
+				52E7C3361FC7851100087B15 /* far.min.css */,
+				52E7C3371FC7851100087B15 /* atelier-dune-dark.min.css */,
+				52E7C3381FC7851100087B15 /* kimbie.light.min.css */,
+				52E7C3391FC7851100087B15 /* railscasts.min.css */,
+				52E7C33A1FC7851100087B15 /* solarized-dark.min.css */,
+				52E7C33B1FC7851100087B15 /* atelier-estuary-light.min.css */,
+				52E7C33C1FC7851100087B15 /* xt256.min.css */,
+				52E7C33D1FC7851200087B15 /* mono-blue.min.css */,
+				52E7C33E1FC7851200087B15 /* ocean.min.css */,
+				52E7C33F1FC7851200087B15 /* github-gist.min.css */,
+				52E7C3401FC7851200087B15 /* atelier-seaside-light.min.css */,
+				52E7C3411FC7851200087B15 /* tomorrow-night-eighties.min.css */,
+				52E7C3421FC7851200087B15 /* atom-one-dark.min.css */,
+				52E7C3431FC7851200087B15 /* qtcreator_dark.min.css */,
+				52E7C3441FC7851200087B15 /* atelier-savanna-dark.min.css */,
+				52E7C3451FC7851200087B15 /* color-brewer.min.css */,
+				52E7C3461FC7851200087B15 /* pojoaque.min.css */,
+				52E7C3471FC7851200087B15 /* routeros.min.css */,
+				52E7C3481FC7851200087B15 /* atelier-forest-dark.min.css */,
+				52E7C3491FC7851200087B15 /* tomorrow-night.min.css */,
+				52E7C34A1FC7851200087B15 /* obsidian.min.css */,
+				52E7C34B1FC7851200087B15 /* atelier-lakeside-dark.min.css */,
+				52E7C34C1FC7851200087B15 /* gruvbox-light.min.css */,
+				52E7C34D1FC7851200087B15 /* idea.min.css */,
+				52E7C34E1FC7851200087B15 /* tomorrow.min.css */,
+				52E7C34F1FC7851200087B15 /* atelier-forest-light.min.css */,
+				52E7C3501FC7851200087B15 /* arduino-light.min.css */,
+				52E7C3511FC7851200087B15 /* gruvbox-dark.min.css */,
+				52E7C3521FC7851200087B15 /* dracula.min.css */,
+				52E7C3531FC7851200087B15 /* magula.min.css */,
+				52E7C3541FC7851200087B15 /* arta.min.css */,
+				52E7C3551FC7851200087B15 /* purebasic.min.css */,
+				52E7C3561FC7851200087B15 /* hopscotch.min.css */,
+				52E7C3571FC7851200087B15 /* github.min.css */,
+				52E7C3581FC7851200087B15 /* dark.min.css */,
+				52E7C3591FC7851200087B15 /* atom-one-light.min.css */,
+				52E7C35A1FC7851200087B15 /* monokai.min.css */,
+				52E7C35B1FC7851200087B15 /* docco.min.css */,
+				52E7C35C1FC7851200087B15 /* default.min.css */,
+				52E7C35D1FC7851200087B15 /* ascetic.min.css */,
+				52E7C35E1FC7851200087B15 /* atelier-cave-light.min.css */,
+				52E7C35F1FC7851200087B15 /* atelier-sulphurpool-light.min.css */,
+				52E7C3601FC7851200087B15 /* atelier-plateau-dark.min.css */,
+				52E7C3611FC7851200087B15 /* darkula.min.css */,
+				52E7C3621FC7851200087B15 /* atelier-cave-dark.min.css */,
+				52E7C3631FC7851200087B15 /* ir-black.min.css */,
+				52E7C3641FC7851200087B15 /* solarized-light.min.css */,
+				52E7C3651FC7851200087B15 /* tomorrow-night-bright.min.css */,
+				52E7C3661FC7851200087B15 /* atelier-savanna-light.min.css */,
+				52E7C3671FC7851200087B15 /* foundation.min.css */,
+				52E7C3681FC7851200087B15 /* codepen-embed.min.css */,
+				52E7C3691FC7851200087B15 /* atelier-estuary-dark.min.css */,
+				52E7C36A1FC7851200087B15 /* googlecode.min.css */,
+				52E7C36B1FC7851200087B15 /* atelier-dune-light.min.css */,
+				52E7C36C1FC7851200087B15 /* paraiso-dark.min.css */,
+				52E7C36D1FC7851200087B15 /* brown-papersq.png */,
+				52E7C36E1FC7851200087B15 /* zenburn.min.css */,
+				52E7C36F1FC7851200087B15 /* androidstudio.min.css */,
+				52E7C3701FC7851200087B15 /* grayscale.min.css */,
+				52E7C3711FC7851200087B15 /* sunburst.min.css */,
+				52E7C3721FC7851200087B15 /* agate.min.css */,
+				52E7C3731FC7851200087B15 /* hybrid.min.css */,
+				52E7C3741FC7851200087B15 /* darcula.min.css */,
+				52E7C3751FC7851200087B15 /* atelier-lakeside-light.min.css */,
+				52E7C3761FC7851200087B15 /* monokai-sublime.min.css */,
+			);
+			path = styles;
+			sourceTree = "<group>";
+		};
+		52E7C3771FC7851200087B15 /* Highlighter */ = {
+			isa = PBXGroup;
+			children = (
+				52E7C3781FC7851200087B15 /* LICENSE */,
+				52E7C42A1FC7851200087B15 /* highlight.min.js */,
+			);
+			path = Highlighter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,12 +473,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5241E9BC1F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToy" */;
 			buildPhases = (
-				C9DF49EA2F082BE4580015F7 /* [CP] Check Pods Manifest.lock */,
 				5241E9901F49E55000107886 /* Sources */,
 				5241E9911F49E55000107886 /* Frameworks */,
 				5241E9921F49E55000107886 /* Resources */,
-				EF2A6EADFF3503C66CC8E7DB /* [CP] Embed Pods Frameworks */,
-				A6D0FDCE47DC911076258721 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -227,12 +490,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5241E9BF1F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToyTests" */;
 			buildPhases = (
-				E356B9728955C412807A4B14 /* [CP] Check Pods Manifest.lock */,
 				5241E9A41F49E55000107886 /* Sources */,
 				5241E9A51F49E55000107886 /* Frameworks */,
 				5241E9A61F49E55000107886 /* Resources */,
-				18AD48FDA6FB00235DD763BE /* [CP] Embed Pods Frameworks */,
-				A40B212F86EBC11D2A7B7201 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,12 +508,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5241E9C21F49E55000107886 /* Build configuration list for PBXNativeTarget "MetalToyUITests" */;
 			buildPhases = (
-				734698F07D072A24B6120C8A /* [CP] Check Pods Manifest.lock */,
 				5241E9AF1F49E55000107886 /* Sources */,
 				5241E9B01F49E55000107886 /* Frameworks */,
 				5241E9B11F49E55000107886 /* Resources */,
-				A9F82FAB5EA3BF521C945CB7 /* [CP] Embed Pods Frameworks */,
-				0EA8F3E84404F7B1FEEFA9A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -322,9 +579,91 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52E7C4811FC7851200087B15 /* LICENSE in Resources */,
+				52E7C45C1FC7851200087B15 /* dracula.min.css in Resources */,
+				52E7C43E1FC7851200087B15 /* kimbie.dark.min.css in Resources */,
+				52E7C47C1FC7851200087B15 /* agate.min.css in Resources */,
+				52E7C47A1FC7851200087B15 /* grayscale.min.css in Resources */,
+				52E7C4341FC7851200087B15 /* atelier-plateau-light.min.css in Resources */,
+				52E7C45E1FC7851200087B15 /* arta.min.css in Resources */,
+				52E7C4381FC7851200087B15 /* tomorrow-night-blue.min.css in Resources */,
+				52E7C43B1FC7851200087B15 /* paraiso-light.min.css in Resources */,
+				52E7C4391FC7851200087B15 /* vs2015.min.css in Resources */,
+				52E7C45A1FC7851200087B15 /* arduino-light.min.css in Resources */,
+				52E7C4541FC7851200087B15 /* obsidian.min.css in Resources */,
+				52E7C4491FC7851200087B15 /* github-gist.min.css in Resources */,
+				52E7C46A1FC7851200087B15 /* atelier-plateau-dark.min.css in Resources */,
 				5241E9A21F49E55000107886 /* LaunchScreen.storyboard in Resources */,
+				52E7C4401FC7851200087B15 /* far.min.css in Resources */,
+				52E7C43F1FC7851200087B15 /* atelier-heath-light.min.css in Resources */,
+				52E7C4561FC7851200087B15 /* gruvbox-light.min.css in Resources */,
+				52E7C4351FC7851200087B15 /* school-book.min.css in Resources */,
+				52E7C4571FC7851200087B15 /* idea.min.css in Resources */,
+				52E7C4791FC7851200087B15 /* androidstudio.min.css in Resources */,
+				52E7C4651FC7851200087B15 /* docco.min.css in Resources */,
+				52E7C47F1FC7851200087B15 /* atelier-lakeside-light.min.css in Resources */,
+				52E7C43D1FC7851200087B15 /* qtcreator_light.min.css in Resources */,
+				52E7C4361FC7851200087B15 /* xcode.min.css in Resources */,
+				52E7C4371FC7851200087B15 /* atelier-sulphurpool-dark.min.css in Resources */,
+				52E7C4671FC7851200087B15 /* ascetic.min.css in Resources */,
+				52E7C4691FC7851200087B15 /* atelier-sulphurpool-light.min.css in Resources */,
+				52E7C4331FC7851200087B15 /* brown-paper.min.css in Resources */,
+				52E7C45F1FC7851200087B15 /* purebasic.min.css in Resources */,
+				52E7C4801FC7851200087B15 /* monokai-sublime.min.css in Resources */,
+				52E7C4521FC7851200087B15 /* atelier-forest-dark.min.css in Resources */,
+				52E7C46D1FC7851200087B15 /* ir-black.min.css in Resources */,
+				52E7C4761FC7851200087B15 /* paraiso-dark.min.css in Resources */,
+				52E7C43C1FC7851200087B15 /* rainbow.min.css in Resources */,
+				52E7C4601FC7851200087B15 /* hopscotch.min.css in Resources */,
+				52E7C46E1FC7851200087B15 /* solarized-light.min.css in Resources */,
+				52E7C46B1FC7851200087B15 /* darkula.min.css in Resources */,
+				52E7C4781FC7851200087B15 /* zenburn.min.css in Resources */,
+				52E7C4611FC7851200087B15 /* github.min.css in Resources */,
 				5241E99F1F49E55000107886 /* Assets.xcassets in Resources */,
+				52E7C4511FC7851200087B15 /* routeros.min.css in Resources */,
+				52E7C4481FC7851200087B15 /* ocean.min.css in Resources */,
+				52E7C4321FC7851200087B15 /* atelier-seaside-dark.min.css in Resources */,
+				52E7C47D1FC7851200087B15 /* hybrid.min.css in Resources */,
+				52E7C4681FC7851200087B15 /* atelier-cave-light.min.css in Resources */,
+				52E7C4721FC7851200087B15 /* codepen-embed.min.css in Resources */,
+				52E7C4311FC7851200087B15 /* vs.min.css in Resources */,
+				52E7C44D1FC7851200087B15 /* qtcreator_dark.min.css in Resources */,
+				52E7C46C1FC7851200087B15 /* atelier-cave-dark.min.css in Resources */,
+				52E7C4741FC7851200087B15 /* googlecode.min.css in Resources */,
+				52E7C44F1FC7851200087B15 /* color-brewer.min.css in Resources */,
+				52E7C47B1FC7851200087B15 /* sunburst.min.css in Resources */,
+				52E7C47E1FC7851200087B15 /* darcula.min.css in Resources */,
+				52E7C4531FC7851200087B15 /* tomorrow-night.min.css in Resources */,
 				5241E99D1F49E55000107886 /* Main.storyboard in Resources */,
+				52E7C4501FC7851200087B15 /* pojoaque.min.css in Resources */,
+				52E7C4631FC7851200087B15 /* atom-one-light.min.css in Resources */,
+				52E7C5321FC7851200087B15 /* highlight.min.js in Resources */,
+				52E7C4621FC7851200087B15 /* dark.min.css in Resources */,
+				52E7C46F1FC7851200087B15 /* tomorrow-night-bright.min.css in Resources */,
+				52E7C44C1FC7851200087B15 /* atom-one-dark.min.css in Resources */,
+				52E7C4711FC7851200087B15 /* foundation.min.css in Resources */,
+				52E7C4751FC7851200087B15 /* atelier-dune-light.min.css in Resources */,
+				52E7C4471FC7851200087B15 /* mono-blue.min.css in Resources */,
+				52E7C4701FC7851200087B15 /* atelier-savanna-light.min.css in Resources */,
+				52E7C44B1FC7851200087B15 /* tomorrow-night-eighties.min.css in Resources */,
+				52E7C45D1FC7851200087B15 /* magula.min.css in Resources */,
+				52E7C4431FC7851200087B15 /* railscasts.min.css in Resources */,
+				52E7C4661FC7851200087B15 /* default.min.css in Resources */,
+				52E7C4411FC7851200087B15 /* atelier-dune-dark.min.css in Resources */,
+				52E7C4551FC7851200087B15 /* atelier-lakeside-dark.min.css in Resources */,
+				52E7C4731FC7851200087B15 /* atelier-estuary-dark.min.css in Resources */,
+				52E7C4641FC7851200087B15 /* monokai.min.css in Resources */,
+				52E7C4441FC7851200087B15 /* solarized-dark.min.css in Resources */,
+				52E7C4421FC7851200087B15 /* kimbie.light.min.css in Resources */,
+				52E7C4461FC7851200087B15 /* xt256.min.css in Resources */,
+				52E7C45B1FC7851200087B15 /* gruvbox-dark.min.css in Resources */,
+				52E7C43A1FC7851200087B15 /* atelier-heath-dark.min.css in Resources */,
+				52E7C44A1FC7851200087B15 /* atelier-seaside-light.min.css in Resources */,
+				52E7C44E1FC7851200087B15 /* atelier-savanna-dark.min.css in Resources */,
+				52E7C4451FC7851200087B15 /* atelier-estuary-light.min.css in Resources */,
+				52E7C4771FC7851200087B15 /* brown-papersq.png in Resources */,
+				52E7C4591FC7851200087B15 /* atelier-forest-light.min.css in Resources */,
+				52E7C4581FC7851200087B15 /* tomorrow.min.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,156 +683,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0EA8F3E84404F7B1FEEFA9A1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		18AD48FDA6FB00235DD763BE /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		734698F07D072A24B6120C8A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MetalToyUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A40B212F86EBC11D2A7B7201 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyTests/Pods-MetalToyTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6D0FDCE47DC911076258721 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A9F82FAB5EA3BF521C945CB7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToyUITests/Pods-MetalToyUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9DF49EA2F082BE4580015F7 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MetalToy-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E356B9728955C412807A4B14 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MetalToyTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF2A6EADFF3503C66CC8E7DB /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Highlightr/Highlightr.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Highlightr.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MetalToy/Pods-MetalToy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		5241E9901F49E55000107886 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -501,13 +690,17 @@
 			files = (
 				525F0C091F79C08300FADC46 /* ViewController.swift in Sources */,
 				5241E9CB1F4A234300107886 /* Shaders.metal in Sources */,
+				52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */,
 				521BF4901F79C53600ABCAED /* SplitViewController.swift in Sources */,
 				521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */,
 				5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */,
 				525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */,
 				521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */,
+				52E7C42B1FC7851200087B15 /* CodeAttributedString.swift in Sources */,
 				5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */,
 				5241E9981F49E55000107886 /* AppDelegate.swift in Sources */,
+				52E7C42C1FC7851200087B15 /* Highlightr.swift in Sources */,
+				52E7C42F1FC7851200087B15 /* Theme.swift in Sources */,
 				521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */,
 				521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */,
 			);
@@ -673,7 +866,6 @@
 		};
 		5241E9BD1F49E55000107886 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8144D16F0AEBB3DDFEBF161F /* Pods-MetalToy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
@@ -689,7 +881,6 @@
 		};
 		5241E9BE1F49E55000107886 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BBAB7FF2FD844657D31F53D1 /* Pods-MetalToy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
@@ -705,7 +896,6 @@
 		};
 		5241E9C01F49E55000107886 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABADE934C9E6D350D11DF861 /* Pods-MetalToyTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -722,7 +912,6 @@
 		};
 		5241E9C11F49E55000107886 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F24D125EFD8560BCE32BFD99 /* Pods-MetalToyTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -739,7 +928,6 @@
 		};
 		5241E9C31F49E55000107886 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC446459A1B0B57324E3F58 /* Pods-MetalToyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
@@ -755,7 +943,6 @@
 		};
 		5241E9C41F49E55000107886 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C0057BD5AB2428F240C1F7D8 /* Pods-MetalToyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
