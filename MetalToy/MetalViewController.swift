@@ -81,25 +81,35 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     
     func setRenderPipeline(fragmentShader: String) {
         do {
-            let pipelineStateDescriptor = try loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: fragmentShader)
-            pipelineState = try device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
-            
+            if let pipelineStateDescriptor = loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: fragmentShader) {
+                pipelineState = try device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+            }
         } catch {
             print(error)
         }
     }
     
-    func loadShaders(device: MTLDevice, vertexShader: String, fragmentShader: String) throws -> MTLRenderPipelineDescriptor {
-        let library = try device.makeLibrary(source: vertexShader + fragmentShader, options: nil)
-        let vertexProgram = library.makeFunction(name: "vertexShader")
-        let fragmentProgram = library.makeFunction(name: "fragmentShader")
+    func loadShaders(device: MTLDevice, vertexShader: String, fragmentShader: String) -> MTLRenderPipelineDescriptor? {
         
-        let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
-        pipelineStateDescriptor.vertexFunction = vertexProgram
-        pipelineStateDescriptor.fragmentFunction = fragmentProgram
-        pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+        do {
+            let library = try device.makeLibrary(source: vertexShader + fragmentShader, options: nil)
+            let vertexProgram = library.makeFunction(name: "vertexShader")
+            let fragmentProgram = library.makeFunction(name: "fragmentShader")
+            
+            let pipelineStateDescriptor = MTLRenderPipelineDescriptor()
+            pipelineStateDescriptor.vertexFunction = vertexProgram
+            pipelineStateDescriptor.fragmentFunction = fragmentProgram
+            pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
+            
+            return pipelineStateDescriptor
+            
+        } catch let error as NSError {
+            let compilerMessages = parseCompilerOutput(error.localizedDescription)
+            
+            print(compilerMessages)
+        }
         
-        return pipelineStateDescriptor
+        return nil
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {

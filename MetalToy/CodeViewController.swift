@@ -12,7 +12,6 @@ class CodeViewController: UIViewController {
     
     var codeView: UITextView?
     weak var metalViewController: MetalViewController?
-    
     let textStorage = CodeAttributedString()
     
     override func viewDidLoad() {
@@ -27,19 +26,19 @@ class CodeViewController: UIViewController {
         layoutManager.addTextContainer(textContainer)
         
         codeView = UITextView(frame: view.frame, textContainer: textContainer)
+        view.addSubview(codeView!)
+        
         codeView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         codeView?.autocorrectionType = .no
         codeView?.autocapitalizationType = .none
-        
-        view.addSubview(codeView!)
-        
         codeView?.text = DefaultFragmentShader
         codeView?.translatesAutoresizingMaskIntoConstraints = false
-        codeView?.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
-        codeView?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
-        view.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: codeView!.trailingAnchor, constant: 20)
         
-        //keyboardHeightLayoutConstraint = NSLayoutConstraint(item: view.safeAreaLayoutGuide, attribute: .bottom, relatedBy: .equal, toItem: codeView, attribute: .bottom, multiplier: 1.0, constant: 20)
+        //constraints
+        codeView?.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor).isActive = true
+        codeView?.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
+        codeView?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: codeView!.bottomAnchor).isActive = true
         
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
@@ -71,18 +70,23 @@ class CodeViewController: UIViewController {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
+        self.view.layoutIfNeeded()
+        self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: keyboardFrame.size.height).isActive = true
+        
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            //self.keyboardHeightLayoutConstraint.constant = keyboardFrame.size.height + 20
-            
-            self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: keyboardFrame.size.height + 20)
+            //self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: keyboardFrame.size.height).isActive = true
+            self.view.layoutIfNeeded()
         })
     }
     
     @objc func keyboardWillBeHidden(notification: NSNotification) {
+        
+        self.view.layoutIfNeeded()
+        self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: 0).isActive = true
+        
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            //self.keyboardHeightLayoutConstraint.constant = 20
-            
-            self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: 20)
+            //self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor).isActive = true
+            self.view.layoutIfNeeded()
         })
     }
     
