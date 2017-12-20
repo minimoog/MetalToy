@@ -8,6 +8,8 @@
 
 import UIKit
 
+let GutterWidth: CGFloat = 22.0
+
 class CodeViewController: UIViewController {
     
     var codeView: UITextView?
@@ -33,6 +35,7 @@ class CodeViewController: UIViewController {
         codeView?.autocapitalizationType = .none
         codeView?.text = DefaultFragmentShader
         codeView?.translatesAutoresizingMaskIntoConstraints = false
+        codeView?.textContainerInset = UIEdgeInsets(top: 10, left: GutterWidth, bottom: 0, right: 0)
         
         //constraints
         codeView?.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor).isActive = true
