@@ -26,6 +26,9 @@
 		525F0C091F79C08300FADC46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C081F79C08300FADC46 /* ViewController.swift */; };
 		5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264C0351F4E3610001B9EEC /* Shaders.swift */; };
 		526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */; };
+		5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A9981FEC7C49000D2449 /* KUIPopOver.swift */; };
+		5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */; };
+		5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */; };
 		52E7C42B1FC7851200087B15 /* CodeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C31F1FC7851100087B15 /* CodeAttributedString.swift */; };
 		52E7C42C1FC7851200087B15 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C3201FC7851100087B15 /* Highlightr.swift */; };
 		52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C3221FC7851100087B15 /* HTMLUtils.swift */; };
@@ -152,6 +155,9 @@
 		525F0C081F79C08300FADC46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5264C0351F4E3610001B9EEC /* Shaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
 		526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerOutputParser.swift; sourceTree = "<group>"; };
+		5272A9981FEC7C49000D2449 /* KUIPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOver.swift; sourceTree = "<group>"; };
+		5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOverUsable.swift; sourceTree = "<group>"; };
+		5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageViewController.swift; sourceTree = "<group>"; };
 		528199FC1F7479DE000C62A0 /* Arrangement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
 		528199FD1F7479DE000C62A0 /* HandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleView.swift; sourceTree = "<group>"; };
 		528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
@@ -307,6 +313,8 @@
 				5241E9CA1F4A234300107886 /* Shaders.metal */,
 				5264C0351F4E3610001B9EEC /* Shaders.swift */,
 				526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */,
+				5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */,
+				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				5272A9961FEC799C000D2449 /* SplitKit */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
 			);
@@ -350,6 +358,15 @@
 				52819A001F7479DE000C62A0 /* Snapped.swift */,
 			);
 			path = SplitKit;
+			sourceTree = "<group>";
+		};
+		5272A9971FEC7C1F000D2449 /* KUIPopOver */ = {
+			isa = PBXGroup;
+			children = (
+				5272A9981FEC7C49000D2449 /* KUIPopOver.swift */,
+				5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */,
+			);
+			path = KUIPopOver;
 			sourceTree = "<group>";
 		};
 		52E7C31D1FC7851100087B15 /* Highlightr */ = {
@@ -702,6 +719,8 @@
 				525F0C091F79C08300FADC46 /* ViewController.swift in Sources */,
 				5241E9CB1F4A234300107886 /* Shaders.metal in Sources */,
 				52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */,
+				5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */,
+				5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */,
 				521BF4901F79C53600ABCAED /* SplitViewController.swift in Sources */,
 				521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */,
 				5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */,
@@ -713,6 +732,7 @@
 				52E7C42C1FC7851200087B15 /* Highlightr.swift in Sources */,
 				52E7C42F1FC7851200087B15 /* Theme.swift in Sources */,
 				521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */,
+				5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */,
 				526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */,
 				521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */,
 			);
