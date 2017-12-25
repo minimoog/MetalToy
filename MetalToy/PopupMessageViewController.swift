@@ -12,7 +12,9 @@ let ButtonSize: CGFloat = 16.0
 let MaxWidth: CGFloat = 320.0
 let MinHeight: CGFloat = 44.0
 
-class PopupMessageViewController: UIViewController {
+class PopupMessageViewController: UIViewController, KUIPopOverUsable {
+    var contentSize = CGSize()
+    
     var messageLabel: UILabel?
     
     var message: String = "" {
@@ -29,6 +31,7 @@ class PopupMessageViewController: UIViewController {
             fakeLabel.sizeToFit()
             
             preferredContentSize = CGSize(width: MaxWidth, height: fakeLabel.frame.height + MinHeight)
+            contentSize = preferredContentSize
             
             messageLabel?.frame = CGRect(x: 10, y: 10, width: fakeLabel.frame.width, height: fakeLabel.frame.height)
         }

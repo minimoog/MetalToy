@@ -24,6 +24,7 @@
 		5241E9CB1F4A234300107886 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9CA1F4A234300107886 /* Shaders.metal */; };
 		525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C061F79BA0900FADC46 /* MetalViewController.swift */; };
 		525F0C091F79C08300FADC46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C081F79C08300FADC46 /* ViewController.swift */; };
+		52619EB51FF1BDAD00490EF9 /* CompilerMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */; };
 		5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264C0351F4E3610001B9EEC /* Shaders.swift */; };
 		526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */; };
 		5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A9981FEC7C49000D2449 /* KUIPopOver.swift */; };
@@ -153,6 +154,7 @@
 		5241E9CA1F4A234300107886 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		525F0C061F79BA0900FADC46 /* MetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
 		525F0C081F79C08300FADC46 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerMessageButton.swift; sourceTree = "<group>"; };
 		5264C0351F4E3610001B9EEC /* Shaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
 		526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerOutputParser.swift; sourceTree = "<group>"; };
 		5272A9981FEC7C49000D2449 /* KUIPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOver.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				5264C0351F4E3610001B9EEC /* Shaders.swift */,
 				526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */,
 				5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */,
+				52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				5272A9961FEC799C000D2449 /* SplitKit */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
@@ -718,6 +721,7 @@
 			files = (
 				525F0C091F79C08300FADC46 /* ViewController.swift in Sources */,
 				5241E9CB1F4A234300107886 /* Shaders.metal in Sources */,
+				52619EB51FF1BDAD00490EF9 /* CompilerMessageButton.swift in Sources */,
 				52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */,
 				5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */,
 				5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */,
