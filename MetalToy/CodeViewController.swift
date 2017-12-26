@@ -15,6 +15,7 @@ class CodeViewController: UIViewController {
     var codeView: UITextView?
     weak var metalViewController: MetalViewController?
     let textStorage = CodeAttributedString()
+    var messageButtons = [CompilerMessageButton]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,5 +101,61 @@ class CodeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func linePosition(inString: String, lastOccurence: Int) -> String.Index? {
+        let splitted = inString.split(separator: "\n")
+        
+        if lastOccurence > splitted.count - 1 {
+            return nil
+        } else {
+            return splitted[lastOccurence].startIndex
+        }
+    }
+    
+    func pointForMessage(lineNumber: Int, columnNumber: Int) -> CGPoint {
+        let rangeOfPrecedingNewLine: Int
+        let lineNumberPlusOffset = lineNumber - 26 //FIX ME
+        
+        if let indexPos = linePosition(inString: codeView!.text, lastOccurence: lineNumberPlusOffset) {
+            rangeOfPrecedingNewLine = indexPos.encodedOffset
+        } else {
+            rangeOfPrecedingNewLine = 0
+        }
+        
+        let offendingCharacterIndex = rangeOfPrecedingNewLine + columnNumber
+        
+        let errorStartPosition = codeView?.position(from: (codeView?.beginningOfDocument)!, offset: offendingCharacterIndex)
+        let errorStartPositionPlusOne = codeView?.position(from: errorStartPosition!, offset: 1)
+        let textRangeForError = codeView?.textRange(from: errorStartPosition!, to: errorStartPositionPlusOne!)
+        let offendingCharacterREct = codeView?.firstRect(for: textRangeForError!)
+        
+        let y = floor((offendingCharacterREct?.midY)! - ButtonSize * 0.5)
+        
+        return CGPoint(x: 5, y: y)
+    }
+    
+    func updateViewWithPoints(messages: [CompilerErrorMessage]) {
+        messageButtons.forEach { $0.removeFromSuperview() }
+        messageButtons = []
+        
+        for message in messages {
+            let buttonOrigin = pointForMessage(lineNumber: message.lineNumber, columnNumber: message.columnNumber)
+            let buttonRect = CGRect(x: buttonOrigin.x, y: buttonOrigin.y, width: CGFloat(ButtonSize), height: CGFloat(ButtonSize))
+            
+            let button = CompilerMessageButton(frame: buttonRect)
+            button.message = message.message
+            
+            codeView?.addSubview(button)
+            
+            messageButtons.append(button)
+        }
+    }
+    
+    func removePoints() {
+        messageButtons.forEach {
+            $0.removeFromSuperview()
+        }
+        messageButtons.removeAll()
     }
 }

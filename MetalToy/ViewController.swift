@@ -24,13 +24,14 @@ class ViewController: UIViewController {
         splitController.didMove(toParentViewController: self)
         splitController.arrangement = .horizontal
         
-        var metalViewController = storyboard?.instantiateViewController(withIdentifier: "MetalViewController") as? MetalViewController
-        var codeViewController = storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController
+        let metalViewController = storyboard?.instantiateViewController(withIdentifier: "MetalViewController") as? MetalViewController
+        let codeViewController = storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController
         
-        codeViewController?.metalViewController = metalViewController
+        codeViewController?.metalViewController = metalViewController // <--- FIX ME: can we do it better
+        metalViewController?.codeViewController = codeViewController  // both controller must be aware of each other (closure or lambda)
         
-        splitController.firstChild = metalViewController
-        splitController.secondChild = codeViewController
+        splitController.firstChild = codeViewController
+        splitController.secondChild = metalViewController
         
         let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
         

@@ -21,6 +21,7 @@ class CompilerMessageButton: UIView {
         
         button = UIButton(frame: bounds)
         button?.contentMode = .scaleAspectFill
+        button?.setImage(#imageLiteral(resourceName: "gutter"), for: .normal)
         button?.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         
         addSubview(button!)
