@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fU6-Ti-LJE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="biB-xu-aqt">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -54,12 +54,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1037" y="776"/>
+            <point key="canvasLocation" x="1160.7421875" y="775.78125"/>
         </scene>
         <!--Metal Toy-->
         <scene sceneID="bq5-ex-psQ">
             <objects>
-                <viewController id="92Z-gh-zJp" customClass="ViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditorViewController" id="92Z-gh-zJp" customClass="ViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GPI-mP-27A">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -70,9 +70,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIP-Uc-f2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="346.82395644283122" y="775.5395683453238"/>
+            <point key="canvasLocation" x="516" y="776"/>
         </scene>
-        <!--Toy Collection View Controller-->
+        <!--Metal Toy-->
         <scene sceneID="c9i-qS-haR">
             <objects>
                 <collectionViewController id="4Sz-e6-c11" customClass="ToyCollectionViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
@@ -118,28 +118,29 @@
                             <outlet property="delegate" destination="4Sz-e6-c11" id="Zn2-vv-Bai"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Metal Toy" id="aAF-WB-2vs"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqz-kP-RcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="287" y="1744"/>
+            <point key="canvasLocation" x="-152.9296875" y="775"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="wdS-0j-bB1">
+        <scene sceneID="hfv-fg-kM5">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fU6-Ti-LJE" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="biB-xu-aqt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="J8q-th-7D6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gaj-aa-mos">
                         <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="92Z-gh-zJp" kind="relationship" relationship="rootViewController" id="y7z-yM-iv4"/>
+                        <segue destination="4Sz-e6-c11" kind="relationship" relationship="rootViewController" id="LKV-VX-UMy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jbR-iO-1is" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pX-RR-8Px" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-955" y="775"/>
+            <point key="canvasLocation" x="-848" y="775"/>
         </scene>
     </scenes>
 </document>

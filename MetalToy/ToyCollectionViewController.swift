@@ -26,6 +26,8 @@ class ToyCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Do any additional setup after loading the view.
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ToyCollectionViewController.plusButtonClicked))
+        navigationItem.rightBarButtonItem = addButton
         
         let localDir = localDocumentDir()
         let localDocuments = try? FileManager.default.contentsOfDirectory(at: localDir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
@@ -42,6 +44,14 @@ class ToyCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @objc func plusButtonClicked() {
+        if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? ViewController {
+            if let navigator = navigationController {
+                navigator.pushViewController(editorViewController, animated: true)
+            }
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
