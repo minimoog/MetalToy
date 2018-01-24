@@ -29,6 +29,9 @@ class ToyCollectionViewController: UICollectionViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ToyCollectionViewController.plusButtonClicked))
         navigationItem.rightBarButtonItem = addButton
         
+        let backButton = UIBarButtonItem(title: "Save", style: .done, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backButton
+        
         let localDir = localDocumentDir()
         let localDocuments = try? FileManager.default.contentsOfDirectory(at: localDir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
         
