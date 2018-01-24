@@ -51,7 +51,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     var startTime: Double = 0
     var numFrames = 0
     
-    weak var codeViewController: CodeViewController?
+    public var finishedCompiling: ((Bool, [CompilerErrorMessage]?) -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,9 +103,8 @@ class MetalViewController: UIViewController, MTKViewDelegate {
             pipelineStateDescriptor.fragmentFunction = fragmentProgram
             pipelineStateDescriptor.colorAttachments[0].pixelFormat = .bgra8Unorm
             
-            //remove points
-            if let codeViewController = codeViewController {
-                codeViewController.removePoints()
+            if let onCompilerResult = finishedCompiling {
+                onCompilerResult(true, nil)
             }
             
             return pipelineStateDescriptor
@@ -113,8 +112,8 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         } catch let error as NSError {
             let compilerMessages = parseCompilerOutput(error.localizedDescription)
             
-            if let codeViewController = codeViewController {
-                codeViewController.updateViewWithPoints(messages: compilerMessages)
+            if let onCompilerResult = finishedCompiling {
+                onCompilerResult(false, compilerMessages)
             }
         }
         

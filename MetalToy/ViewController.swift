@@ -40,7 +40,17 @@ class ViewController: UIViewController {
             }
         }
         
-        metalViewController?.codeViewController = codeViewController  // both controller must be aware of each other (closure or lambda)
+        metalViewController?.finishedCompiling = { result, compilerMessages in
+            if result {
+                if let codeViewController = codeViewController {
+                    codeViewController.removePoints()
+                }
+            } else {
+                if let codeViewController = codeViewController, let compilerMessages = compilerMessages {
+                    codeViewController.updateViewWithPoints(messages: compilerMessages)
+                }
+            }
+        }
         
         splitController.firstChild = codeViewController
         splitController.secondChild = metalViewController
