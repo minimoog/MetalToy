@@ -13,9 +13,11 @@ let GutterWidth: CGFloat = 22.0
 class CodeViewController: UIViewController {
     
     var codeView: UITextView?
-    weak var metalViewController: MetalViewController?
     let textStorage = CodeAttributedString()
     var messageButtons = [CompilerMessageButton]()
+    
+    public var playAction: ((String?) -> ())?
+    public var pauseAction: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,15 +59,14 @@ class CodeViewController: UIViewController {
         if sender.title == "Play" {
             sender.title = "Pause"
             
-            if let metalViewController = metalViewController {
-                metalViewController.mtkView.isPaused = false
-                metalViewController.setRenderPipeline(fragmentShader: codeView!.text)
+            if let playAction = playAction {
+                playAction(codeView!.text)
             }
         } else {
             sender.title = "Play"
             
-            if let metalViewController = metalViewController {
-                metalViewController.mtkView.isPaused = true
+            if let pauseAction = pauseAction {
+                pauseAction()
             }
         }
     }

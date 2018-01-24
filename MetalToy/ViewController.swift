@@ -27,7 +27,19 @@ class ViewController: UIViewController {
         let metalViewController = storyboard?.instantiateViewController(withIdentifier: "MetalViewController") as? MetalViewController
         let codeViewController = storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController
         
-        codeViewController?.metalViewController = metalViewController // <--- FIX ME: can we do it better
+        codeViewController?.playAction = { text in
+            if let metalViewController = metalViewController, let text = text {
+                metalViewController.mtkView.isPaused = false
+                metalViewController.setRenderPipeline(fragmentShader: text)
+            }
+        }
+        
+        codeViewController?.pauseAction = {
+            if let metalViewController = metalViewController {
+                metalViewController.mtkView.isPaused = true
+            }
+        }
+        
         metalViewController?.codeViewController = codeViewController  // both controller must be aware of each other (closure or lambda)
         
         splitController.firstChild = codeViewController
