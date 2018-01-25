@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "ToyCell"
 
-func localDocumentDir() -> URL {
+public func localDocumentDir() -> URL {
     let dirpaths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
     
     return dirpaths[0]
@@ -87,6 +87,10 @@ class ToyCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // ### TODO:
+    }
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {

@@ -10,7 +10,7 @@ import UIKit
 
 class ShaderDocument: UIDocument {
     var shaderText: String? = ""
-    var thumbnail: UIImage? = UIImage()
+    var thumbnail: UIImage? = #imageLiteral(resourceName: "gutter")         //test!!!!
     
     override func contents(forType typeName: String) throws -> Any {
         if let shaderText = shaderText, let thumbnail = thumbnail {
