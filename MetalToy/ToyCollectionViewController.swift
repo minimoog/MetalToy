@@ -32,6 +32,17 @@ class ToyCollectionViewController: UICollectionViewController {
         let backButton = UIBarButtonItem(title: "Save", style: .done, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         
+        refreshFiles()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+
+    func refreshFiles() {
+        fileList = []
+        
         let localDir = localDocumentDir()
         let localDocuments = try? FileManager.default.contentsOfDirectory(at: localDir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
         
@@ -40,17 +51,20 @@ class ToyCollectionViewController: UICollectionViewController {
                 fileList.append(document.lastPathComponent)
             }
         }
+        
+        collectionView?.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     @objc func plusButtonClicked() {
         if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? ViewController {
             if let navigator = navigationController {
                 navigator.pushViewController(editorViewController, animated: true)
+            }
+            
+            editorViewController.savedDocumentAction = {
+                //we should append files not refresh but currently it does the job
+                
+                self.refreshFiles()
             }
         }
     }
