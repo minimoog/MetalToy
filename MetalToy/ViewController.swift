@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     var documentName: String?
     var document: ShaderDocument?
     
+    public var savedDocumentAction: (() -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -62,9 +64,15 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItems = [playBarItem]
         
-        if documentName == nil {
-            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent("test123"))
-            documentName = "test123"
+        if documentName == nil {    //new document
+            let RFC3339DateFormatter = DateFormatter()
+            RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            
+            documentName = RFC3339DateFormatter.string(from: Date())
+            
+            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(documentName!))
         } else {
             document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(documentName!))
             
@@ -79,18 +87,22 @@ class ViewController: UIViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        // ### Here get snapshot
-        
         super.viewWillDisappear(animated)
+        
+        // ### Here get snapshot
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        // ### Here save the document
         document!.shaderText = codeViewController?.codeView?.text!
         
         document!.save(to: document!.fileURL, for: .forOverwriting) { success in
             if success {
                 print("Success")
+                
+                if let savedDocumentAction = self.savedDocumentAction {
+                    savedDocumentAction()
+                }
+                
             } else {
                 print("Failed storing")
             }
