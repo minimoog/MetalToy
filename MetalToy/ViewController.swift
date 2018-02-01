@@ -89,10 +89,12 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        // ### Here get snapshot
+        let imageToSave = metalViewController?.snapshot(size: CGSize(width: 100, height: 100))
+        document!.thumbnail = imageToSave
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        
         document!.shaderText = codeViewController?.codeView?.text!
         
         document!.save(to: document!.fileURL, for: .forOverwriting) { success in

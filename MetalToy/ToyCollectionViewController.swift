@@ -94,7 +94,12 @@ class ToyCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ToyCollectionViewCell
     
         cell.toyNameLabel.text = fileList[indexPath.item]
-        //cell.image // ### TODO
+        
+        let imageFilePath = localDocumentDir().path + "/" + fileList[indexPath.item] + "/thumbnail.png"
+        
+        if let image = UIImage(contentsOfFile: imageFilePath) {
+            cell.thumbnailImageView.image = image
+        }
         
         return cell
     }

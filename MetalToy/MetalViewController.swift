@@ -163,4 +163,15 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         
         numFrames += 1
     }
+    
+    func snapshot(size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, true, 0)
+        
+        mtkView.drawHierarchy(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), afterScreenUpdates: false)
+        let uiimage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return uiimage
+    }
 }
