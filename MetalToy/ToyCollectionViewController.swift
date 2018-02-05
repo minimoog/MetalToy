@@ -107,7 +107,21 @@ class ToyCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // ### TODO:
+        let documentName = fileList[indexPath.item]
+        
+        if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? ViewController {
+            editorViewController.documentName = documentName
+            
+            if let navigator = navigationController {
+                navigator.pushViewController(editorViewController, animated: true)
+            }
+            
+            editorViewController.savedDocumentAction = {
+                //we should append files not refresh but currently it does the job
+                
+                self.refreshFiles()
+            }
+        }
     }
     
     /*
