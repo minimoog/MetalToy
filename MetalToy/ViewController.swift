@@ -71,6 +71,7 @@ class ViewController: UIViewController {
             RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             
             documentName = RFC3339DateFormatter.string(from: Date())
+            navigationItem.title = documentName
             
             document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(documentName!))
         } else {
@@ -91,6 +92,12 @@ class ViewController: UIViewController {
         
         let imageToSave = metalViewController?.snapshot(size: CGSize(width: 100, height: 100))
         document!.thumbnail = imageToSave
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let documentName = documentName {
+            navigationItem.title = documentName
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
