@@ -36,10 +36,15 @@ public let DefaultVertexShader =
     "//--------------------------------------------------\n"
 
 public let DefaultFragmentShader =
-    "fragment float4 fragmentShader(FragmentData in [[stage_in]],\n" +
-    "                               constant float2& resolution [[buffer(0)]],\n" +
-    "                               constant float& time [[buffer(1)]])\n" +
+    "typedef struct\n" +
     "{\n" +
-    "    float2 uv = in.fragCoord.xy / resolution;\n" +
-    "    return float4(uv, 0.5 + 0.5 * sin(time), 1.0);\n" +
+    "   float2 resolution;\n" +
+    "   float time;\n" +
+    "} Uniforms;\n" +
+    "\n" +
+    "fragment float4 fragmentShader(FragmentData in [[stage_in]],\n" +
+    "                               constant Uniforms& uniforms [[buffer(1)]])\n" +
+    "{\n" +
+    "    float2 uv = in.fragCoord.xy / uniforms.resolution;\n" +
+    "    return float4(uv, 0.5 + 0.5 * sin(uniforms.time), 1.0);\n" +
     "}\n"

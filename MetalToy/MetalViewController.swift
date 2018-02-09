@@ -45,8 +45,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     var pipelineState: MTLRenderPipelineState! = nil
     var commandQueue: MTLCommandQueue! = nil
     var vertexBuffer: MTLBuffer!
-    var viewPortBuffer: MTLBuffer!
-    var timeBuffer: MTLBuffer!
+    var uniformBuffer: MTLBuffer!
     
     var startTime: Double = 0
     var numFrames = 0
@@ -71,10 +70,8 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         let dataSize = vertexData.count * MemoryLayout.size(ofValue: vertexData[0])
         vertexBuffer = device.makeBuffer(bytes: vertexData, length: dataSize, options: [])
         
-        let viewPortDataSize = viewPortData.count * MemoryLayout.size(ofValue: viewPortData[0])
-        viewPortBuffer = device.makeBuffer(bytes: viewPortData, length: viewPortDataSize, options: [])
-        
-        timeBuffer = device.makeBuffer(length: MemoryLayout<Float>.stride, options: [])
+        //float2 + float size + padding = 4 floats
+        uniformBuffer = device.makeBuffer(length: 4 * MemoryLayout<Float>.stride, options: [])
         
         setRenderPipeline(fragmentShader: DefaultFragmentShader)
         
@@ -124,7 +121,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         viewPortData[0] = Float(size.width)
         viewPortData[1] = Float(size.height)
         
-        viewPortBuffer.contents().copyBytes(from: viewPortData, count: viewPortData.count * MemoryLayout<Float>.stride)
+        //viewPortBuffer.contents().copyBytes(from: viewPortData, count: viewPortData.count * MemoryLayout<Float>.stride)
     }
     
     func draw(in view: MTKView) {
@@ -135,13 +132,15 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         //ios 11 MTKView bug or not, drawableSizeWillChange is not called, so we need here the viewport sizes
         viewPortData[0] = Float(view.drawableSize.width)
         viewPortData[1] = Float(view.drawableSize.height)
-        viewPortBuffer.contents().copyBytes(from: viewPortData, count: viewPortData.count * MemoryLayout<Float>.stride)
         
         let currentTime = CACurrentMediaTime()
         let timeToShader = Float(currentTime - startTime)
         
-        //fill the buffer with time
-        timeBuffer.contents().copyBytes(from: [timeToShader], count: MemoryLayout<Float>.stride)
+        let pointerUniformBuffer = uniformBuffer.contents().bindMemory(to: Float.self, capacity: 3)
+        let arrayPointer = UnsafeMutableBufferPointer(start: pointerUniformBuffer, count: 3)
+        arrayPointer[0] = viewPortData[0]
+        arrayPointer[1] = viewPortData[1]
+        arrayPointer[2] = timeToShader
         
         let renderPassDescriptor = MTLRenderPassDescriptor()
         renderPassDescriptor.colorAttachments[0].texture = drawable.texture
@@ -153,8 +152,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         renderEncoder?.setViewport(MTLViewport(originX: 0.0, originY: 0.0, width: Double(viewPortData[0]), height: Double(viewPortData[1]), znear: -1.0, zfar: 1.0))
         renderEncoder?.setRenderPipelineState(pipelineState)
         renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
-        renderEncoder?.setFragmentBuffer(viewPortBuffer, offset: 0, index: 0)
-        renderEncoder?.setFragmentBuffer(timeBuffer, offset: 0, index: 1)
+        renderEncoder?.setFragmentBuffer(uniformBuffer, offset: 0, index: 1)
         renderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6, instanceCount: 2)
         renderEncoder?.endEncoding()
         

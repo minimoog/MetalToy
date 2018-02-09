@@ -35,13 +35,16 @@ vertexShader(uint               vertexID    [[vertex_id]],
 }
 
 //--------------------------------------------------
-
-fragment float4 fragmentShader(FragmentData     in          [[stage_in]],
-                               constant float2  *resolution [[buffer(0)]],
-                               constant float   *time       [[buffer(1)]])
+typedef struct
 {
-    float2 uv = in.fragCoord.xy / *resolution;
-    
-    return float4(uv, 0.5 + 0.5 * sin(*time), 1.0);
+    float2 resolution;
+    float time;
+} Uniforms;
+
+fragment float4 fragmentShader(FragmentData in [[stage_in]],
+                               constant Uniforms& uniforms [[buffer(1)]])
+{
+    float2 uv = in.fragCoord.xy / uniforms.resolution;
+    return float4(uv, 0.5 + 0.5 * sin(uniforms.time), 1.0);
 }
 
