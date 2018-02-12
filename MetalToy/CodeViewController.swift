@@ -105,7 +105,7 @@ class CodeViewController: UIViewController {
     }
     
     func linePosition(inString: String, lastOccurence: Int) -> String.Index? {
-        let splitted = inString.split(separator: "\n")
+        let splitted = inString.split(separator: "\n", maxSplits: Int.max, omittingEmptySubsequences: false)
         
         if lastOccurence > splitted.count - 1 {
             return nil
@@ -116,7 +116,7 @@ class CodeViewController: UIViewController {
     
     func pointForMessage(lineNumber: Int, columnNumber: Int) -> CGPoint {
         let rangeOfPrecedingNewLine: Int
-        let lineNumberPlusOffset = lineNumber - 26 //FIX ME
+        let lineNumberPlusOffset = lineNumber - 25 - 1 //FIX ME
         
         if let indexPos = linePosition(inString: codeView!.text, lastOccurence: lineNumberPlusOffset) {
             rangeOfPrecedingNewLine = indexPos.encodedOffset
