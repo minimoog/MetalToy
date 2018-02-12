@@ -9,7 +9,7 @@
 import UIKit
 
 let ButtonSize: CGFloat = 16.0
-let MaxWidth: CGFloat = 320.0
+let MaxWidth: CGFloat = 640.0
 let MinHeight: CGFloat = 44.0
 
 class PopupMessageViewController: UIViewController, KUIPopOverUsable {
@@ -24,7 +24,6 @@ class PopupMessageViewController: UIViewController, KUIPopOverUsable {
             messageLabel?.text = message
             
             let fakeLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: MaxWidth - 20.0, height: CGFloat.greatestFiniteMagnitude))
-            fakeLabel.numberOfLines = 0
             fakeLabel.numberOfLines = 0
             fakeLabel.font = messageLabel?.font
             fakeLabel.text = messageLabel?.text
@@ -51,6 +50,14 @@ class PopupMessageViewController: UIViewController, KUIPopOverUsable {
         messageLabel?.backgroundColor = UIColor.clear
         messageLabel?.text = "test message"
         messageLabel?.numberOfLines = 0
+        
+        // ### TODO: Make this code extension of UIFont
+        guard let monospacedFont = UIFont(name: "Menlo-Regular", size: UIFont.labelFontSize) else {
+            fatalError("Menlo where are you")
+        }
+        
+        messageLabel?.font = UIFontMetrics.default.scaledFont(for: monospacedFont)
+        messageLabel?.adjustsFontForContentSizeCategory = true
         
         view.addSubview(messageLabel!)
     }
