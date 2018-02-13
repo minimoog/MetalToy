@@ -31,7 +31,7 @@ class CompilerMessageButton: UIView {
         if let message = message {
             let messageViewController = PopupMessageViewController()
             messageViewController.message = message
-            messageViewController.showPopover(sourceView: button!, sourceRect: CGRect(x: 0, y: ButtonSize * 0.5, width: 1.0, height: 1.0))
+            messageViewController.showPopover(sourceView: button!)
         }
     }
     
