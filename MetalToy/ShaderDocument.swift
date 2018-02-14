@@ -10,18 +10,24 @@ import UIKit
 
 class ShaderDocument: UIDocument {
     var shaderText: String? = ""
-    var thumbnail: UIImage? = #imageLiteral(resourceName: "gutter")         //test!!!!
+    var thumbnail: UIImage?
+    var name: String?
     
     override func contents(forType typeName: String) throws -> Any {
         if let shaderText = shaderText, let thumbnail = thumbnail {
-            let length = shaderText.lengthOfBytes(using: .utf8)
+            let lenShaderText = shaderText.lengthOfBytes(using: .utf8)
             
-            let shaderTextFileWrapper = FileWrapper(regularFileWithContents: Data(bytes: shaderText, count: length))
+            let shaderTextFileWrapper = FileWrapper(regularFileWithContents: Data(bytes: shaderText, count: lenShaderText))
+            
+            let lenNameText = name?.lengthOfBytes(using: .utf8)
+            let nameFileWrapper = FileWrapper(regularFileWithContents: Data(bytes: name!, count: lenNameText!))
             
             let imageData = UIImagePNGRepresentation(thumbnail)
             let thumbnailFileWrapper = FileWrapper(regularFileWithContents: imageData!) // ### TODO: Fix '!'
             
-            let dirWrapper = FileWrapper(directoryWithFileWrappers: ["shader.txt": shaderTextFileWrapper, "thumbnail.png": thumbnailFileWrapper])
+            let dirWrapper = FileWrapper(directoryWithFileWrappers: ["shader.txt": shaderTextFileWrapper,
+                                                                     "name.txt": nameFileWrapper,
+                                                                     "thumbnail.png": thumbnailFileWrapper])
             
             return dirWrapper
         } else {
@@ -35,10 +41,13 @@ class ShaderDocument: UIDocument {
                 if  let dirWrapper = userContents.fileWrappers,
                     let shaderTextFileWrapper = dirWrapper["shader.txt"],
                     let thumbnailFileWrapper = dirWrapper["thumbnail.png"],
+                    let nameFileWrapper = dirWrapper["name.txt"],
                     let shaderTextData = shaderTextFileWrapper.regularFileContents,
-                    let imageData = thumbnailFileWrapper.regularFileContents {
+                    let imageData = thumbnailFileWrapper.regularFileContents,
+                    let nameData = nameFileWrapper.regularFileContents {
                         shaderText = String(data: shaderTextData, encoding: .utf8)
                         thumbnail = UIImage(data: imageData)
+                        name = String(data: nameData, encoding: .utf8)
                 }
             }
         }

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var metalViewController: MetalViewController?
     var codeViewController: CodeViewController?
-    var documentName: String?
+    var fileName: String?
     var document: ShaderDocument?
     
     public var savedDocumentAction: (() -> ())?
@@ -64,22 +64,28 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItems = [playBarItem]
         
-        if documentName == nil {    //new document
+        if fileName == nil {    //new document
+            //Shader documents has uuid filename
+            //the name of the document is stored inside the document
+            
+            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(UUID().uuidString))
+            
             let RFC3339DateFormatter = DateFormatter()
             RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
             RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             
-            documentName = RFC3339DateFormatter.string(from: Date())
-            navigationItem.title = documentName
+            fileName = RFC3339DateFormatter.string(from: Date())
             
-            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(documentName!))
+            navigationItem.title = fileName
+            document?.name = fileName
         } else {
-            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(documentName!))
+            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(fileName!))
             
             document!.open { valid in
                 if valid {
                     self.codeViewController?.codeView?.text = self.document!.shaderText!
+                    self.navigationItem.title = self.document?.name
                 } else {
                     print("Erorr loading document")
                 }
@@ -95,9 +101,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if let documentName = documentName {
-            navigationItem.title = documentName
-        }
+
     }
     
     override func viewDidDisappear(_ animated: Bool) {

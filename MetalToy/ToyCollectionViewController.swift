@@ -92,8 +92,10 @@ class ToyCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ToyCollectionViewCell
-    
-        cell.toyNameLabel.text = fileList[indexPath.item]
+        
+        if let name = try? String(contentsOfFile: localDocumentDir().path + "/" + fileList[indexPath.item] + "/name.txt", encoding: .utf8) {
+            cell.toyNameLabel.text = name
+        }
         
         let imageFilePath = localDocumentDir().path + "/" + fileList[indexPath.item] + "/thumbnail.png"
         
@@ -107,10 +109,10 @@ class ToyCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let documentName = fileList[indexPath.item]
+        let fileName = fileList[indexPath.item]
         
         if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? ViewController {
-            editorViewController.documentName = documentName
+            editorViewController.fileName = fileName
             
             if let navigator = navigationController {
                 navigator.pushViewController(editorViewController, animated: true)
