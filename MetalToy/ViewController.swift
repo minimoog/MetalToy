@@ -8,9 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
     var metalViewController: MetalViewController?
     var codeViewController: CodeViewController?
+    var docNameTextField: UITextField?
     var fileName: String?
     var document: ShaderDocument?
     
@@ -64,6 +65,14 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItems = [playBarItem]
         
+        docNameTextField = UITextField()
+        docNameTextField?.textAlignment = .center
+        docNameTextField?.autoresizingMask = .flexibleWidth
+        docNameTextField?.frame = CGRect(x: 0, y: 0, width: 400, height: 30)
+        docNameTextField?.delegate = self
+        
+        navigationItem.titleView = docNameTextField
+        
         if fileName == nil {    //new document
             //Shader documents has uuid filename
             //the name of the document is stored inside the document
@@ -75,17 +84,17 @@ class ViewController: UIViewController {
             RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
             
-            fileName = RFC3339DateFormatter.string(from: Date())
+            let documentName = RFC3339DateFormatter.string(from: Date())
             
-            navigationItem.title = fileName
-            document?.name = fileName
+            docNameTextField?.text = documentName
+            document?.name = documentName
         } else {
             document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(fileName!))
             
             document!.open { valid in
                 if valid {
                     self.codeViewController?.codeView?.text = self.document!.shaderText!
-                    self.navigationItem.title = self.document?.name
+                    self.docNameTextField?.text = self.document?.name
                 } else {
                     print("Erorr loading document")
                 }
@@ -122,6 +131,15 @@ class ViewController: UIViewController {
         }
         
         super.viewDidDisappear(animated)
+    }
+    
+    // MARK: UITextDelegate
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard document != nil else {
+            return
+        }
+        
+        document?.name = textField.text
     }
     
     override func didReceiveMemoryWarning() {
