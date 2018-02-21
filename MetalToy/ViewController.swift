@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var metalViewController: MetalViewController?
     var codeViewController: CodeViewController?
     var docNameTextField: UITextField?
-    var fileName: String?
+    var documentURL: URL?
     var document: ShaderDocument?
     
     public var savedDocumentAction: (() -> ())?
@@ -73,7 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         navigationItem.titleView = docNameTextField
         
-        if fileName == nil {    //new document
+        if documentURL == nil {    //new document
             //Shader documents has uuid filename
             //the name of the document is stored inside the document
             
@@ -89,7 +89,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             docNameTextField?.text = documentName
             document?.name = documentName
         } else {
-            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(fileName!))
+            document = ShaderDocument(fileURL: documentURL!)
             
             document!.open { valid in
                 if valid {

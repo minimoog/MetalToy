@@ -17,7 +17,7 @@ public func localDocumentDir() -> URL {
 }
 
 class ToyCollectionViewController: UICollectionViewController {
-    var fileList: [String] = [String]()
+    var documents: [URL] = [URL]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,15 +41,14 @@ class ToyCollectionViewController: UICollectionViewController {
     }
 
     func refreshFiles() {
-        fileList = []
+        documents = []
         
         let localDir = localDocumentDir()
-        let localDocuments = try? FileManager.default.contentsOfDirectory(at: localDir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
         
-        if let documents = localDocuments {
-            for document in documents {
-                fileList.append(document.lastPathComponent)
-            }
+        do {
+            documents = try FileManager.default.contentsOfDirectory(at: localDir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+        } catch {
+            print(error)
         }
         
         collectionView?.reloadData()
@@ -87,17 +86,17 @@ class ToyCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return fileList.count
+        return documents.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ToyCollectionViewCell
         
-        if let name = try? String(contentsOfFile: localDocumentDir().path + "/" + fileList[indexPath.item] + "/name.txt", encoding: .utf8) {
+        if let name = try? String(contentsOf: documents[indexPath.item].appendingPathComponent("name.txt"), encoding: .utf8) {
             cell.toyNameLabel.text = name
         }
         
-        let imageFilePath = localDocumentDir().path + "/" + fileList[indexPath.item] + "/thumbnail.png"
+        let imageFilePath: String = documents[indexPath.item].appendingPathComponent("thumbnail.png").path
         
         if let image = UIImage(contentsOfFile: imageFilePath) {
             cell.thumbnailImageView.image = image
@@ -109,10 +108,10 @@ class ToyCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let fileName = fileList[indexPath.item]
+        let documentURL = documents[indexPath.item]
         
         if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? ViewController {
-            editorViewController.fileName = fileName
+            editorViewController.documentURL = documentURL
             
             if let navigator = navigationController {
                 navigator.pushViewController(editorViewController, animated: true)
