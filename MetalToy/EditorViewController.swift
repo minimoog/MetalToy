@@ -16,6 +16,9 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contentWrapperView: UIView!
     @IBOutlet weak var contentView: UIView!
     
+    var metalViewPanelContentVC: MetalViewController!
+    var metalViewPanelVC: PanelViewController!
+    
     public var savedDocumentAction: (() -> ())?
     
     override func viewDidLoad() {
@@ -23,7 +26,14 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
+        metalViewPanelContentVC = storyboard?.instantiateViewController(withIdentifier: "MetalViewController") as! MetalViewController
+        metalViewPanelVC = PanelViewController(with: metalViewPanelContentVC, in: self)
+        
         //let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
+        
+        ////test
+        let testBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
+        navigationItem.rightBarButtonItems = [testBarItem]
         
         //navigationItem.rightBarButtonItems = [playBarItem]
         
@@ -128,6 +138,13 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         document?.name = textField.text
     }
     
+    @objc func onViewButtonTapped(sender: UIBarButtonItem) {
+        metalViewPanelVC.modalPresentationStyle = .popover
+        metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
+        
+        present(metalViewPanelVC, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -137,7 +154,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 /*
@@ -154,7 +170,7 @@ extension EditorViewController: PanelManager {
     }
     
     var panels: [PanelViewController] {
-        return [mapPanelVC, textPanelVC]
+        return [metalViewPanelVC]
     }
     
 }

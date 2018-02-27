@@ -19,7 +19,7 @@ struct Vertex {
     }
 }
 
-class MetalViewController: UIViewController, MTKViewDelegate {
+class MetalViewController: UIViewController, PanelContentDelegate, MTKViewDelegate {
     
     let vertices: [Vertex] = [
         Vertex(x: -1, y:  -1),
@@ -172,4 +172,17 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         
         return uiimage
     }
+    
+    var preferredPanelContentSize: CGSize {
+        return CGSize(width: 320, height: 500)
+    }
+    
+    var maximumPanelContentSize: CGSize {
+        return CGSize(width: 512, height: 600)
+    }
+    
+    var preferredPanelPinnedWidth: CGFloat {
+        return 500
+    }
 }
+
