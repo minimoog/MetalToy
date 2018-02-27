@@ -55,7 +55,7 @@ class ToyCollectionViewController: UICollectionViewController {
     }
     
     @objc func plusButtonClicked() {
-        if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? ViewController {
+        if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? EditorViewController {
             if let navigator = navigationController {
                 navigator.pushViewController(editorViewController, animated: true)
             }
@@ -110,7 +110,7 @@ class ToyCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let documentURL = documents[indexPath.item]
         
-        if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? ViewController {
+        if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? EditorViewController {
             editorViewController.documentURL = documentURL
             
             if let navigator = navigationController {

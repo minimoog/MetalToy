@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520C76522044CB1100F39EA1 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C76512044CB1100F39EA1 /* EditorViewController.swift */; };
 		521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FC1F7479DE000C62A0 /* Arrangement.swift */; };
 		521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FD1F7479DE000C62A0 /* HandleView.swift */; };
 		521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */; };
@@ -139,6 +140,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		520C76512044CB1100F39EA1 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		5241E9941F49E55000107886 /* MetalToy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetalToy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5241E9971F49E55000107886 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5241E9991F49E55000107886 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 			children = (
 				5241E9971F49E55000107886 /* AppDelegate.swift */,
 				525F0C081F79C08300FADC46 /* ViewController.swift */,
+				520C76512044CB1100F39EA1 /* EditorViewController.swift */,
 				5241E9991F49E55000107886 /* CodeViewController.swift */,
 				525F0C061F79BA0900FADC46 /* MetalViewController.swift */,
 				525D82E120168F0B00B16618 /* ShaderDocument.swift */,
@@ -747,6 +750,7 @@
 				521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */,
 				525D82E42016A72000B16618 /* ToyCollectionViewController.swift in Sources */,
 				525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */,
+				520C76522044CB1100F39EA1 /* EditorViewController.swift in Sources */,
 				5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */,
 				525D82E62016A9C200B16618 /* ToyCollectionViewCell.swift in Sources */,
 				526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */,

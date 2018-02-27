@@ -39,14 +39,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luS-ci-BrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1161" y="61"/>
+            <point key="canvasLocation" x="712" y="775"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="CodeViewController" id="BYZ-38-t0r" userLabel="Code View Controller" customClass="CodeViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tBs-2A-rYT"/>
@@ -54,23 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1160.7421875" y="775.78125"/>
-        </scene>
-        <!--Metal Toy-->
-        <scene sceneID="bq5-ex-psQ">
-            <objects>
-                <viewController storyboardIdentifier="EditorViewController" id="92Z-gh-zJp" customClass="ViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GPI-mP-27A">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="GD4-qp-zhI"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Metal Toy" id="2Sq-c5-ieF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tIP-Uc-f2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="517" y="776"/>
+            <point key="canvasLocation" x="46" y="1501"/>
         </scene>
         <!--Metal Toy-->
         <scene sceneID="c9i-qS-haR">
@@ -122,7 +106,59 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqz-kP-RcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-152.9296875" y="775"/>
+            <point key="canvasLocation" x="-626" y="775"/>
+        </scene>
+        <!--Editor View Controller-->
+        <scene sceneID="cRc-dp-Ctw">
+            <objects>
+                <viewController storyboardIdentifier="EditorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KyW-2N-Wbw" customClass="EditorViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q9F-tf-eFo">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIa-f2-2oV" userLabel="Content Wrapper View">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeR-qk-h7t" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                        <subviews>
+                                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r4d-B6-rro">
+                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="embed" id="QqX-mR-tYi"/>
+                                                </connections>
+                                            </containerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="zeR-qk-h7t" secondAttribute="trailing" id="8ql-k8-ovp"/>
+                                    <constraint firstAttribute="bottom" secondItem="zeR-qk-h7t" secondAttribute="bottom" id="Gkx-uL-5Rn"/>
+                                    <constraint firstItem="zeR-qk-h7t" firstAttribute="top" secondItem="GIa-f2-2oV" secondAttribute="top" id="SnB-Vk-t8P"/>
+                                    <constraint firstItem="zeR-qk-h7t" firstAttribute="leading" secondItem="GIa-f2-2oV" secondAttribute="leading" id="YOT-WI-aWh"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Gj-Ut-c37" firstAttribute="bottom" secondItem="GIa-f2-2oV" secondAttribute="bottom" id="3mI-dl-haG"/>
+                            <constraint firstItem="1Gj-Ut-c37" firstAttribute="trailing" secondItem="GIa-f2-2oV" secondAttribute="trailing" id="8sc-Nv-Aqq"/>
+                            <constraint firstItem="GIa-f2-2oV" firstAttribute="top" secondItem="1Gj-Ut-c37" secondAttribute="top" id="D3q-Rg-NWS"/>
+                            <constraint firstItem="GIa-f2-2oV" firstAttribute="leading" secondItem="1Gj-Ut-c37" secondAttribute="leading" id="Pqg-PH-N4F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1Gj-Ut-c37"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentView" destination="zeR-qk-h7t" id="YLz-Mn-FCC"/>
+                        <outlet property="contentWrapperView" destination="GIa-f2-2oV" id="Wir-Me-bOo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q4S-oE-hTe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45.703125" y="775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hfv-fg-kM5">
@@ -140,7 +176,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6pX-RR-8Px" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848" y="775"/>
+            <point key="canvasLocation" x="-1256" y="775"/>
         </scene>
     </scenes>
 </document>

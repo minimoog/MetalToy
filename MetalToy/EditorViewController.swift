@@ -1,0 +1,160 @@
+//
+//  EditorViewController.swift
+//  MetalToy
+//
+//  Created by minimoog on 2/27/18.
+//  Copyright © 2018 Toni Jovanoski. All rights reserved.
+//
+
+import UIKit
+
+class EditorViewController: UIViewController, UITextFieldDelegate {
+    var docNameTextField: UITextField?
+    var documentURL: URL?
+    var document: ShaderDocument?
+    
+    @IBOutlet weak var contentWrapperView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    
+    public var savedDocumentAction: (() -> ())?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        
+        //let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
+        
+        //navigationItem.rightBarButtonItems = [playBarItem]
+        
+        docNameTextField = UITextField()
+        docNameTextField?.textAlignment = .center
+        docNameTextField?.autoresizingMask = .flexibleWidth
+        docNameTextField?.frame = CGRect(x: 0, y: 0, width: 400, height: 30)
+        docNameTextField?.delegate = self
+        
+        navigationItem.titleView = docNameTextField
+        
+        if documentURL == nil {    //new document
+            //Shader documents has uuid filename
+            //the name of the document is stored inside the document
+            
+            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(UUID().uuidString))
+            
+            let RFC3339DateFormatter = DateFormatter()
+            RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
+            RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+            
+            let documentName = RFC3339DateFormatter.string(from: Date())
+            
+            docNameTextField?.text = documentName
+            document?.name = documentName
+        } else {
+            document = ShaderDocument(fileURL: documentURL!)
+            
+            document!.open { valid in
+                if valid {
+                    //self.codeViewController?.codeView?.text = self.document!.shaderText!
+                    self.docNameTextField?.text = self.document?.name
+                } else {
+                    print("Erorr loading document")
+                }
+            }
+        }
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { (context) in
+            
+        }) { (context) in
+            
+            if !self.allowFloatingPanels {
+                self.closeAllFloatingPanels()
+            }
+            
+            if !self.allowPanelPinning {
+                self.closeAllPinnedPanels()
+            }
+            
+        }
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //let imageToSave = metalViewController?.snapshot(size: CGSize(width: 100, height: 100))
+        //document!.thumbnail = imageToSave
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        
+        //document!.shaderText = codeViewController?.codeView?.text!
+        
+        document!.save(to: document!.fileURL, for: .forOverwriting) { success in
+            if success {
+                print("Success")
+                
+                if let savedDocumentAction = self.savedDocumentAction {
+                    savedDocumentAction()
+                }
+                
+            } else {
+                print("Failed storing")
+            }
+        }
+        
+        super.viewDidDisappear(animated)
+    }
+    
+    // MARK: UITextDelegate
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard document != nil else {
+            return
+        }
+        
+        document?.name = textField.text
+    }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
+
+/*
+ * PanelKit
+ */
+extension EditorViewController: PanelManager {
+    
+    var panelContentWrapperView: UIView {
+        return contentWrapperView
+    }
+    
+    var panelContentView: UIView {
+        return contentView
+    }
+    
+    var panels: [PanelViewController] {
+        return [mapPanelVC, textPanelVC]
+    }
+    
+}
