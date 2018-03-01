@@ -16,9 +16,6 @@ class CodeViewController: UIViewController {
     let textStorage = CodeAttributedString()
     var messageButtons = [CompilerMessageButton]()
     
-    public var playAction: ((String?) -> ())?
-    public var pauseAction: (() -> ())?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -53,22 +50,6 @@ class CodeViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
-    }
-    
-    @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
-        if sender.title == "Play" {
-            sender.title = "Pause"
-            
-            if let playAction = playAction {
-                playAction(codeView!.text)
-            }
-        } else {
-            sender.title = "Play"
-            
-            if let pauseAction = pauseAction {
-                pauseAction()
-            }
-        }
     }
     
     @objc func keyboardWasShown(notification: NSNotification) {

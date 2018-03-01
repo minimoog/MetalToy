@@ -34,13 +34,9 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         
         metalViewController = metalViewPanelContentVC.metalViewController
         
-        //let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
-        
-        ////test
-        let testBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
-        navigationItem.rightBarButtonItems = [testBarItem]
-        
-        //navigationItem.rightBarButtonItems = [playBarItem]
+        let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
+        let viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
+        navigationItem.rightBarButtonItems = [playBarItem, viewBarItem]
         
         docNameTextField = UITextField()
         docNameTextField?.textAlignment = .center
@@ -70,7 +66,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             
             document!.open { valid in
                 if valid {
-                    //self.codeViewController?.codeView?.text = self.document!.shaderText!
+                    self.codeViewController?.codeView?.text = self.document!.shaderText!
                     self.docNameTextField?.text = self.document?.name
                 } else {
                     print("Erorr loading document")
@@ -106,8 +102,8 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        //let imageToSave = metalViewController?.snapshot(size: CGSize(width: 100, height: 100))
-        //document!.thumbnail = imageToSave
+        let imageToSave = metalViewController?.snapshot(size: CGSize(width: 100, height: 100))
+        document!.thumbnail = imageToSave
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -116,7 +112,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidDisappear(_ animated: Bool) {
         
-        //document!.shaderText = codeViewController?.codeView?.text!
+        document!.shaderText = codeViewController?.codeView?.text!
         
         document!.save(to: document!.fileURL, for: .forOverwriting) { success in
             if success {
@@ -148,6 +144,23 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
         
         present(metalViewPanelVC, animated: true, completion: nil)
+    }
+    
+    @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
+        if sender.title == "Play" {
+            sender.title = "Pause"
+            
+            metalViewController?.mtkView.isPaused = false
+            
+            if let text = codeViewController?.codeView?.text {
+                metalViewController?.setRenderPipeline(fragmentShader: text)
+            }
+            
+        } else {
+            sender.title = "Play"
+            
+            metalViewController?.mtkView.isPaused = true
+        }
     }
     
     // MARK: - Navigation

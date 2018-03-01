@@ -33,18 +33,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         metalViewController = storyboard?.instantiateViewController(withIdentifier: "MetalViewController") as? MetalViewController
         codeViewController = storyboard?.instantiateViewController(withIdentifier: "CodeViewController") as? CodeViewController
         
-        codeViewController?.playAction = { text in
-            if let metalViewController = self.metalViewController, let text = text {
-                metalViewController.mtkView.isPaused = false
-                metalViewController.setRenderPipeline(fragmentShader: text)
-            }
-        }
-        
-        codeViewController?.pauseAction = {
-            if let metalViewController = self.metalViewController {
-                metalViewController.mtkView.isPaused = true
-            }
-        }
+//        codeViewController?.playAction = { text in
+//            if let metalViewController = self.metalViewController, let text = text {
+//                metalViewController.mtkView.isPaused = false
+//                metalViewController.setRenderPipeline(fragmentShader: text)
+//            }
+//        }
+//
+//        codeViewController?.pauseAction = {
+//            if let metalViewController = self.metalViewController {
+//                metalViewController.mtkView.isPaused = true
+//            }
+//        }
         
         metalViewController?.finishedCompiling = { result, compilerMessages in
             if result {
@@ -61,9 +61,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         splitController.firstChild = codeViewController
         splitController.secondChild = metalViewController
         
-        let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
+        //let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
         
-        navigationItem.rightBarButtonItems = [playBarItem]
+        //navigationItem.rightBarButtonItems = [playBarItem]
         
         docNameTextField = UITextField()
         docNameTextField?.textAlignment = .center
