@@ -16,6 +16,8 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contentWrapperView: UIView!
     @IBOutlet weak var contentView: UIView!
     
+    var codeViewController: CodeViewController?
+    
     var metalViewPanelContentVC: MetalViewController!
     var metalViewPanelVC: PanelViewController!
     
@@ -145,15 +147,16 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         present(metalViewPanelVC, animated: true, completion: nil)
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let destination = segue.destination
+        
+        if let codeViewController = destination as? CodeViewController {
+            self.codeViewController = codeViewController
+        }
     }
-    */
 }
 
 /*
