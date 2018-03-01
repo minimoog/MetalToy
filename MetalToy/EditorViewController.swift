@@ -17,8 +17,9 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contentView: UIView!
     
     var codeViewController: CodeViewController?
+    var metalViewController: MetalViewController?
     
-    var metalViewPanelContentVC: MetalViewController!
+    var metalViewPanelContentVC: MetalViewPanelContentController!
     var metalViewPanelVC: PanelViewController!
     
     public var savedDocumentAction: (() -> ())?
@@ -28,8 +29,10 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
-        metalViewPanelContentVC = storyboard?.instantiateViewController(withIdentifier: "MetalViewController") as! MetalViewController
+        metalViewPanelContentVC = storyboard?.instantiateViewController(withIdentifier: "MetalViewPanelContentController") as! MetalViewPanelContentController
         metalViewPanelVC = PanelViewController(with: metalViewPanelContentVC, in: self)
+        
+        metalViewController = metalViewPanelContentVC.metalViewController
         
         //let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: codeViewController, action: #selector(codeViewController?.onPlayButtonTapped))
         
