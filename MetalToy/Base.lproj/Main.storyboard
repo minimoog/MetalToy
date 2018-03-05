@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="biB-xu-aqt">
-    <device id="ipad9_7" orientation="landscape">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,11 +15,11 @@
             <objects>
                 <viewController storyboardIdentifier="MetalViewController" id="OsE-9k-1M1" customClass="MetalViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UHL-UV-XWH">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mtkView contentMode="scaleToFill" colorPixelFormat="BGRA8Unorm" depthStencilPixelFormat="Depth32Float" translatesAutoresizingMaskIntoConstraints="NO" id="25O-GC-V7a">
-                                <rect key="frame" x="20" y="40" width="984" height="984"/>
+                                <rect key="frame" x="20" y="40" width="728" height="728"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="25O-GC-V7a" secondAttribute="height" multiplier="1:1" id="ciN-XY-H4N"/>
                                 </constraints>
@@ -46,11 +46,11 @@
             <objects>
                 <viewController storyboardIdentifier="MetalViewPanelContentController" id="fZ0-95-JUg" customClass="MetalViewPanelContentController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sUA-XD-XFL">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ayK-kC-9ki">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                                 <connections>
                                     <segue destination="OsE-9k-1M1" kind="embed" id="TL1-lg-3bP"/>
                                 </connections>
@@ -75,7 +75,7 @@
             <objects>
                 <viewController storyboardIdentifier="CodeViewController" id="BYZ-38-t0r" userLabel="Code View Controller" customClass="CodeViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="tBs-2A-rYT"/>
@@ -90,7 +90,7 @@
             <objects>
                 <collectionViewController id="4Sz-e6-c11" customClass="ToyCollectionViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3vB-rn-YpW">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="aq9-f2-kXy">
@@ -142,24 +142,29 @@
             <objects>
                 <viewController storyboardIdentifier="EditorViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KyW-2N-Wbw" customClass="EditorViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q9F-tf-eFo">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIa-f2-2oV" userLabel="Content Wrapper View">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="748"/>
+                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeR-qk-h7t" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                         <subviews>
-                                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r4d-B6-rro">
-                                                <rect key="frame" x="0.0" y="0.0" width="1024" height="748"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4d-B6-rro">
+                                                <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                                 <connections>
                                                     <segue destination="BYZ-38-t0r" kind="embed" id="QqX-mR-tYi"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="r4d-B6-rro" secondAttribute="bottom" id="Of8-iN-8mf"/>
+                                            <constraint firstItem="r4d-B6-rro" firstAttribute="top" secondItem="zeR-qk-h7t" secondAttribute="top" id="VhX-Ml-n0f"/>
+                                            <constraint firstItem="r4d-B6-rro" firstAttribute="leading" secondItem="zeR-qk-h7t" secondAttribute="leading" id="YPB-Yt-V84"/>
+                                            <constraint firstAttribute="trailing" secondItem="r4d-B6-rro" secondAttribute="trailing" id="ds5-Ph-J49"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,7 +200,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="biB-xu-aqt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gaj-aa-mos">
-                        <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="768" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
