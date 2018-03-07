@@ -7,12 +7,7 @@
 //
 
 import Foundation
-
-#if os(OSX)
-    import AppKit
-#else
-    import UIKit
-#endif
+import UIKit
 
 /// Highlighting Delegate
 @objc public protocol HighlightDelegate
@@ -39,7 +34,7 @@ import Foundation
 open class CodeAttributedString : NSTextStorage
 {
     /// Internal Storage
-    let stringStorage = NSMutableAttributedString(string: "")
+    let stringStorage = NSTextStorage()
 
     /// Highlightr instace used internally for highlighting. Use this for configuring the theme.
     open let highlightr = Highlightr()!
@@ -60,26 +55,10 @@ open class CodeAttributedString : NSTextStorage
         super.init(coder: aDecoder)
         setupListeners()
     }
-
-	/// Initialize the CodeAttributedString
-	required public init(itemProviderData data: Data, typeIdentifier: String) throws
-	{
-        super.init()
-		//try super.init(itemProviderData: data, typeIdentifier: typeIdentifier)
-		setupListeners()
-	}
-
-	/// Initialize the CodeAttributedString
-	public override init(attributedString attrStr: NSAttributedString)
-	{
-		super.init()
-		stringStorage.append(attrStr)
-		setupListeners()
-	}
-
+    
     #if os(OSX)
     /// Initialize the CodeAttributedString
-    required public init?(pasteboardPropertyList propertyList: Any, ofType type: String)
+    required public init?(pasteboardPropertyList propertyList: Any, ofType type: NSPasteboard.PasteboardType)
     {
         super.init(pasteboardPropertyList: propertyList, ofType: type)
         setupListeners()
