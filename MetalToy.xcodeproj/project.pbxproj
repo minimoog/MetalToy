@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		520C76522044CB1100F39EA1 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C76512044CB1100F39EA1 /* EditorViewController.swift */; };
-		521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FC1F7479DE000C62A0 /* Arrangement.swift */; };
-		521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FD1F7479DE000C62A0 /* HandleView.swift */; };
-		521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */; };
-		521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52819A001F7479DE000C62A0 /* Snapped.swift */; };
-		521BF4901F79C53600ABCAED /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52819A021F7479DE000C62A0 /* SplitViewController.swift */; };
 		5241E9981F49E55000107886 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9971F49E55000107886 /* AppDelegate.swift */; };
 		5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9991F49E55000107886 /* CodeViewController.swift */; };
 		5241E99D1F49E55000107886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99B1F49E55000107886 /* Main.storyboard */; };
@@ -243,11 +238,6 @@
 		5272A9981FEC7C49000D2449 /* KUIPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOver.swift; sourceTree = "<group>"; };
 		5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOverUsable.swift; sourceTree = "<group>"; };
 		5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageViewController.swift; sourceTree = "<group>"; };
-		528199FC1F7479DE000C62A0 /* Arrangement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrangement.swift; sourceTree = "<group>"; };
-		528199FD1F7479DE000C62A0 /* HandleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleView.swift; sourceTree = "<group>"; };
-		528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		52819A001F7479DE000C62A0 /* Snapped.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapped.swift; sourceTree = "<group>"; };
-		52819A021F7479DE000C62A0 /* SplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		52E7C31F1FC7851100087B15 /* CodeAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeAttributedString.swift; sourceTree = "<group>"; };
 		52E7C3201FC7851100087B15 /* Highlightr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
 		52E7C3221FC7851100087B15 /* HTMLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
@@ -406,7 +396,6 @@
 				52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */,
 				526EE31F204620C2004451E6 /* PanelKit */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
-				5272A9961FEC799C000D2449 /* SplitKit */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
 			);
 			path = MetalToy;
@@ -538,18 +527,6 @@
 				526EE34D204620C2004451E6 /* Constants.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		5272A9961FEC799C000D2449 /* SplitKit */ = {
-			isa = PBXGroup;
-			children = (
-				528199FC1F7479DE000C62A0 /* Arrangement.swift */,
-				528199FD1F7479DE000C62A0 /* HandleView.swift */,
-				528199FF1F7479DE000C62A0 /* InstantPanGestureRecognizer.swift */,
-				52819A021F7479DE000C62A0 /* SplitViewController.swift */,
-				52819A001F7479DE000C62A0 /* Snapped.swift */,
-			);
-			path = SplitKit;
 			sourceTree = "<group>";
 		};
 		5272A9971FEC7C1F000D2449 /* KUIPopOver */ = {
@@ -924,17 +901,14 @@
 				526EE364204620C2004451E6 /* PanelNavigationController.swift in Sources */,
 				526EE36A204620C2004451E6 /* ResizeStart.swift in Sources */,
 				526EE365204620C2004451E6 /* PanelViewController+Appearance.swift in Sources */,
-				521BF4901F79C53600ABCAED /* SplitViewController.swift in Sources */,
 				526EE36E204620C2004451E6 /* UnpinningMetadata.swift in Sources */,
 				526EE35C204620C2004451E6 /* PanelManager+Expose.swift in Sources */,
-				521BF48D1F79C53200ABCAED /* HandleView.swift in Sources */,
 				526EE355204620C2004451E6 /* PanelManager+State.swift in Sources */,
 				5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */,
 				526EE369204620C2004451E6 /* PanelStateCoder.swift in Sources */,
 				526EE358204620C2004451E6 /* PanelManager+Pinning.swift in Sources */,
 				526EE350204620C2004451E6 /* BlockBarButtonItem.swift in Sources */,
 				525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */,
-				521BF48E1F79C53400ABCAED /* InstantPanGestureRecognizer.swift in Sources */,
 				52E7C42B1FC7851200087B15 /* CodeAttributedString.swift in Sources */,
 				5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */,
 				5241E9981F49E55000107886 /* AppDelegate.swift in Sources */,
@@ -947,7 +921,6 @@
 				526EE371204620C2004451E6 /* BlockGestureRecognizer.swift in Sources */,
 				52E7C42F1FC7851200087B15 /* Theme.swift in Sources */,
 				526EE370204620C2004451E6 /* AssociatedObject.swift in Sources */,
-				521BF48C1F79C53000ABCAED /* Arrangement.swift in Sources */,
 				526EE359204620C2004451E6 /* PanelManager+Offscreen.swift in Sources */,
 				526EE373204620C2004451E6 /* Constants.swift in Sources */,
 				526EE372204620C2004451E6 /* PinnedPosition.swift in Sources */,
@@ -965,7 +938,6 @@
 				526EE363204620C2004451E6 /* PanelViewController+Keyboard.swift in Sources */,
 				525D82E62016A9C200B16618 /* ToyCollectionViewCell.swift in Sources */,
 				526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */,
-				521BF48F1F79C53500ABCAED /* Snapped.swift in Sources */,
 				526EE353204620C2004451E6 /* PanelContentDelegate.swift in Sources */,
 				526EE36C204620C2004451E6 /* PanelFloatingState.swift in Sources */,
 				526EE362204620C2004451E6 /* PanelViewController.swift in Sources */,
