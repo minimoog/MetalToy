@@ -21,6 +21,9 @@ class CodeViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         textStorage.language = "cpp"
+        textStorage.highlightr.setTheme(to: "Pojoaque")
+        textStorage.highlightr.theme.setCodeFont(UIFont(name: "Menlo-Regular", size: 16)!)
+        
         let layoutManager = NSLayoutManager()
         textStorage.addLayoutManager(layoutManager)
         
@@ -36,7 +39,8 @@ class CodeViewController: UIViewController {
         codeView?.text = DefaultFragmentShader
         codeView?.translatesAutoresizingMaskIntoConstraints = false
         codeView?.textContainerInset = UIEdgeInsets(top: 10, left: GutterWidth, bottom: 0, right: 0)
-        
+        codeView?.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
+ 
         //constraints
         codeView?.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor).isActive = true
         codeView?.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
