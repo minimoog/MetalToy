@@ -18,6 +18,7 @@ public func localDocumentDir() -> URL {
 
 class ToyCollectionViewController: UICollectionViewController {
     var documents: [URL] = [URL]()
+    var selectionMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,8 @@ class ToyCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Do any additional setup after loading the view.
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ToyCollectionViewController.plusButtonClicked))
-        navigationItem.rightBarButtonItem = addButton
+        
+        restoreDefaultRightButtonsAndState()
         
         let backButton = UIBarButtonItem(title: "Save", style: .done, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
@@ -40,6 +41,22 @@ class ToyCollectionViewController: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func restoreDefaultRightButtonsAndState() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ToyCollectionViewController.plusButtonClicked))
+        let selectButton = UIBarButtonItem(title: "select", style: .plain, target: self, action: #selector(self.selectButtonClicked))
+        
+        navigationItem.setRightBarButtonItems([addButton, selectButton], animated: true)
+        
+        collectionView?.allowsMultipleSelection = false
+        
+        //deselect everything
+        guard let indexPaths = collectionView?.indexPathsForSelectedItems else { return }
+        
+        for indexPath in indexPaths {
+            collectionView?.deselectItem(at: indexPath, animated: true)
+        }
+    }
+    
     func refreshFiles() {
         documents = []
         
@@ -66,6 +83,54 @@ class ToyCollectionViewController: UICollectionViewController {
                 self.refreshFiles()
             }
         }
+    }
+    
+    @objc func selectButtonClicked() {
+        let deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(self.trashButtonClicked))
+        let cancelButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelButtonClicked))
+        
+        navigationItem.setRightBarButtonItems([deleteButton, cancelButton], animated: true)
+        
+        collectionView?.allowsMultipleSelection = true
+    }
+    
+    @objc func trashButtonClicked() {
+        defer {
+            restoreDefaultRightButtonsAndState()
+        }
+        
+        guard let selectedIndexPaths = collectionView?.indexPathsForSelectedItems else { return }
+        let selectedItems = selectedIndexPaths.map { $0.item }
+        
+        // ### TODO: Invoke alert here
+        
+        for item in selectedItems {
+            let docUrl = documents[item]
+            
+            DispatchQueue.global(qos: .default).async {
+                let fileCoordinator = NSFileCoordinator()
+                fileCoordinator.coordinate(writingItemAt: docUrl, options: .forDeleting, error: nil) {
+                    url in
+                    
+                    let fileManager = FileManager()
+                    
+                    do {
+                        try fileManager.removeItem(at: url)
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+            
+            documents.remove(at: item)
+        }
+        
+        collectionView?.deleteItems(at: selectedIndexPaths) //could be problematicß
+    }
+    
+    @objc func cancelButtonClicked() {
+        
+        restoreDefaultRightButtonsAndState()
     }
     
     /*
@@ -108,7 +173,14 @@ class ToyCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        //if it's in selected mode
+        if collectionView.allowsMultipleSelection {
+            return
+        }
+        
         let documentURL = documents[indexPath.item]
+        
+        //collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
         
         if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? EditorViewController {
             editorViewController.documentURL = documentURL
