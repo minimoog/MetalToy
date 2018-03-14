@@ -202,8 +202,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gaj-aa-mos">
                         <rect key="frame" x="0.0" y="20" width="1112" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.90588235294117647" green="0.90196078431372551" blue="0.92156862745098034" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.86274509799999999" green="0.81176470590000005" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.094117647060000004" green="0.098039215690000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.86274509803921573" green="0.81176470588235294" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

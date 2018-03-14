@@ -43,6 +43,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         docNameTextField?.autoresizingMask = .flexibleWidth
         docNameTextField?.frame = CGRect(x: 0, y: 0, width: 400, height: 30)
         docNameTextField?.delegate = self
+        docNameTextField?.textColor = navigationController?.navigationBar.titleTextAttributes![NSAttributedStringKey.foregroundColor] as? UIColor
         
         navigationItem.titleView = docNameTextField
         
