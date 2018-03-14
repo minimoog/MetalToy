@@ -15,7 +15,8 @@ class MetalViewPanelContentController: UIViewController, PanelContentDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        panelNavigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(24.0 / 255.0), green: CGFloat(25.0 / 255.0), blue: CGFloat(20.0 / 255.0), alpha: 1.0)
+        panelNavigationController?.navigationBar.tintColor = UIColor(red: CGFloat(220.0 / 255.0), green: CGFloat(207.0 / 255.0), blue: CGFloat(143.0 / 255.0), alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
