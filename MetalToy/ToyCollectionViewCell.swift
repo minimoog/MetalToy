@@ -21,7 +21,7 @@ class ToyCollectionViewCell: UICollectionViewCell {
         
         self.selectedBackgroundView = {
             let view = UIView()
-            view.backgroundColor = UIColor.groupTableViewBackground
+            view.backgroundColor = UIColor.darkGray
             return view
         }()
     }
