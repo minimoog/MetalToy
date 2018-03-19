@@ -1,10 +1,17 @@
-## Metal Shader Toy
+# Metal Shader Toy
 
 
-### About
+## About
 
-### Features
+Metal Shader Toy is Metal based app for editing and writing Metal shading languange shaders similar like ShaderToy.
 
-### Support or Contact
+## Features
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+* Live coding and JIT compilation of shader code
+* Shader viewing
+* Shader editor with syntax highlighting.
+* Save the shaders to be later edited
+
+## Contact
+
+[contact support](mailto://minimoog77@gmail.com) and we’ll help you sort it out.
