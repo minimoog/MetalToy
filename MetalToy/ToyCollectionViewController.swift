@@ -43,7 +43,7 @@ class ToyCollectionViewController: UICollectionViewController {
 
     func restoreDefaultRightButtonsAndState() {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(ToyCollectionViewController.plusButtonClicked))
-        let selectButton = UIBarButtonItem(title: "select", style: .plain, target: self, action: #selector(self.selectButtonClicked))
+        let selectButton = UIBarButtonItem(title: "Select", style: .plain, target: self, action: #selector(self.selectButtonClicked))
         
         navigationItem.setRightBarButtonItems([addButton, selectButton], animated: true)
         
