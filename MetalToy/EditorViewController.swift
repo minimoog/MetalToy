@@ -34,6 +34,18 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         
         metalViewController = metalViewPanelContentVC.metalViewController
         
+        metalViewController?.finishedCompiling = { result, compilerMessages in
+            if result {
+                if let codeViewController = self.codeViewController {
+                    codeViewController.removePoints()
+                }
+            } else {
+                if let codeViewController = self.codeViewController, let compilerMessages = compilerMessages {
+                    codeViewController.updateViewWithPoints(messages: compilerMessages)
+                }
+            }
+        }
+        
         let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
         let viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
         navigationItem.rightBarButtonItems = [playBarItem, viewBarItem]
