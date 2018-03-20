@@ -15,6 +15,7 @@ class CodeViewController: UIViewController {
     var codeView: UITextView?
     let textStorage = CodeAttributedString()
     var messageButtons = [CompilerMessageButton]()
+    var bottomConstraint: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,15 +39,17 @@ class CodeViewController: UIViewController {
         codeView?.autocapitalizationType = .none
         codeView?.text = DefaultFragmentShader
         codeView?.translatesAutoresizingMaskIntoConstraints = false
-        codeView?.textContainerInset = UIEdgeInsets(top: 10, left: GutterWidth, bottom: 0, right: 0)
+        codeView?.textContainerInset = UIEdgeInsets(top: 10, left: GutterWidth, bottom: 8, right: 0)
         codeView?.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
  
         //constraints
         codeView?.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor).isActive = true
         codeView?.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         codeView?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: codeView!.bottomAnchor).isActive = true
         
+        bottomConstraint = view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: codeView!.bottomAnchor)
+        bottomConstraint?.isActive = true
+       
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: NSNotification.Name.UIKeyboardDidShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -60,22 +63,20 @@ class CodeViewController: UIViewController {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         
-        self.view.layoutIfNeeded()
-        self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: keyboardFrame.size.height).isActive = true
+        //self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            //self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: keyboardFrame.size.height).isActive = true
+            self.bottomConstraint?.constant = keyboardFrame.size.height
             self.view.layoutIfNeeded()
         })
     }
     
     @objc func keyboardWillBeHidden(notification: NSNotification) {
         
-        self.view.layoutIfNeeded()
-        self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor, constant: 0).isActive = true
+        //self.view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.1, animations: { () -> Void in
-            //self.view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.codeView!.bottomAnchor).isActive = true
+            self.bottomConstraint?.constant = 0
             self.view.layoutIfNeeded()
         })
     }
