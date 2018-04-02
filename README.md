@@ -14,4 +14,4 @@ Metal Shader Toy is Metal based app for editing and writing Metal shading langua
 
 ## Contact
 
-[contact support](mailto://minimoog77@gmail.com) and we’ll help you sort it out.
+[contact support](mailto:minimoog77@gmail.com) and we’ll help you sort it out.
