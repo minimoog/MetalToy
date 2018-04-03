@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="biB-xu-aqt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="biB-xu-aqt">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -85,7 +85,7 @@
             </objects>
             <point key="canvasLocation" x="46" y="1501"/>
         </scene>
-        <!--Metal Toy-->
+        <!--Shader Editor-->
         <scene sceneID="c9i-qS-haR">
             <objects>
                 <collectionViewController id="4Sz-e6-c11" customClass="ToyCollectionViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,7 +131,7 @@
                             <outlet property="delegate" destination="4Sz-e6-c11" id="Zn2-vv-Bai"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Metal Toy" id="aAF-WB-2vs"/>
+                    <navigationItem key="navigationItem" title="Shader Editor" id="aAF-WB-2vs"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqz-kP-RcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
