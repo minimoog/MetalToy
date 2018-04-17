@@ -50,7 +50,7 @@ class DocumentManager {
     }
     
     func removeDocuments(indices: [Int]) {
-        for item in indices {
+        for item in indices.sorted(by: >) {
             let docUrl = documents[item]
             
             DispatchQueue.global(qos: .default).async {
