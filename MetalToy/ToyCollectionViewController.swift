@@ -10,15 +10,9 @@ import UIKit
 
 private let reuseIdentifier = "ToyCell"
 
-public func localDocumentDir() -> URL {
-    let dirpaths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-    
-    return dirpaths[0]
-}
-
 class ToyCollectionViewController: UICollectionViewController {
-    var documents: [URL] = [URL]()
     var selectionMode: Bool = false
+    var documentManager: DocumentManager = DocumentManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +27,8 @@ class ToyCollectionViewController: UICollectionViewController {
         let backButton = UIBarButtonItem(title: "Save", style: .done, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         
-        refreshFiles()
+        documentManager.refreshFiles()
+        collectionView?.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,20 +52,6 @@ class ToyCollectionViewController: UICollectionViewController {
         }
     }
     
-    func refreshFiles() {
-        documents = []
-        
-        let localDir = localDocumentDir()
-        
-        do {
-            documents = try FileManager.default.contentsOfDirectory(at: localDir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
-        } catch {
-            print(error)
-        }
-        
-        collectionView?.reloadData()
-    }
-    
     @objc func plusButtonClicked() {
         if let editorViewController = storyboard?.instantiateViewController(withIdentifier: "EditorViewController") as? EditorViewController {
             if let navigator = navigationController {
@@ -80,7 +61,8 @@ class ToyCollectionViewController: UICollectionViewController {
             editorViewController.savedDocumentAction = {
                 //we should append files not refresh but currently it does the job
                 
-                self.refreshFiles()
+                self.documentManager.refreshFiles()
+                self.collectionView?.reloadData()
             }
         }
     }
@@ -102,28 +84,9 @@ class ToyCollectionViewController: UICollectionViewController {
         guard let selectedIndexPaths = collectionView?.indexPathsForSelectedItems else { return }
         let selectedItems = selectedIndexPaths.map { $0.item }
         
-        // ### TODO: Invoke alert here
+        documentManager.removeDocuments(indices: selectedItems)
         
-        for item in selectedItems {
-            let docUrl = documents[item]
-            
-            DispatchQueue.global(qos: .default).async {
-                let fileCoordinator = NSFileCoordinator()
-                fileCoordinator.coordinate(writingItemAt: docUrl, options: .forDeleting, error: nil) {
-                    url in
-                    
-                    let fileManager = FileManager()
-                    
-                    do {
-                        try fileManager.removeItem(at: url)
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
-            
-            documents.remove(at: item)
-        }
+        // ### TODO: Invoke alert here
         
         collectionView?.deleteItems(at: selectedIndexPaths) //could be problematicß
     }
@@ -151,17 +114,15 @@ class ToyCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return documents.count
+        return documentManager.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ToyCollectionViewCell
         
-        if let name = try? String(contentsOf: documents[indexPath.item].appendingPathComponent("name.txt"), encoding: .utf8) {
-            cell.toyNameLabel.text = name
-        }
+        cell.toyNameLabel.text = documentManager.namePathComponent(index: indexPath.item)
         
-        let imageFilePath: String = documents[indexPath.item].appendingPathComponent("thumbnail.png").path
+        let imageFilePath: String = documentManager.imagePathComponent(index: indexPath.item)
         
         if let image = UIImage(contentsOfFile: imageFilePath) {
             cell.thumbnailImageView.image = image
@@ -178,7 +139,7 @@ class ToyCollectionViewController: UICollectionViewController {
             return
         }
         
-        let documentURL = documents[indexPath.item]
+        let documentURL = documentManager[indexPath.item]
         
         //collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .top)
         
@@ -192,7 +153,8 @@ class ToyCollectionViewController: UICollectionViewController {
             editorViewController.savedDocumentAction = {
                 //we should append files not refresh but currently it does the job
                 
-                self.refreshFiles()
+                self.documentManager.refreshFiles()
+                self.collectionView?.reloadData()
             }
         }
     }

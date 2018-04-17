@@ -13,6 +13,12 @@ class ShaderDocument: UIDocument {
     var thumbnail: UIImage?
     var name: String?
     
+    enum SubDocumentType: String {
+        case shader = "shader.txt"
+        case name = "name.txt"
+        case thumbnail = "thumbnail.png"
+    }
+    
     override func contents(forType typeName: String) throws -> Any {
         if let shaderText = shaderText, let thumbnail = thumbnail {
             let lenShaderText = shaderText.lengthOfBytes(using: .utf8)
@@ -25,9 +31,9 @@ class ShaderDocument: UIDocument {
             let imageData = UIImagePNGRepresentation(thumbnail)
             let thumbnailFileWrapper = FileWrapper(regularFileWithContents: imageData!) // ### TODO: Fix '!'
             
-            let dirWrapper = FileWrapper(directoryWithFileWrappers: ["shader.txt": shaderTextFileWrapper,
-                                                                     "name.txt": nameFileWrapper,
-                                                                     "thumbnail.png": thumbnailFileWrapper])
+            let dirWrapper = FileWrapper(directoryWithFileWrappers: [SubDocumentType.shader.rawValue:       shaderTextFileWrapper,
+                                                                     SubDocumentType.name.rawValue:         nameFileWrapper,
+                                                                     SubDocumentType.thumbnail.rawValue:    thumbnailFileWrapper])
             
             return dirWrapper
         } else {
@@ -39,9 +45,9 @@ class ShaderDocument: UIDocument {
         if let userContents = contents as? FileWrapper {
             if userContents.isDirectory {
                 if  let dirWrapper = userContents.fileWrappers,
-                    let shaderTextFileWrapper = dirWrapper["shader.txt"],
-                    let thumbnailFileWrapper = dirWrapper["thumbnail.png"],
-                    let nameFileWrapper = dirWrapper["name.txt"],
+                    let shaderTextFileWrapper = dirWrapper[SubDocumentType.shader.rawValue],
+                    let thumbnailFileWrapper = dirWrapper[SubDocumentType.thumbnail.rawValue],
+                    let nameFileWrapper = dirWrapper[SubDocumentType.name.rawValue],
                     let shaderTextData = shaderTextFileWrapper.regularFileContents,
                     let imageData = thumbnailFileWrapper.regularFileContents,
                     let nameData = nameFileWrapper.regularFileContents {
