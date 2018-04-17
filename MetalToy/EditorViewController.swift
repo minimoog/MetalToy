@@ -132,7 +132,14 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
                 print("Success")
                 
                 if let savedDocumentAction = self.savedDocumentAction {
-                    savedDocumentAction()
+                    
+                    self.document?.close { success in
+                        if success {
+                            savedDocumentAction()
+                        } else {
+                            print("Failed closing document")
+                        }
+                    }
                 }
                 
             } else {
