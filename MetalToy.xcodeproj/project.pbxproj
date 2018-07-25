@@ -25,6 +25,33 @@
 		52607BEA2048B5D30014130F /* МetalViewPanelContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52607BE92048B5D30014130F /* МetalViewPanelContentController.swift */; };
 		52619EB51FF1BDAD00490EF9 /* CompilerMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */; };
 		5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264C0351F4E3610001B9EEC /* Shaders.swift */; };
+		526618A621092A8A00F12D9D /* cube_basilica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266188921092A8800F12D9D /* cube_basilica.jpg */; };
+		526618A721092A8A00F12D9D /* tex_abstract_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266188A21092A8800F12D9D /* tex_abstract_2.jpg */; };
+		526618A821092A8A00F12D9D /* cube_basilica_blurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266188B21092A8800F12D9D /* cube_basilica_blurred.png */; };
+		526618A921092A8A00F12D9D /* tex_organic_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266188C21092A8800F12D9D /* tex_organic_4.jpg */; };
+		526618AA21092A8A00F12D9D /* tex_abstract_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266188D21092A8900F12D9D /* tex_abstract_1.jpg */; };
+		526618AB21092A8A00F12D9D /* tex_bayer.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266188E21092A8900F12D9D /* tex_bayer.png */; };
+		526618AC21092A8A00F12D9D /* tex_stars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266188F21092A8900F12D9D /* tex_stars.jpg */; };
+		526618AD21092A8A00F12D9D /* tex_london.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266189021092A8900F12D9D /* tex_london.jpg */; };
+		526618AF21092A8A00F12D9D /* tex_organic_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266189221092A8900F12D9D /* tex_organic_2.jpg */; };
+		526618B021092A8A00F12D9D /* tex_rgb_noise_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266189321092A8900F12D9D /* tex_rgb_noise_medium.png */; };
+		526618B121092A8A00F12D9D /* tex_gray_noise_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266189421092A8900F12D9D /* tex_gray_noise_small.png */; };
+		526618B221092A8A00F12D9D /* cube_uffizi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266189521092A8900F12D9D /* cube_uffizi.jpg */; };
+		526618B321092A8A00F12D9D /* tex_wood.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266189621092A8900F12D9D /* tex_wood.jpg */; };
+		526618B421092A8A00F12D9D /* tex_nyancat.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266189721092A8900F12D9D /* tex_nyancat.png */; };
+		526618B521092A8A00F12D9D /* tex_pebbles.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266189821092A8900F12D9D /* tex_pebbles.png */; };
+		526618B621092A8A00F12D9D /* cube_uffizi_blurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266189921092A8900F12D9D /* cube_uffizi_blurred.png */; };
+		526618B721092A8A00F12D9D /* cube_forest_blurred.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266189A21092A8900F12D9D /* cube_forest_blurred.png */; };
+		526618B821092A8A00F12D9D /* tex_font_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5266189B21092A8900F12D9D /* tex_font_1.png */; };
+		526618B921092A8A00F12D9D /* tex_abstract_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266189C21092A8A00F12D9D /* tex_abstract_3.jpg */; };
+		526618BB21092A8A00F12D9D /* tex_rock_tiles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266189E21092A8A00F12D9D /* tex_rock_tiles.jpg */; };
+		526618BC21092A8A00F12D9D /* tex_rusty_metal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266189F21092A8A00F12D9D /* tex_rusty_metal.jpg */; };
+		526618BD21092A8A00F12D9D /* tex_organic_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 526618A021092A8A00F12D9D /* tex_organic_1.jpg */; };
+		526618BE21092A8A00F12D9D /* tex_rgb_noise_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 526618A121092A8A00F12D9D /* tex_rgb_noise_small.png */; };
+		526618BF21092A8A00F12D9D /* cube_forest.png in Resources */ = {isa = PBXBuildFile; fileRef = 526618A221092A8A00F12D9D /* cube_forest.png */; };
+		526618C021092A8A00F12D9D /* tex_lichen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 526618A321092A8A00F12D9D /* tex_lichen.jpg */; };
+		526618C121092A8A00F12D9D /* tex_gray_noise_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 526618A421092A8A00F12D9D /* tex_gray_noise_medium.png */; };
+		526618C221092A8A00F12D9D /* tex_organic_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 526618A521092A8A00F12D9D /* tex_organic_3.jpg */; };
 		526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */; };
 		526EE34E204620C2004451E6 /* UIViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE322204620C2004451E6 /* UIViewController+Popover.swift */; };
 		526EE34F204620C2004451E6 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE323204620C2004451E6 /* CGRect+Center.swift */; };
@@ -197,6 +224,33 @@
 		52607BE92048B5D30014130F /* МetalViewPanelContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "МetalViewPanelContentController.swift"; sourceTree = "<group>"; };
 		52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerMessageButton.swift; sourceTree = "<group>"; };
 		5264C0351F4E3610001B9EEC /* Shaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
+		5266188921092A8800F12D9D /* cube_basilica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cube_basilica.jpg; sourceTree = "<group>"; };
+		5266188A21092A8800F12D9D /* tex_abstract_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_abstract_2.jpg; sourceTree = "<group>"; };
+		5266188B21092A8800F12D9D /* cube_basilica_blurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_basilica_blurred.png; sourceTree = "<group>"; };
+		5266188C21092A8800F12D9D /* tex_organic_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_organic_4.jpg; sourceTree = "<group>"; };
+		5266188D21092A8900F12D9D /* tex_abstract_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_abstract_1.jpg; sourceTree = "<group>"; };
+		5266188E21092A8900F12D9D /* tex_bayer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_bayer.png; sourceTree = "<group>"; };
+		5266188F21092A8900F12D9D /* tex_stars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_stars.jpg; sourceTree = "<group>"; };
+		5266189021092A8900F12D9D /* tex_london.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_london.jpg; sourceTree = "<group>"; };
+		5266189221092A8900F12D9D /* tex_organic_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_organic_2.jpg; sourceTree = "<group>"; };
+		5266189321092A8900F12D9D /* tex_rgb_noise_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_rgb_noise_medium.png; sourceTree = "<group>"; };
+		5266189421092A8900F12D9D /* tex_gray_noise_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_gray_noise_small.png; sourceTree = "<group>"; };
+		5266189521092A8900F12D9D /* cube_uffizi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cube_uffizi.jpg; sourceTree = "<group>"; };
+		5266189621092A8900F12D9D /* tex_wood.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_wood.jpg; sourceTree = "<group>"; };
+		5266189721092A8900F12D9D /* tex_nyancat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_nyancat.png; sourceTree = "<group>"; };
+		5266189821092A8900F12D9D /* tex_pebbles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_pebbles.png; sourceTree = "<group>"; };
+		5266189921092A8900F12D9D /* cube_uffizi_blurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_uffizi_blurred.png; sourceTree = "<group>"; };
+		5266189A21092A8900F12D9D /* cube_forest_blurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_forest_blurred.png; sourceTree = "<group>"; };
+		5266189B21092A8900F12D9D /* tex_font_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_font_1.png; sourceTree = "<group>"; };
+		5266189C21092A8A00F12D9D /* tex_abstract_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_abstract_3.jpg; sourceTree = "<group>"; };
+		5266189E21092A8A00F12D9D /* tex_rock_tiles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_rock_tiles.jpg; sourceTree = "<group>"; };
+		5266189F21092A8A00F12D9D /* tex_rusty_metal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_rusty_metal.jpg; sourceTree = "<group>"; };
+		526618A021092A8A00F12D9D /* tex_organic_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_organic_1.jpg; sourceTree = "<group>"; };
+		526618A121092A8A00F12D9D /* tex_rgb_noise_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_rgb_noise_small.png; sourceTree = "<group>"; };
+		526618A221092A8A00F12D9D /* cube_forest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cube_forest.png; sourceTree = "<group>"; };
+		526618A321092A8A00F12D9D /* tex_lichen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_lichen.jpg; sourceTree = "<group>"; };
+		526618A421092A8A00F12D9D /* tex_gray_noise_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_gray_noise_medium.png; sourceTree = "<group>"; };
+		526618A521092A8A00F12D9D /* tex_organic_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_organic_3.jpg; sourceTree = "<group>"; };
 		526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerOutputParser.swift; sourceTree = "<group>"; };
 		526EE320204620C2004451E6 /* PanelKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelKit.h; sourceTree = "<group>"; };
 		526EE322204620C2004451E6 /* UIViewController+Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Popover.swift"; sourceTree = "<group>"; };
@@ -400,6 +454,7 @@
 				526EE31F204620C2004451E6 /* PanelKit */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
+				5266188821092A0800F12D9D /* textures */,
 			);
 			path = MetalToy;
 			sourceTree = "<group>";
@@ -429,6 +484,40 @@
 				5241E9C61F49F0A600107886 /* Metal.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5266188821092A0800F12D9D /* textures */ = {
+			isa = PBXGroup;
+			children = (
+				5266189521092A8900F12D9D /* cube_uffizi.jpg */,
+				5266189921092A8900F12D9D /* cube_uffizi_blurred.png */,
+				5266188921092A8800F12D9D /* cube_basilica.jpg */,
+				5266188B21092A8800F12D9D /* cube_basilica_blurred.png */,
+				526618A221092A8A00F12D9D /* cube_forest.png */,
+				5266189A21092A8900F12D9D /* cube_forest_blurred.png */,
+				5266189E21092A8A00F12D9D /* tex_rock_tiles.jpg */,
+				526618A021092A8A00F12D9D /* tex_organic_1.jpg */,
+				5266189F21092A8A00F12D9D /* tex_rusty_metal.jpg */,
+				5266188F21092A8900F12D9D /* tex_stars.jpg */,
+				5266189021092A8900F12D9D /* tex_london.jpg */,
+				5266189621092A8900F12D9D /* tex_wood.jpg */,
+				526618A321092A8A00F12D9D /* tex_lichen.jpg */,
+				5266188D21092A8900F12D9D /* tex_abstract_1.jpg */,
+				5266188A21092A8800F12D9D /* tex_abstract_2.jpg */,
+				5266189221092A8900F12D9D /* tex_organic_2.jpg */,
+				5266189421092A8900F12D9D /* tex_gray_noise_small.png */,
+				526618A121092A8A00F12D9D /* tex_rgb_noise_small.png */,
+				526618A421092A8A00F12D9D /* tex_gray_noise_medium.png */,
+				5266189721092A8900F12D9D /* tex_nyancat.png */,
+				5266188E21092A8900F12D9D /* tex_bayer.png */,
+				5266189321092A8900F12D9D /* tex_rgb_noise_medium.png */,
+				5266188C21092A8800F12D9D /* tex_organic_4.jpg */,
+				526618A521092A8A00F12D9D /* tex_organic_3.jpg */,
+				5266189821092A8900F12D9D /* tex_pebbles.png */,
+				5266189C21092A8A00F12D9D /* tex_abstract_3.jpg */,
+				5266189B21092A8900F12D9D /* tex_font_1.png */,
+			);
+			path = textures;
 			sourceTree = "<group>";
 		};
 		526EE31F204620C2004451E6 /* PanelKit */ = {
@@ -781,10 +870,14 @@
 			files = (
 				52E7C4811FC7851200087B15 /* LICENSE in Resources */,
 				52E7C45C1FC7851200087B15 /* dracula.min.css in Resources */,
+				526618B421092A8A00F12D9D /* tex_nyancat.png in Resources */,
 				52E7C43E1FC7851200087B15 /* kimbie.dark.min.css in Resources */,
+				526618B221092A8A00F12D9D /* cube_uffizi.jpg in Resources */,
 				52E7C47C1FC7851200087B15 /* agate.min.css in Resources */,
 				52E7C47A1FC7851200087B15 /* grayscale.min.css in Resources */,
 				52E7C4341FC7851200087B15 /* atelier-plateau-light.min.css in Resources */,
+				526618BD21092A8A00F12D9D /* tex_organic_1.jpg in Resources */,
+				526618B521092A8A00F12D9D /* tex_pebbles.png in Resources */,
 				52E7C45E1FC7851200087B15 /* arta.min.css in Resources */,
 				52E7C4381FC7851200087B15 /* tomorrow-night-blue.min.css in Resources */,
 				52E7C43B1FC7851200087B15 /* paraiso-light.min.css in Resources */,
@@ -793,20 +886,31 @@
 				52E7C4541FC7851200087B15 /* obsidian.min.css in Resources */,
 				52E7C4491FC7851200087B15 /* github-gist.min.css in Resources */,
 				52E7C46A1FC7851200087B15 /* atelier-plateau-dark.min.css in Resources */,
+				526618A721092A8A00F12D9D /* tex_abstract_2.jpg in Resources */,
 				5241E9A21F49E55000107886 /* LaunchScreen.storyboard in Resources */,
 				52E7C4401FC7851200087B15 /* far.min.css in Resources */,
 				52E7C43F1FC7851200087B15 /* atelier-heath-light.min.css in Resources */,
 				52E7C4561FC7851200087B15 /* gruvbox-light.min.css in Resources */,
 				52E7C4351FC7851200087B15 /* school-book.min.css in Resources */,
+				526618B021092A8A00F12D9D /* tex_rgb_noise_medium.png in Resources */,
+				526618AC21092A8A00F12D9D /* tex_stars.jpg in Resources */,
 				52E7C4571FC7851200087B15 /* idea.min.css in Resources */,
+				526618AF21092A8A00F12D9D /* tex_organic_2.jpg in Resources */,
+				526618BF21092A8A00F12D9D /* cube_forest.png in Resources */,
 				52E7C4791FC7851200087B15 /* androidstudio.min.css in Resources */,
+				526618C021092A8A00F12D9D /* tex_lichen.jpg in Resources */,
+				526618AD21092A8A00F12D9D /* tex_london.jpg in Resources */,
 				52E7C4651FC7851200087B15 /* docco.min.css in Resources */,
 				52E7C47F1FC7851200087B15 /* atelier-lakeside-light.min.css in Resources */,
+				526618BE21092A8A00F12D9D /* tex_rgb_noise_small.png in Resources */,
 				52E7C43D1FC7851200087B15 /* qtcreator_light.min.css in Resources */,
 				52E7C4361FC7851200087B15 /* xcode.min.css in Resources */,
+				526618AA21092A8A00F12D9D /* tex_abstract_1.jpg in Resources */,
+				526618BC21092A8A00F12D9D /* tex_rusty_metal.jpg in Resources */,
 				52E7C4371FC7851200087B15 /* atelier-sulphurpool-dark.min.css in Resources */,
 				52E7C4671FC7851200087B15 /* ascetic.min.css in Resources */,
 				52E7C4691FC7851200087B15 /* atelier-sulphurpool-light.min.css in Resources */,
+				526618B321092A8A00F12D9D /* tex_wood.jpg in Resources */,
 				52E7C4331FC7851200087B15 /* brown-paper.min.css in Resources */,
 				52E7C45F1FC7851200087B15 /* purebasic.min.css in Resources */,
 				52E7C4801FC7851200087B15 /* monokai-sublime.min.css in Resources */,
@@ -818,23 +922,32 @@
 				52E7C46E1FC7851200087B15 /* solarized-light.min.css in Resources */,
 				52E7C46B1FC7851200087B15 /* darkula.min.css in Resources */,
 				52E7C4781FC7851200087B15 /* zenburn.min.css in Resources */,
+				526618C121092A8A00F12D9D /* tex_gray_noise_medium.png in Resources */,
+				526618B121092A8A00F12D9D /* tex_gray_noise_small.png in Resources */,
 				52E7C4611FC7851200087B15 /* github.min.css in Resources */,
 				5241E99F1F49E55000107886 /* Assets.xcassets in Resources */,
+				526618BB21092A8A00F12D9D /* tex_rock_tiles.jpg in Resources */,
 				52E7C4511FC7851200087B15 /* routeros.min.css in Resources */,
 				52E7C4481FC7851200087B15 /* ocean.min.css in Resources */,
+				526618B721092A8A00F12D9D /* cube_forest_blurred.png in Resources */,
 				52E7C4321FC7851200087B15 /* atelier-seaside-dark.min.css in Resources */,
 				52E7C47D1FC7851200087B15 /* hybrid.min.css in Resources */,
+				526618A621092A8A00F12D9D /* cube_basilica.jpg in Resources */,
 				52E7C4681FC7851200087B15 /* atelier-cave-light.min.css in Resources */,
+				526618AB21092A8A00F12D9D /* tex_bayer.png in Resources */,
 				52E7C4721FC7851200087B15 /* codepen-embed.min.css in Resources */,
 				52E7C4311FC7851200087B15 /* vs.min.css in Resources */,
 				52E7C44D1FC7851200087B15 /* qtcreator_dark.min.css in Resources */,
 				52E7C46C1FC7851200087B15 /* atelier-cave-dark.min.css in Resources */,
+				526618B921092A8A00F12D9D /* tex_abstract_3.jpg in Resources */,
+				526618A921092A8A00F12D9D /* tex_organic_4.jpg in Resources */,
 				52E7C4741FC7851200087B15 /* googlecode.min.css in Resources */,
 				52E7C44F1FC7851200087B15 /* color-brewer.min.css in Resources */,
 				52E7C47B1FC7851200087B15 /* sunburst.min.css in Resources */,
 				52E7C47E1FC7851200087B15 /* darcula.min.css in Resources */,
 				52E7C4531FC7851200087B15 /* tomorrow-night.min.css in Resources */,
 				5241E99D1F49E55000107886 /* Main.storyboard in Resources */,
+				526618B821092A8A00F12D9D /* tex_font_1.png in Resources */,
 				52E7C4501FC7851200087B15 /* pojoaque.min.css in Resources */,
 				52E7C4631FC7851200087B15 /* atom-one-light.min.css in Resources */,
 				52E7C5321FC7851200087B15 /* highlight.min.js in Resources */,
@@ -851,16 +964,19 @@
 				52E7C4661FC7851200087B15 /* default.min.css in Resources */,
 				52E7C4411FC7851200087B15 /* atelier-dune-dark.min.css in Resources */,
 				52E7C4551FC7851200087B15 /* atelier-lakeside-dark.min.css in Resources */,
+				526618C221092A8A00F12D9D /* tex_organic_3.jpg in Resources */,
 				52E7C4731FC7851200087B15 /* atelier-estuary-dark.min.css in Resources */,
 				52E7C4641FC7851200087B15 /* monokai.min.css in Resources */,
 				52E7C4441FC7851200087B15 /* solarized-dark.min.css in Resources */,
 				52E7C4421FC7851200087B15 /* kimbie.light.min.css in Resources */,
 				52E7C4461FC7851200087B15 /* xt256.min.css in Resources */,
 				52E7C45B1FC7851200087B15 /* gruvbox-dark.min.css in Resources */,
+				526618A821092A8A00F12D9D /* cube_basilica_blurred.png in Resources */,
 				52E7C43A1FC7851200087B15 /* atelier-heath-dark.min.css in Resources */,
 				52E7C44A1FC7851200087B15 /* atelier-seaside-light.min.css in Resources */,
 				52E7C44E1FC7851200087B15 /* atelier-savanna-dark.min.css in Resources */,
 				52E7C4451FC7851200087B15 /* atelier-estuary-light.min.css in Resources */,
+				526618B621092A8A00F12D9D /* cube_uffizi_blurred.png in Resources */,
 				52E7C4771FC7851200087B15 /* brown-papersq.png in Resources */,
 				52E7C4591FC7851200087B15 /* atelier-forest-light.min.css in Resources */,
 				52E7C4581FC7851200087B15 /* tomorrow.min.css in Resources */,
