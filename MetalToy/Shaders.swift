@@ -43,6 +43,10 @@ public let DefaultFragmentShader =
     "} Uniforms;\n" +
     "\n" +
     "fragment float4 fragmentShader(FragmentData in [[stage_in]],\n" +
+    "                               texture2d<float> texture0 [[texture(0)]],\n" +
+    "                               texture2d<float> texture1 [[texture(1)]],\n" +
+    "                               texture2d<float> texture2 [[texture(2)]],\n" +
+    "                               texture2d<float> texture3 [[texture(3)]],\n" +
     "                               constant Uniforms& uniforms [[buffer(1)]])\n" +
     "{\n" +
     "    float2 uv = in.fragCoord.xy / uniforms.resolution;\n" +
