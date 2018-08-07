@@ -8,8 +8,10 @@
 
 import UIKit
 
-class TextureSelectorViewController: UIViewController, PanelContentDelegate {
+class TextureSelectorViewController: UIViewController, PanelContentDelegate, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var texSelectorTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -44,5 +46,32 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: Table View
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellTextureUnit", for: indexPath)
+        
+        let row = indexPath.row
+        
+        cell.textLabel?.text = "\(row)"
+        
+        return cell
+    }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let row = indexPath.row
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "TextureListViewController") as! TextureListViewController
+        panelNavigationController?.pushViewController(viewController, animated: true)
+        //navigationController?.pushViewController(viewController, animated: true)
+        
+        print(row)
+    }
 }

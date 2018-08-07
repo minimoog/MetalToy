@@ -224,7 +224,7 @@ extension EditorViewController: PanelManager {
     }
     
     var panels: [PanelViewController] {
-        return [metalViewPanelVC]
+        return [metalViewPanelVC, textureSelectorPanelVC]
     }
     
 }
