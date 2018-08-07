@@ -18,9 +18,12 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     
     var codeViewController: CodeViewController?
     var metalViewController: MetalViewController?
-    
+
     var metalViewPanelContentVC: MetalViewPanelContentController!
     var metalViewPanelVC: PanelViewController!
+    
+    var textureSelectorPanelContentVC: TextureSelectorViewController!
+    var textureSelectorPanelVC: PanelViewController!
     
     public var savedDocumentAction: (() -> ())?
     
@@ -46,9 +49,14 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             }
         }
         
+        //texture selector panel
+        textureSelectorPanelContentVC = storyboard?.instantiateViewController(withIdentifier: "TextureSelectorViewController") as! TextureSelectorViewController
+        textureSelectorPanelVC = PanelViewController(with: textureSelectorPanelContentVC, in: self)
+        
         let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
         let viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
-        navigationItem.rightBarButtonItems = [playBarItem, viewBarItem]
+        let texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
+        navigationItem.rightBarButtonItems = [playBarItem, viewBarItem, texturesBarItem]
         
         docNameTextField = UITextField()
         docNameTextField?.textAlignment = .center
@@ -181,6 +189,13 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             
             metalViewController?.mtkView.isPaused = true
         }
+    }
+    
+    @objc func onTexturesButtonTapped(sender: UIBarButtonItem) {
+        textureSelectorPanelVC.modalPresentationStyle = .popover
+        textureSelectorPanelVC.popoverPresentationController?.barButtonItem = sender
+        
+        present(textureSelectorPanelVC, animated: true, completion: nil)
     }
     
     // MARK: - Navigation
