@@ -12,6 +12,8 @@ class TextureListViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBOutlet weak var textureListTableView: UITableView!
     
+    public var selectedTexture: ((String) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,5 +50,15 @@ class TextureListViewController: UIViewController, UITableViewDelegate, UITableV
         cell.textLabel?.text = "\(row)"
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let selectedTexture = selectedTexture {
+            selectedTexture("\(row)")
+        }
     }
 }

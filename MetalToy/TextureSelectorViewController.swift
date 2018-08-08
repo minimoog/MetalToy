@@ -8,9 +8,15 @@
 
 import UIKit
 
+struct TextureUnit {
+    let filename: String
+}
+
 class TextureSelectorViewController: UIViewController, PanelContentDelegate, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var texSelectorTableView: UITableView!
+    
+    var textureUnits = [TextureUnit](repeating: TextureUnit(filename: "NULL"), count: 4)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +56,7 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
     // MARK: Table View
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return textureUnits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -58,20 +64,32 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         
         let row = indexPath.row
         
-        cell.textLabel?.text = "\(row)"
+        cell.textLabel?.text = textureUnits[row].filename
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        //tableView.deselectRow(at: indexPath, animated: true)
         
         let row = indexPath.row
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "TextureListViewController") as! TextureListViewController
-        panelNavigationController?.pushViewController(viewController, animated: true)
-        //navigationController?.pushViewController(viewController, animated: true)
         
-        print(row)
+        viewController.selectedTexture = {
+            textureName in
+            
+            self.panelNavigationController?.popViewController(animated: true)
+            
+            if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
+                let selectedRow = selectedIndexPath.row
+                
+                self.textureUnits[selectedRow] = TextureUnit(filename: textureName)
+                self.texSelectorTableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+                self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
+            }
+        }
+        
+        panelNavigationController?.pushViewController(viewController, animated: true)
     }
 }
