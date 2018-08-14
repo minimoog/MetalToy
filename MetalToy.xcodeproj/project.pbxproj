@@ -19,7 +19,6 @@
 		5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C81F49F0B000107886 /* MetalKit.framework */; };
 		5241E9CB1F4A234300107886 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9CA1F4A234300107886 /* Shaders.metal */; };
 		524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */; };
-		524B4C33211A54C500CFC6FC /* TextureListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4C32211A54C500CFC6FC /* TextureListViewController.swift */; };
 		525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D82E120168F0B00B16618 /* ShaderDocument.swift */; };
 		525D82E42016A72000B16618 /* ToyCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D82E32016A72000B16618 /* ToyCollectionViewController.swift */; };
 		525D82E62016A9C200B16618 /* ToyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D82E52016A9C200B16618 /* ToyCollectionViewCell.swift */; };
@@ -92,6 +91,8 @@
 		526EE371204620C2004451E6 /* BlockGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE34B204620C2004451E6 /* BlockGestureRecognizer.swift */; };
 		526EE372204620C2004451E6 /* PinnedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE34C204620C2004451E6 /* PinnedPosition.swift */; };
 		526EE373204620C2004451E6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE34D204620C2004451E6 /* Constants.swift */; };
+		526F72D9212387EE0068F574 /* TexturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */; };
+		526F72DB21238A610068F574 /* TextureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526F72DA21238A610068F574 /* TextureCollectionViewCell.swift */; };
 		5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A9981FEC7C49000D2449 /* KUIPopOver.swift */; };
 		5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */; };
 		5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */; };
@@ -220,7 +221,6 @@
 		5241E9C81F49F0B000107886 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		5241E9CA1F4A234300107886 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureSelectorViewController.swift; sourceTree = "<group>"; };
-		524B4C32211A54C500CFC6FC /* TextureListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureListViewController.swift; sourceTree = "<group>"; };
 		525D82E120168F0B00B16618 /* ShaderDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderDocument.swift; sourceTree = "<group>"; };
 		525D82E32016A72000B16618 /* ToyCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyCollectionViewController.swift; sourceTree = "<group>"; };
 		525D82E52016A9C200B16618 /* ToyCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToyCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +294,8 @@
 		526EE34B204620C2004451E6 /* BlockGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGestureRecognizer.swift; sourceTree = "<group>"; };
 		526EE34C204620C2004451E6 /* PinnedPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinnedPosition.swift; sourceTree = "<group>"; };
 		526EE34D204620C2004451E6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexturesCollectionViewController.swift; sourceTree = "<group>"; };
+		526F72DA21238A610068F574 /* TextureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCollectionViewCell.swift; sourceTree = "<group>"; };
 		5272A9981FEC7C49000D2449 /* KUIPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOver.swift; sourceTree = "<group>"; };
 		5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOverUsable.swift; sourceTree = "<group>"; };
 		5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageViewController.swift; sourceTree = "<group>"; };
@@ -447,7 +449,8 @@
 				525D82E52016A9C200B16618 /* ToyCollectionViewCell.swift */,
 				5298BD0F2085396E00593244 /* DocumentManager.swift */,
 				524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */,
-				524B4C32211A54C500CFC6FC /* TextureListViewController.swift */,
+				526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */,
+				526F72DA21238A610068F574 /* TextureCollectionViewCell.swift */,
 				5241E99B1F49E55000107886 /* Main.storyboard */,
 				5241E99E1F49E55000107886 /* Assets.xcassets */,
 				5241E9A01F49E55000107886 /* LaunchScreen.storyboard */,
@@ -1026,6 +1029,7 @@
 				526EE364204620C2004451E6 /* PanelNavigationController.swift in Sources */,
 				526EE36A204620C2004451E6 /* ResizeStart.swift in Sources */,
 				526EE365204620C2004451E6 /* PanelViewController+Appearance.swift in Sources */,
+				526F72D9212387EE0068F574 /* TexturesCollectionViewController.swift in Sources */,
 				526EE36E204620C2004451E6 /* UnpinningMetadata.swift in Sources */,
 				526EE35C204620C2004451E6 /* PanelManager+Expose.swift in Sources */,
 				526EE355204620C2004451E6 /* PanelManager+State.swift in Sources */,
@@ -1059,11 +1063,11 @@
 				526EE368204620C2004451E6 /* PanelState.swift in Sources */,
 				520C76522044CB1100F39EA1 /* EditorViewController.swift in Sources */,
 				5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */,
+				526F72DB21238A610068F574 /* TextureCollectionViewCell.swift in Sources */,
 				526EE34E204620C2004451E6 /* UIViewController+Popover.swift in Sources */,
 				526EE357204620C2004451E6 /* PanelManager.swift in Sources */,
 				526EE34F204620C2004451E6 /* CGRect+Center.swift in Sources */,
 				526EE363204620C2004451E6 /* PanelViewController+Keyboard.swift in Sources */,
-				524B4C33211A54C500CFC6FC /* TextureListViewController.swift in Sources */,
 				525D82E62016A9C200B16618 /* ToyCollectionViewCell.swift in Sources */,
 				526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */,
 				526EE353204620C2004451E6 /* PanelContentDelegate.swift in Sources */,

@@ -74,7 +74,7 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         
         let row = indexPath.row
         
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "TextureListViewController") as! TextureListViewController
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "TexturesCollectionViewController") as! TexturesCollectionViewController
         
         viewController.selectedTexture = {
             textureName in
