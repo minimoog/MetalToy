@@ -13,6 +13,15 @@ private let reuseIdentifier = "TextureCell"
 class TexturesCollectionViewController: UICollectionViewController {
 
     public var selectedTexture: ((String) -> ())?
+    let texturePaths: [String] = {
+        let fm = FileManager.default
+        let path = Bundle.main.resourcePath!
+        
+        let textureFiles = try! fm.contentsOfDirectory(atPath: path)
+        let paths = textureFiles.filter{ $0.hasPrefix("tex_") }.map{ path + "/" + $0 }
+        
+        return paths
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,16 +59,14 @@ class TexturesCollectionViewController: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 5
+        return texturePaths.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! TextureCollectionViewCell
     
-        // Configure the cell
         cell.backgroundColor = .black
-        cell.textureView.image = UIImage()
+        cell.textureView.image = UIImage(contentsOfFile: texturePaths[indexPath.row])
         
         return cell
     }
@@ -72,7 +79,7 @@ class TexturesCollectionViewController: UICollectionViewController {
         collectionView.deselectItem(at: indexPath, animated: true)
         
         if let selectedTexture = selectedTexture {
-            selectedTexture("\(row)")
+            selectedTexture(texturePaths[row])
         }
     }
     

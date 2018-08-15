@@ -10,6 +10,13 @@ import UIKit
 
 struct TextureUnit {
     let filename: String
+    
+    var textureName: String {
+        get {
+            let urlPath = URL(fileURLWithPath: filename)
+            return urlPath.deletingPathExtension().lastPathComponent
+        }
+    }
 }
 
 class TextureSelectorViewController: UIViewController, PanelContentDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -64,7 +71,7 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         
         let row = indexPath.row
         
-        cell.textLabel?.text = textureUnits[row].filename
+        cell.textLabel?.text = textureUnits[row].textureName
         
         return cell
     }
