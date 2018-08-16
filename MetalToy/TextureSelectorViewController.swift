@@ -23,6 +23,8 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
 
     @IBOutlet weak var texSelectorTableView: UITableView!
     
+    public var selectedTextureOnTextureUnit: ((String, Int) -> ())?
+    
     var textureUnits = [TextureUnit](repeating: TextureUnit(filename: "NULL"), count: 4)
     
     override func viewDidLoad() {
@@ -77,23 +79,23 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //tableView.deselectRow(at: indexPath, animated: true)
-        
-        let row = indexPath.row
-        
         let viewController = storyboard?.instantiateViewController(withIdentifier: "TexturesCollectionViewController") as! TexturesCollectionViewController
         
         viewController.selectedTexture = {
-            textureName in
+            filename in
             
             self.panelNavigationController?.popViewController(animated: true)
             
             if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
                 let selectedRow = selectedIndexPath.row
                 
-                self.textureUnits[selectedRow] = TextureUnit(filename: textureName)
+                self.textureUnits[selectedRow] = TextureUnit(filename: filename)
                 self.texSelectorTableView.reloadRows(at: [selectedIndexPath], with: .automatic)
                 self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
+                
+                if let selectedTextureOnTextureUnit = self.selectedTextureOnTextureUnit {
+                    selectedTextureOnTextureUnit(filename, selectedRow)
+                }
             }
         }
         

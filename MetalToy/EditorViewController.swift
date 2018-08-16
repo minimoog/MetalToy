@@ -53,6 +53,13 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         textureSelectorPanelContentVC = storyboard?.instantiateViewController(withIdentifier: "TextureSelectorViewController") as! TextureSelectorViewController
         textureSelectorPanelVC = PanelViewController(with: textureSelectorPanelContentVC, in: self)
         
+        //connect texture selector with metal view
+        textureSelectorPanelContentVC.selectedTextureOnTextureUnit = {
+            filename, index in
+            
+            self.metalViewController?.loadTexture(filename: filename, index: index)
+        }
+        
         let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
         let viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
         let texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))

@@ -46,6 +46,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     var commandQueue: MTLCommandQueue! = nil
     var vertexBuffer: MTLBuffer!
     var uniformBuffer: MTLBuffer!
+    var textures: [MTLTexture?] = [MTLTexture?](repeating: nil, count: 4)
     
     var startTime: Double = 0
     var numFrames = 0
@@ -117,6 +118,13 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         return nil
     }
     
+    func loadTexture(filename: String, index: Int) {
+        print("filename: \(filename) at \(index)")
+        
+        let textureLoader: MTKTextureLoader = MTKTextureLoader(device: device)
+        textures[index] = try? textureLoader.newTexture(URL: URL(fileURLWithPath: filename), options: nil)
+    }
+    
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         viewPortData[0] = Float(size.width)
         viewPortData[1] = Float(size.height)
@@ -153,6 +161,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         renderEncoder?.setRenderPipelineState(pipelineState)
         renderEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
         renderEncoder?.setFragmentBuffer(uniformBuffer, offset: 0, index: 1)
+        renderEncoder?.setFragmentTextures(textures, range: 0 ..< textures.count)
         renderEncoder?.drawPrimitives(type: .triangle, vertexStart: 0, vertexCount: 6, instanceCount: 2)
         renderEncoder?.endEncoding()
         
