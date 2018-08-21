@@ -13,6 +13,8 @@ private let reuseIdentifier = "TextureCell"
 class TexturesCollectionViewController: UICollectionViewController {
 
     public var selectedTexture: ((String) -> ())?
+    public var dismissed: (() -> ())?
+    
     let texturePaths: [String] = {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -35,6 +37,17 @@ class TexturesCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if self.isMovingFromParentViewController {
+            if let dismissed = dismissed {
+                dismissed()
+            }
+        }
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

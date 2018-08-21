@@ -36,7 +36,7 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         
         view.tintColor = UIColor(red: CGFloat(220.0/255.0), green: CGFloat(207.0/255.0), blue: CGFloat(143.0/255.0), alpha: 1.0)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -100,6 +100,12 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
                 if let selectedTextureOnTextureUnit = self.selectedTextureOnTextureUnit {
                     selectedTextureOnTextureUnit(filename, selectedRow)
                 }
+            }
+        }
+        
+        viewController.dismissed = {
+            if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
+                self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
             }
         }
         

@@ -133,7 +133,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GnC-Mu-7yx">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="GnC-Mu-7yx">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -152,6 +152,7 @@
                                         </imageView>
                                     </subviews>
                                 </view>
+                                <color key="backgroundColor" red="0.094117647060000004" green="0.098039215690000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="dpP-qo-iiC" secondAttribute="bottom" id="An9-Ox-zAV"/>
                                     <constraint firstItem="dpP-qo-iiC" firstAttribute="leading" secondItem="YyV-kn-5Kt" secondAttribute="leading" id="NFC-Hh-Kz5"/>
