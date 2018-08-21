@@ -122,9 +122,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             if !self.allowPanelPinning {
                 self.closeAllPinnedPanels()
             }
-            
         }
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
