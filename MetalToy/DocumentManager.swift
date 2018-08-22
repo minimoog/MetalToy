@@ -71,9 +71,9 @@ class DocumentManager {
     }
     
     func namePathComponent(index: Int) -> String {
-        if let namePath = try? String(contentsOf: documents[index].appendingPathComponent(ShaderDocument.SubDocumentType.name.rawValue), encoding: .utf8) {
-            return namePath
-        }
+        //if let namePath = try? String(contentsOf: documents[index].appendingPathComponent(ShaderDocument.SubDocumentType.name.rawValue), encoding: .utf8) {
+        //    return namePath
+        //}
         
         return String()
     }

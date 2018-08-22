@@ -9,32 +9,25 @@
 import UIKit
 
 class ShaderDocument: UIDocument {
-    var shaderText: String? = ""
+    var shaderInfo: ShaderInfo?
     var thumbnail: UIImage?
-    var name: String?
     
     enum SubDocumentType: String {
-        case shader = "shader.txt"
-        case name = "name.txt"
+        case shaderinfo = "shaderinfo.json"
         case thumbnail = "thumbnail.png"
     }
     
     override func contents(forType typeName: String) throws -> Any {
-        if let shaderText = shaderText, let thumbnail = thumbnail {
-            let lenShaderText = shaderText.lengthOfBytes(using: .utf8)
+        if let shaderInfo = shaderInfo, let thumbnail = thumbnail {
+            guard let jsonData = encodeToJsonData(shaderInfo: shaderInfo) else { return Data() }
             
-            let shaderTextFileWrapper = FileWrapper(regularFileWithContents: Data(bytes: shaderText, count: lenShaderText))
+            let shaderInfoFileWrapper = FileWrapper(regularFileWithContents: jsonData)
             
-            let lenNameText = name?.lengthOfBytes(using: .utf8)
-            let nameFileWrapper = FileWrapper(regularFileWithContents: Data(bytes: name!, count: lenNameText!))
+            guard let imageData = UIImagePNGRepresentation(thumbnail) else { return Data() }
+            let thumbnailFileWrapper = FileWrapper(regularFileWithContents: imageData)
             
-            let imageData = UIImagePNGRepresentation(thumbnail)
-            let thumbnailFileWrapper = FileWrapper(regularFileWithContents: imageData!) // ### TODO: Fix '!'
-            
-            let dirWrapper = FileWrapper(directoryWithFileWrappers: [SubDocumentType.shader.rawValue:       shaderTextFileWrapper,
-                                                                     SubDocumentType.name.rawValue:         nameFileWrapper,
-                                                                     SubDocumentType.thumbnail.rawValue:    thumbnailFileWrapper])
-            
+            let dirWrapper = FileWrapper(directoryWithFileWrappers: [SubDocumentType.shaderinfo.rawValue: shaderInfoFileWrapper,
+                                                                     SubDocumentType.thumbnail.rawValue: thumbnailFileWrapper])
             return dirWrapper
         } else {
             return Data()
@@ -45,15 +38,12 @@ class ShaderDocument: UIDocument {
         if let userContents = contents as? FileWrapper {
             if userContents.isDirectory {
                 if  let dirWrapper = userContents.fileWrappers,
-                    let shaderTextFileWrapper = dirWrapper[SubDocumentType.shader.rawValue],
+                    let shaderInfoFileWrapper = dirWrapper[SubDocumentType.shaderinfo.rawValue],
                     let thumbnailFileWrapper = dirWrapper[SubDocumentType.thumbnail.rawValue],
-                    let nameFileWrapper = dirWrapper[SubDocumentType.name.rawValue],
-                    let shaderTextData = shaderTextFileWrapper.regularFileContents,
-                    let imageData = thumbnailFileWrapper.regularFileContents,
-                    let nameData = nameFileWrapper.regularFileContents {
-                        shaderText = String(data: shaderTextData, encoding: .utf8)
+                    let shaderInfoData = shaderInfoFileWrapper.regularFileContents,
+                    let imageData = thumbnailFileWrapper.regularFileContents {
+                        shaderInfo = decodeFromJsonData(data: shaderInfoData)
                         thumbnail = UIImage(data: imageData)
-                        name = String(data: nameData, encoding: .utf8)
                 }
             }
         }

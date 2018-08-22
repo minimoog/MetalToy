@@ -88,14 +88,14 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             let documentName = RFC3339DateFormatter.string(from: Date())
             
             docNameTextField?.text = documentName
-            document?.name = documentName
+            document?.shaderInfo?.name = documentName
         } else {
             document = ShaderDocument(fileURL: documentURL!)
             
             document!.open { valid in
                 if valid {
-                    self.codeViewController?.codeView?.text = self.document!.shaderText!
-                    self.docNameTextField?.text = self.document?.name
+                    self.codeViewController?.codeView?.text = self.document!.shaderInfo?.fragment
+                    self.docNameTextField?.text = self.document?.shaderInfo?.name
                 } else {
                     print("Erorr loading document")
                 }
@@ -137,8 +137,9 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        guard let text = codeViewController?.codeView?.text else { return }
         
-        document!.shaderText = codeViewController?.codeView?.text!
+        document!.shaderInfo?.fragment = text
         
         document!.save(to: document!.fileURL, for: .forOverwriting) { success in
             if success {
@@ -169,7 +170,9 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        document?.name = textField.text
+        if let text = textField.text {
+            document?.shaderInfo?.name = text
+        }
     }
     
     @objc func onViewButtonTapped(sender: UIBarButtonItem) {

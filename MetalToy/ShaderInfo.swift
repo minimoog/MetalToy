@@ -9,25 +9,39 @@
 import Foundation
 
 public struct ShaderInfo: Codable {
-    let name: String
-    let fragment: String
-    let textures: [String]
+    var name: String
+    var fragment: String
+    var textures: [String]
 }
 
-public func encodeToJson(shaderInfo: ShaderInfo) -> String? {
+public func encodeToJsonString(shaderInfo: ShaderInfo) -> String? {
+    guard let data = encodeToJsonData(shaderInfo: shaderInfo) else { return nil }
+    
+    return String(data: data, encoding: .utf8)
+}
+
+public func encodeToJsonData(shaderInfo: ShaderInfo) -> Data? {
     let encoder = JSONEncoder()
     encoder.outputFormatting = .prettyPrinted
     
     guard let data = try? encoder.encode(shaderInfo) else { return nil }
     
-    return String(data: data, encoding: .utf8)
+    return data
 }
 
-public func decodeFromJson(json: String) -> ShaderInfo? {
+public func decodeFromJsonData(data: Data) -> ShaderInfo? {
+    let decoder = JSONDecoder()
+    
+    guard let shaderInfo = try? decoder.decode(ShaderInfo.self, from: data) else { return nil }
+    
+    return shaderInfo
+}
+
+public func decodeFromJsonFile(json: String) -> ShaderInfo? {
     let decoder = JSONDecoder()
     
     guard let data = json.data(using: .utf8) else { return nil }
-    guard let shaderInfo = try? decoder.decode(ShaderInfo.self, from: data) else { return nil}
+    guard let shaderInfo = try? decoder.decode(ShaderInfo.self, from: data) else { return nil }
     
     return shaderInfo
 }
