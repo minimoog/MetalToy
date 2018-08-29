@@ -15,6 +15,8 @@ class ShaderDocument: UIDocument {
     enum SubDocumentType: String {
         case shaderinfo = "shaderinfo.json"
         case thumbnail = "thumbnail.png"
+        case shader = "shader.txt"  //old format
+        case name = "name.txt"      //old format
     }
     
     override func contents(forType typeName: String) throws -> Any {
@@ -44,6 +46,26 @@ class ShaderDocument: UIDocument {
                     let imageData = thumbnailFileWrapper.regularFileContents {
                         shaderInfo = decodeFromJsonData(data: shaderInfoData)
                         thumbnail = UIImage(data: imageData)
+                } else {
+                    // read from old format
+                    if let dirWrapper = userContents.fileWrappers,
+                        let shaderTextFileWrapper = dirWrapper[SubDocumentType.shader.rawValue],
+                        let nameFileWrapper = dirWrapper[SubDocumentType.name.rawValue],
+                        let shaderTextData = shaderTextFileWrapper.regularFileContents,
+                        let thumbnailFileWrapper = dirWrapper[SubDocumentType.thumbnail.rawValue],
+                        let imageData = thumbnailFileWrapper.regularFileContents,
+                        let nameData = nameFileWrapper.regularFileContents {
+                        
+                        shaderInfo = ShaderInfo(name: String(data: nameData, encoding: .utf8)!,
+                                                             fragment: String(data: shaderTextData, encoding: .utf8)!,
+                                                             textures: [String]())
+                        
+                        //remove old data
+                        userContents.removeFileWrapper(nameFileWrapper)
+                        userContents.removeFileWrapper(shaderTextFileWrapper)
+                        
+                        thumbnail = UIImage(data: imageData)
+                    }
                 }
             }
         }
