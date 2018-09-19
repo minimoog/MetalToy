@@ -36,6 +36,10 @@ class MetalViewPanelContentController: UIViewController, PanelContentDelegate {
         }
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     // MARK: PanelContentDelegate
     
     var preferredPanelContentSize: CGSize {

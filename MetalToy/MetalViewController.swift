@@ -79,6 +79,10 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         commandQueue = device.makeCommandQueue()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     func setRenderPipeline(fragmentShader: String) {
         do {
             if let pipelineStateDescriptor = loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: fragmentShader) {

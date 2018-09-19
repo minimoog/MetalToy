@@ -90,6 +90,10 @@ class CodeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent // .default
+    }
+    
     func linePosition(inString: String, lastOccurence: Int) -> String.Index? {
         let splitted = inString.split(separator: "\n", maxSplits: Int.max, omittingEmptySubsequences: false)
         

@@ -10,6 +10,12 @@ import UIKit
 
 private let reuseIdentifier = "ToyCell"
 
+extension UINavigationController {
+    open override var preferredStatusBarStyle: UIStatusBarStyle {
+        return topViewController?.preferredStatusBarStyle ?? .default
+    }
+}
+
 class ToyCollectionViewController: UICollectionViewController {
     var selectionMode: Bool = false
     var documentManager: DocumentManager = DocumentManager()
@@ -24,6 +30,8 @@ class ToyCollectionViewController: UICollectionViewController {
         
         restoreDefaultRightButtonsAndState()
         
+        setNeedsStatusBarAppearanceUpdate();
+        
         let backButton = UIBarButtonItem(title: "Save", style: .done, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButton
         
@@ -34,6 +42,10 @@ class ToyCollectionViewController: UICollectionViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     func restoreDefaultRightButtonsAndState() {

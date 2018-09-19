@@ -32,7 +32,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         
-        metalViewPanelContentVC = storyboard?.instantiateViewController(withIdentifier: "MetalViewPanelContentController") as! MetalViewPanelContentController
+        metalViewPanelContentVC = (storyboard?.instantiateViewController(withIdentifier: "MetalViewPanelContentController") as! MetalViewPanelContentController)
         metalViewPanelVC = PanelViewController(with: metalViewPanelContentVC, in: self)
         
         metalViewController = metalViewPanelContentVC.metalViewController
@@ -50,7 +50,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         }
         
         //texture selector panel
-        textureSelectorPanelContentVC = storyboard?.instantiateViewController(withIdentifier: "TextureSelectorViewController") as! TextureSelectorViewController
+        textureSelectorPanelContentVC = (storyboard?.instantiateViewController(withIdentifier: "TextureSelectorViewController") as! TextureSelectorViewController)
         textureSelectorPanelVC = PanelViewController(with: textureSelectorPanelContentVC, in: self)
         
         //connect texture selector with metal view
@@ -162,6 +162,10 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         }
         
         super.viewDidDisappear(animated)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: UITextDelegate
