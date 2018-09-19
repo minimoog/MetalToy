@@ -77,6 +77,12 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         setRenderPipeline(fragmentShader: DefaultFragmentShader)
         
         commandQueue = device.makeCommandQueue()
+        
+        //load placeholder test textures so that shader don't throw errors
+        let textureLoader: MTKTextureLoader = MTKTextureLoader(device: device)
+        for index in 0 ..< textures.count {
+            textures[index] = try? textureLoader.newTexture(name: "placeholder", scaleFactor: view.contentScaleFactor, bundle: nil, options: nil)
+        }
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
