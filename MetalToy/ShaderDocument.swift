@@ -19,6 +19,17 @@ class ShaderDocument: UIDocument {
         case name = "name.txt"      //old format
     }
     
+    override init(fileURL url: URL) {
+        super.init(fileURL: url)
+    }
+    
+    init() {
+        let tempDir = FileManager.default.temporaryDirectory
+        let url = tempDir.appendingPathComponent("MyShader.shader")
+        
+        super.init(fileURL: url)
+    }
+    
     override func contents(forType typeName: String) throws -> Any {
         if let shaderInfo = shaderInfo, let thumbnail = thumbnail {
             guard let jsonData = encodeToJsonData(shaderInfo: shaderInfo) else { return Data() }
