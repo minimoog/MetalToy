@@ -34,6 +34,15 @@ class DocumentManager {
     
         do {
             documents = try FileManager.default.contentsOfDirectory(at: localDir, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
+            
+            let realDoc = documents.map {
+                return $0.absoluteString
+                }.map {
+                return URL(string: $0)!
+            }
+            
+            documents = realDoc
+            
         } catch {
             print(error)
         }
@@ -71,11 +80,33 @@ class DocumentManager {
     }
     
     func namePathComponent(index: Int) -> String {
-        //if let namePath = try? String(contentsOf: documents[index].appendingPathComponent(ShaderDocument.SubDocumentType.name.rawValue), encoding: .utf8) {
-        //    return namePath
-        //}
+        let shaderDocument = ShaderDocument(fileURL: documents[index])
+        var name = String()
         
-        return String()
+        //sequantily at this moment
+        let openSemaphore = DispatchSemaphore(value: 0)
+        var openingSuccess = false
+        
+        shaderDocument.open { success in
+            openSemaphore.signal()
+            openingSuccess = success
+            
+            print("fak dis shit")
+        }
+        
+        let closeSemaphore = DispatchSemaphore(value: 0)
+        
+        shaderDocument.close { (_) in
+            closeSemaphore.signal()
+            name = shaderDocument.shaderInfo?.name ?? String()
+        }
+        
+        openSemaphore.wait()
+        closeSemaphore.wait()
+        
+        guard openingSuccess else { return String() }
+        
+        return name
     }
     
     func imagePathComponent(index: Int) -> String {

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="biB-xu-aqt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5kM-7O-Odp">
     <device id="ipad10_5" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luS-ci-BrN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1998" y="533"/>
+            <point key="canvasLocation" x="643" y="727"/>
         </scene>
         <!--Metal View Panel Content Controller-->
         <scene sceneID="DKj-SP-bV2">
@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1h0-Xs-5B3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="681" y="533"/>
+            <point key="canvasLocation" x="-512" y="719"/>
         </scene>
         <!--Texture Selector View Controller-->
         <scene sceneID="5AP-US-YQu">
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6u-Yt-X6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697.66187050359713" y="1507.9136690647483"/>
+            <point key="canvasLocation" x="-512" y="1501"/>
         </scene>
         <!--Textures Collection View Controller-->
         <scene sceneID="TIl-aT-xLa">
@@ -172,7 +172,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15Z-dx-n3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="697" y="2549"/>
+            <point key="canvasLocation" x="-512" y="2254"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -187,59 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-623" y="720"/>
-        </scene>
-        <!--Shader Editor-->
-        <scene sceneID="c9i-qS-haR">
-            <objects>
-                <collectionViewController id="4Sz-e6-c11" customClass="ToyCollectionViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="3vB-rn-YpW">
-                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.094117647060000004" green="0.098039215690000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="aq9-f2-kXy">
-                            <size key="itemSize" width="140" height="180"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ToyCell" id="Rbr-dh-ycY" customClass="ToyCollectionViewCell" customModule="MetalToy" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="140" height="180"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gb1-P2-feH">
-                                            <rect key="frame" x="20" y="20" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="yyyy-MM-dd'T'HH:mm:ss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1O-ai-isn">
-                                            <rect key="frame" x="20" y="140" width="100" height="20"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <color key="textColor" red="0.90588235289999997" green="0.90196078430000004" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <connections>
-                                    <outlet property="thumbnailImageView" destination="gb1-P2-feH" id="ax9-UV-PIU"/>
-                                    <outlet property="toyNameLabel" destination="x1O-ai-isn" id="4JC-Je-a47"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="4Sz-e6-c11" id="SMD-0U-ZvF"/>
-                            <outlet property="delegate" destination="4Sz-e6-c11" id="Zn2-vv-Bai"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" title="Shader Editor" id="aAF-WB-2vs"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fqz-kP-RcF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-623" y="-238"/>
+            <point key="canvasLocation" x="-1232" y="719"/>
         </scene>
         <!--Editor View Controller-->
         <scene sceneID="cRc-dp-Ctw">
@@ -298,28 +246,20 @@
             </objects>
             <point key="canvasLocation" x="-1923" y="720"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hfv-fg-kM5">
+        <!--Shader Document Browser View Controller-->
+        <scene sceneID="XNb-le-vGM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="biB-xu-aqt" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gaj-aa-mos">
-                        <rect key="frame" x="0.0" y="20" width="1112" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.86274509799999999" green="0.81176470590000005" blue="0.56078431370000004" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.094117647060000004" green="0.098039215690000001" blue="0.078431372550000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.86274509803921573" green="0.81176470588235294" blue="0.5607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="4Sz-e6-c11" kind="relationship" relationship="rootViewController" id="LKV-VX-UMy"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6pX-RR-8Px" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="5kM-7O-Odp" customClass="ShaderDocumentBrowserViewController" customModule="MetalToy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="C2D-e1-4qz">
+                        <rect key="frame" x="0.0" y="0.0" width="1112" height="834"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="59F-Ms-CRF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U6K-ZK-rMc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1888" y="-238"/>
+            <point key="canvasLocation" x="-1923" y="6"/>
         </scene>
     </scenes>
 </document>
