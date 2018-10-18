@@ -10,7 +10,6 @@ import UIKit
 
 class EditorViewController: UIViewController, UITextFieldDelegate {
     var docNameTextField: UITextField?
-    var documentURL: URL?
     var document: ShaderDocument?
     
     @IBOutlet weak var contentWrapperView: UIView!
@@ -73,34 +72,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         docNameTextField?.textColor = navigationController?.navigationBar.titleTextAttributes![NSAttributedStringKey.foregroundColor] as? UIColor
         
         navigationItem.titleView = docNameTextField
-        
-        if documentURL == nil {    //new document
-            //Shader documents has uuid filename
-            //the name of the document is stored inside the document
-            
-            document = ShaderDocument(fileURL: localDocumentDir().appendingPathComponent(UUID().uuidString))
-            
-            let RFC3339DateFormatter = DateFormatter()
-            RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
-            RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
-            RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
-            
-            let documentName = RFC3339DateFormatter.string(from: Date())
-            
-            docNameTextField?.text = documentName
-            document?.shaderInfo?.name = documentName
-        } else {
-            document = ShaderDocument(fileURL: documentURL!)
-            
-            document!.open { valid in
-                if valid {
-                    self.codeViewController?.codeView?.text = self.document!.shaderInfo?.fragment
-                    self.docNameTextField?.text = self.document?.shaderInfo?.name
-                } else {
-                    print("Erorr loading document")
-                }
-            }
-        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -133,14 +104,33 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        guard let doc = document else { fatalError("document is null") }
+        
+        codeViewController?.codeView?.text = doc.shaderInfo?.fragment
+        docNameTextField?.text = doc.shaderInfo?.name
     }
     
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
         guard let text = codeViewController?.codeView?.text else { return }
+        guard let doc = document else { fatalError("document is null") }
         
-        document!.shaderInfo?.fragment = text
+        doc.shaderInfo?.fragment = text
         
+        doc.close { [weak self] (success) in
+            guard success else { fatalError("failed closing the document") }
+            
+            if let savedDocumentAction = self?.savedDocumentAction {
+                savedDocumentAction()
+            }
+            
+            print("Success closing the document")
+        }
+        
+        /*
         document!.save(to: document!.fileURL, for: .forOverwriting) { success in
             if success {
                 print("Success")
@@ -160,8 +150,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
                 print("Failed storing")
             }
         }
-        
-        super.viewDidDisappear(animated)
+        */
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -170,12 +159,10 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: UITextDelegate
     func textFieldDidEndEditing(_ textField: UITextField) {
-        guard document != nil else {
-            return
-        }
+        guard let doc = document else { return }
         
         if let text = textField.text {
-            document?.shaderInfo?.name = text
+            doc.shaderInfo?.name = text
         }
     }
     

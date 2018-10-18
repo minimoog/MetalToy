@@ -95,11 +95,15 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         //load editor view
         editorViewController.loadViewIfNeeded()
         
-        //let doc = ShaderDocument(fileURL: url)    // load the doc first then present the controller?
+        let doc = ShaderDocument(fileURL: url)
         
-        editorViewController.documentURL = url
-        
-        present(editorViewController, animated: true, completion: nil)
+        doc.open { [weak self] (success) in
+            guard success else {
+                fatalError("Unable to open shader file")
+            }
+            
+            self?.present(editorViewController, animated: true, completion: nil)
+        }
     }
     
     /*
