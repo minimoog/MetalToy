@@ -97,6 +97,8 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         
         let doc = ShaderDocument(fileURL: url)
         
+        editorViewController.document = doc
+        
         doc.open { [weak self] (success) in
             guard success else {
                 fatalError("Unable to open shader file")
