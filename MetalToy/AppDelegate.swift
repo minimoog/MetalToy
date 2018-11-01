@@ -13,7 +13,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        guard let shaderDocumentBrowserViewController = window?.rootViewController as? ShaderDocumentBrowserViewController else {
+            fatalError("ShaderDocumentBrowserViewController not root viewcontroller")
+        }
+        
+        shaderDocumentBrowserViewController.revealDocument(at: url, importIfNeeded: true) {
+            (revealedDocumentUrl, error) in
+            
+            guard error == nil else {
+                print("Failed to reveal document \(String(describing: revealedDocumentUrl))")
+                
+                return
+            }
+            
+            guard let url = revealedDocumentUrl else {
+                print("no url")
+                
+                return
+            }
+            
+            // Here we can do something with the document
+            
+            //present the document
+            shaderDocumentBrowserViewController.presentDocument(at: url)
+        }
+        
+        return true
+    }
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
