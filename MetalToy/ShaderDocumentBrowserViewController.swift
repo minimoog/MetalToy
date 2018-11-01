@@ -35,20 +35,20 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
                 importHandler(nil, .none)
                 return
             }
-        }
-        
-        // close document
-        
-        doc.close(completionHandler: { (closeSuccess) in
-            guard closeSuccess else {
-                print("Cannot create/close new document")
-                
-                importHandler(nil, .none)
-                return
-            }
             
-            importHandler(url, .move)
-        })
+            // close document
+            
+            doc.close(completionHandler: { (closeSuccess) in
+                guard closeSuccess else {
+                    print("Cannot create/close new document")
+                    
+                    importHandler(nil, .none)
+                    return
+                }
+                
+                importHandler(url, .move)
+            })
+        }
     }
 
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didImportDocumentAt sourceURL: URL, toDestinationURL destinationURL: URL) {
