@@ -95,7 +95,6 @@
 		5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */; };
 		5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */; };
 		527B1F18212E189A003494BF /* ShaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B1F17212E189A003494BF /* ShaderInfo.swift */; };
-		5298BD102085396E00593244 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5298BD0F2085396E00593244 /* DocumentManager.swift */; };
 		52997B4E2176A27000E4983B /* ShaderDocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52997B4D2176A27000E4983B /* ShaderDocumentBrowserViewController.swift */; };
 		52E7C42B1FC7851200087B15 /* CodeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C31F1FC7851100087B15 /* CodeAttributedString.swift */; };
 		52E7C42C1FC7851200087B15 /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E7C3201FC7851100087B15 /* Highlightr.swift */; };
@@ -298,7 +297,6 @@
 		5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOverUsable.swift; sourceTree = "<group>"; };
 		5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageViewController.swift; sourceTree = "<group>"; };
 		527B1F17212E189A003494BF /* ShaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderInfo.swift; sourceTree = "<group>"; };
-		5298BD0F2085396E00593244 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		52997B4D2176A27000E4983B /* ShaderDocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderDocumentBrowserViewController.swift; sourceTree = "<group>"; };
 		52E7C31F1FC7851100087B15 /* CodeAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeAttributedString.swift; sourceTree = "<group>"; };
 		52E7C3201FC7851100087B15 /* Highlightr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
@@ -446,7 +444,6 @@
 				525F0C061F79BA0900FADC46 /* MetalViewController.swift */,
 				525D82E120168F0B00B16618 /* ShaderDocument.swift */,
 				527B1F17212E189A003494BF /* ShaderInfo.swift */,
-				5298BD0F2085396E00593244 /* DocumentManager.swift */,
 				52997B4D2176A27000E4983B /* ShaderDocumentBrowserViewController.swift */,
 				524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */,
 				526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */,
@@ -1056,7 +1053,6 @@
 				524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */,
 				526EE373204620C2004451E6 /* Constants.swift in Sources */,
 				526EE372204620C2004451E6 /* PinnedPosition.swift in Sources */,
-				5298BD102085396E00593244 /* DocumentManager.swift in Sources */,
 				526EE366204620C2004451E6 /* PanelViewController+Dragging.swift in Sources */,
 				526EE35E204620C2004451E6 /* CornerHandleView.swift in Sources */,
 				525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */,
