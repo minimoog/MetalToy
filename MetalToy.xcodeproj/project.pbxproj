@@ -440,6 +440,7 @@
 			isa = PBXGroup;
 			children = (
 				5241E9971F49E55000107886 /* AppDelegate.swift */,
+				52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */,
 				520C76512044CB1100F39EA1 /* EditorViewController.swift */,
 				5241E9991F49E55000107886 /* CodeViewController.swift */,
 				52607BE92048B5D30014130F /* МetalViewPanelContentController.swift */,
@@ -459,7 +460,6 @@
 				526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */,
 				5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */,
 				52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */,
-				52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */,
 				526EE31F204620C2004451E6 /* PanelKit */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,

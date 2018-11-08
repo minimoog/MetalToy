@@ -10,7 +10,8 @@ import UIKit
 
 let GutterWidth: CGFloat = 22.0
 
-class CodeViewController: UIViewController {
+class CodeViewController: UIViewController, UITextViewDelegate {
+    var document: ShaderDocument?
     
     var codeView: UITextView?
     let textStorage = CodeAttributedString()
@@ -47,6 +48,9 @@ class CodeViewController: UIViewController {
         codeView?.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         codeView?.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         
+        //codeView delegate
+        codeView?.delegate = self
+        
         bottomConstraint = view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: codeView!.bottomAnchor)
         bottomConstraint?.isActive = true
        
@@ -57,6 +61,26 @@ class CodeViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let doc = document else { fatalError("document is null") }
+        
+        codeView?.text = doc.shaderInfo?.fragment
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        guard let doc = document else { fatalError("document is null") }
+        
+        doc.close { [weak self] (success) in
+            guard success else { fatalError("failed closing the document") }
+            
+            print("Success closing the document")
+        }
     }
     
     @objc func keyboardWasShown(notification: NSNotification) {
@@ -93,6 +117,24 @@ class CodeViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent // .default
     }
+    
+    // MARK: - UITextViewDelegate
+    
+    func textViewDidChange(_ textView: UITextView) {
+        guard let doc = document else { fatalError("No document set") }
+        
+        doc.shaderInfo?.fragment = textView.text
+        doc.updateChangeCount(.done)
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        guard let doc = document else { fatalError("No document set") }
+        
+        doc.shaderInfo?.fragment = textView.text
+        doc.updateChangeCount(.done)
+    }
+    
+    // MARK: private functions
     
     func linePosition(inString: String, lastOccurence: Int) -> String.Index? {
         let splitted = inString.split(separator: "\n", maxSplits: Int.max, omittingEmptySubsequences: false)

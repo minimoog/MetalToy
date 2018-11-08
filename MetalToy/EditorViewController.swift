@@ -65,6 +65,12 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         navigationItem.leftBarButtonItems = [backButton]
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        codeViewController?.document = document
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -85,51 +91,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
                 self.closeAllPinnedPanels()
             }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        guard let doc = document else { fatalError("document is null") }
-        
-        codeViewController?.codeView?.text = doc.shaderInfo?.fragment
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        guard let text = codeViewController?.codeView?.text else { return }
-        guard let doc = document else { fatalError("document is null") }
-        
-        doc.shaderInfo?.fragment = text
-        
-        doc.close { [weak self] (success) in
-            guard success else { fatalError("failed closing the document") }
-            
-            print("Success closing the document")
-        }
-        
-        /*
-        document!.save(to: document!.fileURL, for: .forOverwriting) { success in
-            if success {
-                print("Success")
-                
-                if let savedDocumentAction = self.savedDocumentAction {
-                    
-                    self.document?.close { success in
-                        if success {
-                            savedDocumentAction()
-                        } else {
-                            print("Failed closing document")
-                        }
-                    }
-                }
-                
-            } else {
-                print("Failed storing")
-            }
-        }
-        */
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
