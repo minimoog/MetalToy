@@ -182,6 +182,7 @@
 		52E7C4801FC7851200087B15 /* monokai-sublime.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3761FC7851200087B15 /* monokai-sublime.min.css */; };
 		52E7C4811FC7851200087B15 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3781FC7851200087B15 /* LICENSE */; };
 		52E7C5321FC7851200087B15 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C42A1FC7851200087B15 /* highlight.min.js */; };
+		52FF7416219251ED0056FFC4 /* EditorNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,6 +385,7 @@
 		52E7C3761FC7851200087B15 /* monokai-sublime.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "monokai-sublime.min.css"; sourceTree = "<group>"; };
 		52E7C3781FC7851200087B15 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		52E7C42A1FC7851200087B15 /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
+		52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +459,7 @@
 				526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */,
 				5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */,
 				52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */,
+				52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */,
 				526EE31F204620C2004451E6 /* PanelKit */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
@@ -1014,6 +1017,7 @@
 				526EE36B204620C2004451E6 /* LogLevel.swift in Sources */,
 				5241E9CB1F4A234300107886 /* Shaders.metal in Sources */,
 				52997B4E2176A27000E4983B /* ShaderDocumentBrowserViewController.swift in Sources */,
+				52FF7416219251ED0056FFC4 /* EditorNavigationController.swift in Sources */,
 				52619EB51FF1BDAD00490EF9 /* CompilerMessageButton.swift in Sources */,
 				526EE36D204620C2004451E6 /* PanelPinSide.swift in Sources */,
 				52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */,

@@ -19,6 +19,8 @@ class ShaderDocument: UIDocument {
         let tempDir = FileManager.default.temporaryDirectory
         let url = tempDir.appendingPathComponent("MyShader.shader")
         
+        shaderInfo = ShaderInfo()
+        
         super.init(fileURL: url)
     }
     
