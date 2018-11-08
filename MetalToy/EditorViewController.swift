@@ -9,7 +9,6 @@
 import UIKit
 
 class EditorViewController: UIViewController, UITextFieldDelegate {
-    var docNameTextField: UITextField?
     var document: ShaderDocument?
     
     @IBOutlet weak var contentWrapperView: UIView!
@@ -23,8 +22,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     
     var textureSelectorPanelContentVC: TextureSelectorViewController!
     var textureSelectorPanelVC: PanelViewController!
-    
-    public var savedDocumentAction: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,14 +61,8 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         let texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
         navigationItem.rightBarButtonItems = [playBarItem, viewBarItem, texturesBarItem]
         
-        docNameTextField = UITextField()
-        docNameTextField?.textAlignment = .center
-        docNameTextField?.autoresizingMask = .flexibleWidth
-        docNameTextField?.frame = CGRect(x: 0, y: 0, width: 400, height: 30)
-        docNameTextField?.delegate = self
-        docNameTextField?.textColor = navigationController?.navigationBar.titleTextAttributes![NSAttributedStringKey.foregroundColor] as? UIColor
-        
-        navigationItem.titleView = docNameTextField
+        let backButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.onSaveButtonTapped)) // ### TODO: Implement action
+        navigationItem.leftBarButtonItems = [backButton]
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,20 +87,12 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        let imageToSave = metalViewController?.snapshot(size: CGSize(width: 100, height: 100))
-        document!.thumbnail = imageToSave
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         guard let doc = document else { fatalError("document is null") }
         
         codeViewController?.codeView?.text = doc.shaderInfo?.fragment
-        docNameTextField?.text = doc.shaderInfo?.name
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -122,10 +105,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         
         doc.close { [weak self] (success) in
             guard success else { fatalError("failed closing the document") }
-            
-            if let savedDocumentAction = self?.savedDocumentAction {
-                savedDocumentAction()
-            }
             
             print("Success closing the document")
         }
@@ -157,15 +136,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         return .lightContent
     }
     
-    // MARK: UITextDelegate
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let doc = document else { return }
-        
-        if let text = textField.text {
-            doc.shaderInfo?.name = text
-        }
-    }
-    
     @objc func onViewButtonTapped(sender: UIBarButtonItem) {
         metalViewPanelVC.modalPresentationStyle = .popover
         metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
@@ -195,6 +165,10 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         textureSelectorPanelVC.popoverPresentationController?.barButtonItem = sender
         
         present(textureSelectorPanelVC, animated: true, completion: nil)
+    }
+    
+    @objc func onSaveButtonTapped(sender: UIBarButtonItem) {
+            dismiss(animated: true, completion: nil)        // this is top view controller so no problem here
     }
     
     // MARK: - Navigation
