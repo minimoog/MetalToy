@@ -86,25 +86,25 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
     func presentDocument(at url: URL) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         
-        let tempController = storyBoard.instantiateViewController(withIdentifier: "EditorViewController")
+        let tempController = storyBoard.instantiateViewController(withIdentifier: "EditorNavigationController")
         
-        guard let editorViewController = tempController as? EditorViewController else {
-            fatalError("cannot cast to editorViewController")
+        guard let editorNavigationController = tempController as? EditorNavigationController else {
+            fatalError("cannot cast to EditorViewController")
         }
         
         //load editor view
-        editorViewController.loadViewIfNeeded()
+        editorNavigationController.loadViewIfNeeded()
         
         let doc = ShaderDocument(fileURL: url)
         
-        editorViewController.document = doc
+        editorNavigationController.document = doc
         
         doc.open { [weak self] (success) in
             guard success else {
                 fatalError("Unable to open shader file")
             }
             
-            self?.present(editorViewController, animated: true, completion: nil)
+            self?.present(editorNavigationController, animated: true, completion: nil)
         }
     }
     
