@@ -10,7 +10,7 @@ import Foundation
 
 public struct ShaderInfo: Codable {
     var fragment: String = DefaultFragmentShader
-    var textures: [String] = [String]()
+    var textures: [String] = [String](repeating: "NULL", count: 4)
 }
 
 public func encodeToJsonString(shaderInfo: ShaderInfo) -> String? {

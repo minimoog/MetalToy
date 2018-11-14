@@ -47,6 +47,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         
         //texture selector panel
         textureSelectorPanelContentVC = (storyboard?.instantiateViewController(withIdentifier: "TextureSelectorViewController") as! TextureSelectorViewController)
+    
         textureSelectorPanelVC = PanelViewController(with: textureSelectorPanelContentVC, in: self)
         
         //connect texture selector with metal view
@@ -54,6 +55,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             filename, index in
             
             self.metalViewController?.loadTexture(filename: filename, index: index)
+            self.codeViewController?.setTexture(filename: filename, index: index)
         }
         
         let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
@@ -69,6 +71,15 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         
         codeViewController?.document = document
+        
+        //needs rework
+        if let textures = codeViewController?.getTextures() {
+            for (i, texture) in textures.enumerated() {
+                let textureUnit = TextureUnit(filename: texture)
+                
+                self.textureSelectorPanelContentVC.textureUnits[i] = textureUnit
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {

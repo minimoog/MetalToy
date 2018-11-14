@@ -118,6 +118,19 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         return .lightContent // .default
     }
     
+    func setTexture(filename: String, index: Int) {
+        guard let doc = document else { fatalError("No document set") }
+        
+        doc.shaderInfo?.textures[index] = filename
+        doc.updateChangeCount(.done)
+    }
+    
+    func getTextures() -> [String] {
+        guard let doc = document else { fatalError("No document set") }
+        
+        return doc.shaderInfo?.textures ?? [String](repeating: "NULL", count: 4)
+    }
+    
     // MARK: - UITextViewDelegate
     
     func textViewDidChange(_ textView: UITextView) {
