@@ -8,6 +8,8 @@
 
 import UIKit
 
+// Button showed in the gutter in code editor when there is compiler error
+
 class CompilerMessageButton: UIView {
     open var message: String?
     fileprivate var button: UIButton?
@@ -28,19 +30,13 @@ class CompilerMessageButton: UIView {
     }
     
     @objc func buttonTapped(sender: UIButton) {
+        
+        // Show the error message when button is tapped
+        
         if let message = message {
             let messageViewController = PopupMessageViewController()
             messageViewController.message = message
             messageViewController.showPopover(sourceView: button!)
         }
     }
-    
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
-
 }

@@ -8,20 +8,24 @@
 
 import UIKit
 
+// View controller which shows the error text when error button
+// in gutter of editor is pressed
+
 let ButtonSize: CGFloat = 16.0
 let MaxWidth: CGFloat = 640.0
 let MinHeight: CGFloat = 44.0
 
 class PopupMessageViewController: UIViewController, KUIPopOverUsable {
-    var contentSize = CGSize()
+    internal var contentSize = CGSize()
+    fileprivate var messageLabel: UILabel?
     
-    var messageLabel: UILabel?
-    
-    var message: String = "" {
+    public var message: String = "" {
         didSet {
             loadViewIfNeeded()
             
             messageLabel?.text = message
+            
+            // render the message text in fake label to determine the frame right size
             
             let fakeLabel = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: MaxWidth - 20.0, height: CGFloat.greatestFiniteMagnitude))
             fakeLabel.numberOfLines = 0
