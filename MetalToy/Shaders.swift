@@ -42,6 +42,8 @@ public let DefaultFragmentShader =
     "   float time;\n" +
     "} Uniforms;\n" +
     "\n" +
+    "constexpr sampler textureSampler (mag_filter::linear, min_filter::linear);\n" +
+    "\n" +
     "fragment float4 fragmentShader(FragmentData in [[stage_in]],\n" +
     "                               texture2d<float> texture0 [[texture(0)]],\n" +
     "                               texture2d<float> texture1 [[texture(1)]],\n" +
