@@ -78,6 +78,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
                 let textureUnit = TextureUnit(filename: texture)
                 
                 self.textureSelectorPanelContentVC.textureUnits[i] = textureUnit
+                self.metalViewController?.loadTexture(filename: texture, index: i)
             }
         }
     }
