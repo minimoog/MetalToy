@@ -121,14 +121,32 @@ class CodeViewController: UIViewController, UITextViewDelegate {
     func setTexture(filename: String, index: Int) {
         guard let doc = document else { fatalError("No document set") }
         
-        doc.shaderInfo?.textures[index] = filename
+        //convert from full filename to texture name  ### needs rework
+        let urlPath = URL(fileURLWithPath: filename)
+        let textureName = urlPath.lastPathComponent
+        
+        doc.shaderInfo?.textures[index] = textureName
         doc.updateChangeCount(.done)
     }
     
     func getTextures() -> [String] {
         guard let doc = document else { fatalError("No document set") }
         
-        return doc.shaderInfo?.textures ?? [String](repeating: "NULL", count: 4)
+        if let shaderInfo = doc.shaderInfo {
+            let path = Bundle.main.resourcePath!
+            
+            let textures: [String] = shaderInfo.textures.map {
+                if $0 == "NULL" {
+                    return "NULL"
+                } else {
+                    return path + "/" + $0
+                }
+            }
+            
+            return textures
+        }
+        
+        return [String](repeating: "NULL", count: 4)
     }
     
     // MARK: - UITextViewDelegate
