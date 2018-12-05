@@ -23,16 +23,12 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController,
                          didRequestDocumentCreationWithHandler importHandler: @escaping (URL?, UIDocumentBrowserViewController.ImportMode) -> Void) {
-        print("Creating new document")
-        
         let doc = ShaderDocument()
         let url = doc.fileURL
         
         //save to temp
         doc.save(to: url, for: .forCreating) { (saveSuccess) in
             guard saveSuccess else {
-                print("Cannot create new document")
-                
                 importHandler(nil, .none)
                 return
             }
@@ -41,8 +37,6 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
             
             doc.close(completionHandler: { (closeSuccess) in
                 guard closeSuccess else {
-                    print("Cannot create/close new document")
-                    
                     importHandler(nil, .none)
                     return
                 }
@@ -52,11 +46,13 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         }
     }
 
+    // ----- Importing document -------
+    
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didImportDocumentAt sourceURL: URL, toDestinationURL destinationURL: URL) {
-        print("importing document from \(sourceURL.path) to \(destinationURL.path)")
-        
         presentDocument(at: destinationURL)
     }
+    
+    // ------ Failed importing document ------
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController, failedToImportDocumentAt documentURL: URL, error: Error?) {
         let alert = UIAlertController(title: "Unable to import document",
@@ -70,7 +66,7 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         controller.present(alert, animated: true, completion: nil)
     }
     
-    // user selected a document
+    // -------- User selects document --------
     
     func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentURLs documentURLs: [URL]) {
         assert(controller.allowsPickingMultipleItems == false)
@@ -83,6 +79,12 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         
         presentDocument(at: url)
     }
+    
+    // -------- Present document -------
+    // - Load main storyboard
+    // - instatiate navigation controller
+    // - pass shader document to the controller
+    // - on open document present the controller
     
     func presentDocument(at url: URL) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
@@ -108,15 +110,4 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
             self?.present(editorNavigationController, animated: true, completion: nil)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
