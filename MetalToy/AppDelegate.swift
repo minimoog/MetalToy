@@ -33,8 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
             
-            // Here we can do something with the document
-            
             //present the document
             shaderDocumentBrowserViewController.presentDocument(at: url)
         }
