@@ -33,6 +33,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         
         metalViewController = metalViewPanelContentVC.metalViewController
         
+        //on shader successfull compiling invoke codeviewcontroller
         metalViewController?.finishedCompiling = { result, compilerMessages in
             if result {
                 if let codeViewController = self.codeViewController {
@@ -58,6 +59,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
             self.codeViewController?.setTexture(filename: filename, index: index)
         }
         
+        //setup buttons
         let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
         let viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
         let texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
@@ -72,7 +74,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         
         codeViewController?.document = document
         
-        //needs rework
+        // ### needs rework ###
         if let textures = codeViewController?.getTextures() {
             for (i, texture) in textures.enumerated() {
                 let textureUnit = TextureUnit(filename: texture)
@@ -110,6 +112,9 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func onViewButtonTapped(sender: UIBarButtonItem) {
+        
+        //show metal VC
+        
         metalViewPanelVC.modalPresentationStyle = .popover
         metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
         
@@ -134,6 +139,9 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func onTexturesButtonTapped(sender: UIBarButtonItem) {
+        
+        //show texture selector
+        
         textureSelectorPanelVC.modalPresentationStyle = .popover
         textureSelectorPanelVC.popoverPresentationController?.barButtonItem = sender
         
