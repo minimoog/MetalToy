@@ -129,26 +129,6 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         doc.updateChangeCount(.done)
     }
     
-    func getTextures() -> [String] {
-        guard let doc = document else { fatalError("No document set") }
-        
-        if let shaderInfo = doc.shaderInfo {
-            let path = Bundle.main.resourcePath!
-            
-            let textures: [String] = shaderInfo.textures.map {
-                if $0 == "NULL" {
-                    return "NULL"
-                } else {
-                    return path + "/" + $0
-                }
-            }
-            
-            return textures
-        }
-        
-        return [String](repeating: "NULL", count: 4)
-    }
-    
     // MARK: - UITextViewDelegate
     
     func textViewDidChange(_ textView: UITextView) {

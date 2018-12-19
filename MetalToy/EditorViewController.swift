@@ -75,7 +75,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         codeViewController?.document = document
         
         // ### needs rework ###
-        if let textures = codeViewController?.getTextures() {
+        if let textures = document?.getTextures() {
             for (i, texture) in textures.enumerated() {
                 let textureUnit = TextureUnit(filename: texture)
                 

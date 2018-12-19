@@ -24,6 +24,25 @@ class ShaderDocument: UIDocument {
         super.init(fileURL: url)
     }
     
+    func getTextures() -> [String] {
+        
+        if let shaderInfo = shaderInfo {
+            let path = Bundle.main.resourcePath!
+            
+            let textures: [String] = shaderInfo.textures.map {
+                if $0 == "NULL" {
+                    return "NULL"
+                } else {
+                    return path + "/" + $0
+                }
+            }
+            
+            return textures
+        }
+        
+        return [String](repeating: "NULL", count: 4)
+    }
+    
     override func contents(forType typeName: String) throws -> Any {
         if let shaderInfo = shaderInfo {
             guard let jsonData = encodeToJsonData(shaderInfo: shaderInfo) else { return Data() }
