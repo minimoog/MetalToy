@@ -12,7 +12,10 @@ private let reuseIdentifier = "TextureCell"
 
 class TexturesCollectionViewController: UICollectionViewController {
 
+    // closure invoked when texture is selected
     public var selectedTexture: ((String) -> ())?
+    
+    // closure invoked when VC is dismissed
     public var dismissed: (() -> ())?
     
     let texturePaths: [String] = {

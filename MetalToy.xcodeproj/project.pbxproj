@@ -17,7 +17,6 @@
 		5241E9B81F49E55000107886 /* MetalToyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9B71F49E55000107886 /* MetalToyUITests.swift */; };
 		5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C61F49F0A600107886 /* Metal.framework */; };
 		5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C81F49F0B000107886 /* MetalKit.framework */; };
-		5241E9CB1F4A234300107886 /* Shaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9CA1F4A234300107886 /* Shaders.metal */; };
 		524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */; };
 		525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D82E120168F0B00B16618 /* ShaderDocument.swift */; };
 		525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C061F79BA0900FADC46 /* MetalViewController.swift */; };
@@ -219,7 +218,6 @@
 		5241E9B91F49E55000107886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5241E9C61F49F0A600107886 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		5241E9C81F49F0B000107886 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
-		5241E9CA1F4A234300107886 /* Shaders.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Shaders.metal; sourceTree = "<group>"; };
 		524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureSelectorViewController.swift; sourceTree = "<group>"; };
 		525D82E120168F0B00B16618 /* ShaderDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderDocument.swift; sourceTree = "<group>"; };
 		525F0C061F79BA0900FADC46 /* MetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
@@ -455,7 +453,6 @@
 				5241E99E1F49E55000107886 /* Assets.xcassets */,
 				5241E9A01F49E55000107886 /* LaunchScreen.storyboard */,
 				5241E9A31F49E55000107886 /* Info.plist */,
-				5241E9CA1F4A234300107886 /* Shaders.metal */,
 				5264C0351F4E3610001B9EEC /* Shaders.swift */,
 				526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */,
 				5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */,
@@ -1015,7 +1012,6 @@
 			files = (
 				526EE36F204620C2004451E6 /* PanelPinnedMetadata.swift in Sources */,
 				526EE36B204620C2004451E6 /* LogLevel.swift in Sources */,
-				5241E9CB1F4A234300107886 /* Shaders.metal in Sources */,
 				52997B4E2176A27000E4983B /* ShaderDocumentBrowserViewController.swift in Sources */,
 				52FF7416219251ED0056FFC4 /* EditorNavigationController.swift in Sources */,
 				52619EB51FF1BDAD00490EF9 /* CompilerMessageButton.swift in Sources */,

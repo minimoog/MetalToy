@@ -8,6 +8,7 @@
 
 import UIKit
 
+// ### TODO: This should be a model
 struct TextureUnit {
     let filename: String
     
@@ -23,6 +24,7 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
 
     @IBOutlet weak var texSelectorTableView: UITableView!
     
+    // closure invoke when user selects texture unit
     public var selectedTextureOnTextureUnit: ((String, Int) -> ())?
     
     public var textureUnits = [TextureUnit](repeating: TextureUnit(filename: "NULL"), count: 4)
@@ -31,10 +33,20 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        panelNavigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(24.0/255.0), green: CGFloat(25.0/255.0), blue: CGFloat(20.0/255.0), alpha: 1.0)
-        panelNavigationController?.navigationBar.tintColor = UIColor(red: CGFloat(220.0/255.0), green: CGFloat(207.0/255.0), blue: CGFloat(143.0/255.0), alpha: 1.0)
+        panelNavigationController?.navigationBar.barTintColor = UIColor(red: CGFloat(24.0/255.0),
+                                                                        green: CGFloat(25.0/255.0),
+                                                                        blue: CGFloat(20.0/255.0),
+                                                                        alpha: 1.0)
         
-        view.tintColor = UIColor(red: CGFloat(220.0/255.0), green: CGFloat(207.0/255.0), blue: CGFloat(143.0/255.0), alpha: 1.0)
+        panelNavigationController?.navigationBar.tintColor = UIColor(red: CGFloat(220.0/255.0),
+                                                                     green: CGFloat(207.0/255.0),
+                                                                     blue: CGFloat(143.0/255.0),
+                                                                     alpha: 1.0)
+        
+        view.tintColor = UIColor(red: CGFloat(220.0/255.0),
+                                 green: CGFloat(207.0/255.0),
+                                 blue: CGFloat(143.0/255.0),
+                                 alpha: 1.0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,13 +95,18 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // show the textures list
+        
         let viewController = storyboard?.instantiateViewController(withIdentifier: "TexturesCollectionViewController") as! TexturesCollectionViewController
         
+        // when user select texture from texture list
         viewController.selectedTexture = {
             filename in
             
+            // pop the textures list
             self.panelNavigationController?.popViewController(animated: true)
             
+            // update the current table view
             if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
                 let selectedRow = selectedIndexPath.row
                 
@@ -103,6 +120,7 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
             }
         }
         
+        // when user dismisses the texture lists
         viewController.dismissed = {
             if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
                 self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
