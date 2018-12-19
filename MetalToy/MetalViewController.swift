@@ -181,6 +181,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         numFrames += 1
     }
     
+    // MARK: Not used
     func snapshot(size: CGSize) -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(size, true, 0)
         
