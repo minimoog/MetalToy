@@ -34,6 +34,7 @@ public let DefaultVertexShader = """
     }
 
     //--------------------------------------------------
+
     """
 
 public let DefaultFragmentShader = """
