@@ -182,6 +182,8 @@
 		52E7C4811FC7851200087B15 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C3781FC7851200087B15 /* LICENSE */; };
 		52E7C5321FC7851200087B15 /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 52E7C42A1FC7851200087B15 /* highlight.min.js */; };
 		52FF7416219251ED0056FFC4 /* EditorNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */; };
+		CD147C52222F3D6F002A4696 /* InputAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD147C50222F3D6E002A4696 /* InputAssistantView.swift */; };
+		CD147C53222F3D6F002A4696 /* InputAssistantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD147C51222F3D6E002A4696 /* InputAssistantCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,6 +386,8 @@
 		52E7C3781FC7851200087B15 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		52E7C42A1FC7851200087B15 /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
 		52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNavigationController.swift; sourceTree = "<group>"; };
+		CD147C50222F3D6E002A4696 /* InputAssistantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAssistantView.swift; sourceTree = "<group>"; };
+		CD147C51222F3D6E002A4696 /* InputAssistantCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAssistantCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +461,7 @@
 				526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */,
 				5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */,
 				52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */,
+				CD147C4F222F3D6E002A4696 /* InputAssistant */,
 				526EE31F204620C2004451E6 /* PanelKit */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
@@ -761,6 +766,15 @@
 			path = Highlighter;
 			sourceTree = "<group>";
 		};
+		CD147C4F222F3D6E002A4696 /* InputAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				CD147C50222F3D6E002A4696 /* InputAssistantView.swift */,
+				CD147C51222F3D6E002A4696 /* InputAssistantCollectionView.swift */,
+			);
+			path = InputAssistant;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1019,6 +1033,7 @@
 				526EE36D204620C2004451E6 /* PanelPinSide.swift in Sources */,
 				52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */,
 				5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */,
+				CD147C52222F3D6F002A4696 /* InputAssistantView.swift in Sources */,
 				526EE352204620C2004451E6 /* PanelContentDelegate+Default.swift in Sources */,
 				526EE356204620C2004451E6 /* PanelManager+AutoLayout.swift in Sources */,
 				526EE351204620C2004451E6 /* PanelContentDelegate+Navigation.swift in Sources */,
@@ -1054,6 +1069,7 @@
 				524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */,
 				526EE373204620C2004451E6 /* Constants.swift in Sources */,
 				526EE372204620C2004451E6 /* PinnedPosition.swift in Sources */,
+				CD147C53222F3D6F002A4696 /* InputAssistantCollectionView.swift in Sources */,
 				526EE366204620C2004451E6 /* PanelViewController+Dragging.swift in Sources */,
 				526EE35E204620C2004451E6 /* CornerHandleView.swift in Sources */,
 				525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */,
