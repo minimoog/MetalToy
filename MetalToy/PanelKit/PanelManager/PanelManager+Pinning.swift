@@ -260,7 +260,7 @@ public extension PanelManager {
 					continue
 				}
 				
-				pinnedPanel.pinnedMetadata?.index = prevPinnedPanels.index(of: pinnedPanel) ?? 0
+                pinnedPanel.pinnedMetadata?.index = prevPinnedPanels.firstIndex(of: pinnedPanel) ?? 0
 				
 				guard let newPosition = pinnedPanelPosition(for: pinnedPanel, at: side) else {
 					assertionFailure("Expected a valid position")

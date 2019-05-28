@@ -34,7 +34,7 @@ public struct PanelState: Codable, Equatable {
 				let y = panel.view.frame.origin.y / panelContentWrapperView.frame.height
 				let relPosition = CGPoint(x: x, y: y)
 			
-				if let zIndex = panelContentWrapperView.subviews.index(of: panel.view) {
+                if let zIndex = panelContentWrapperView.subviews.firstIndex(of: panel.view) {
 					floatingState = PanelFloatingState(relativePosition: relPosition, zIndex: zIndex)
 				} else {
 					floatingState = nil

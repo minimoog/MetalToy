@@ -374,7 +374,7 @@ extension PanelManager {
 
 			stack.append(mostIntersected)
 
-			guard let index = frames.index(where: { (r) -> Bool in
+            guard let index = frames.firstIndex(where: { (r) -> Bool in
 				r === mostIntersected
 			}) else {
 				break
