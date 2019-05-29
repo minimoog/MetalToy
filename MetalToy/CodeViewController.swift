@@ -10,13 +10,31 @@ import UIKit
 
 let GutterWidth: CGFloat = 22.0
 
+enum KeywordState {
+    case entering, other
+}
+
+extension String {
+    func isAlphaNumeric() -> Bool {
+        return rangeOfCharacter(from: CharacterSet.alphanumerics.inverted) == nil && self != ""
+    }
+}
+
 class CodeViewController: UIViewController, UITextViewDelegate {
     var document: ShaderDocument?
     
     var codeView: UITextView?
     let textStorage = CodeAttributedString()
+    let inputAssistantView: InputAssistantView = InputAssistantView()
     var messageButtons = [CompilerMessageButton]()
     var bottomConstraint: NSLayoutConstraint?
+    
+    let allSuggestions = ["int", "float", "while", "char", "typedef", "const", "for", "union", "unsigned", "long", "static", "bool"]
+    let fixedSuggestion = ["[ ]", "{ }"]
+    var matchedSuggestions: [String] = []
+    
+    var keywordBuffer: String = String()
+    var suggestionKeyWordState: KeywordState = .other
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +75,11 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         //keyboard
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillBeHidden), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        //input assistant view
+        inputAssistantView.delegate = self
+        inputAssistantView.dataSource = self
+        inputAssistantView.attach(to: codeView!)
     }
     
     deinit {
@@ -145,6 +168,35 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         doc.updateChangeCount(.done)
     }
     
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        matchedSuggestions = []
+        
+        if range.length == 1 { //delete
+            //remove character from keyword buffer
+            
+            if !keywordBuffer.isEmpty {
+                keywordBuffer.removeLast()
+            }
+        } else {
+            
+            if text.isAlphaNumeric() {
+                suggestionKeyWordState = .entering
+                keywordBuffer.append(text)
+                
+                matchedSuggestions = allSuggestions.filter { $0.hasPrefix(keywordBuffer) }
+            } else {
+                suggestionKeyWordState = .other
+                keywordBuffer = String()
+            }
+        }
+        
+        //matchedSuggestions.append(contentsOf: fixedSuggestion)
+        
+        inputAssistantView.reloadData()
+        
+        return true
+    }
+    
     // MARK: private functions
     
     func linePosition(inString: String, lastOccurence: Int) -> String.Index? {
@@ -201,5 +253,33 @@ class CodeViewController: UIViewController, UITextViewDelegate {
             $0.removeFromSuperview()
         }
         messageButtons.removeAll()
+    }
+}
+
+extension CodeViewController: InputAssistantViewDataSource {
+    func textForEmptySuggestionsInInputAssistantView() -> String? {
+        return nil
+    }
+    
+    func numberOfSuggestionsInInputAssistantView() -> Int {
+        return matchedSuggestions.count + fixedSuggestion.count
+    }
+    
+    func inputAssistantView(_ inputAssistantView: InputAssistantView, nameForSuggestionAtIndex index: Int) -> String {
+        return (matchedSuggestions + fixedSuggestion)[index]
+    }
+}
+
+extension CodeViewController: InputAssistantViewDelegate {
+    func inputAssistantView(_ inputAssistantView: InputAssistantView, didSelectSuggestionAtIndex index: Int) {
+        if index < (matchedSuggestions.endIndex - fixedSuggestion.count) {
+            
+            let lengthOfMatched = matchedSuggestions[index].count
+            let textToInsert = matchedSuggestions[index].suffix(lengthOfMatched - keywordBuffer.count)
+            
+            self.codeView!.insertText(String(textToInsert))
+        } else {
+            self.codeView!.insertText(matchedSuggestions[index])
+        }
     }
 }
