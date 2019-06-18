@@ -184,6 +184,7 @@
 		52FF7416219251ED0056FFC4 /* EditorNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */; };
 		CD147C52222F3D6F002A4696 /* InputAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD147C50222F3D6E002A4696 /* InputAssistantView.swift */; };
 		CD147C53222F3D6F002A4696 /* InputAssistantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD147C51222F3D6E002A4696 /* InputAssistantCollectionView.swift */; };
+		CDFF76A622B990A10022D9FF /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF76A522B990A10022D9FF /* Suggestions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -388,6 +389,7 @@
 		52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorNavigationController.swift; sourceTree = "<group>"; };
 		CD147C50222F3D6E002A4696 /* InputAssistantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAssistantView.swift; sourceTree = "<group>"; };
 		CD147C51222F3D6E002A4696 /* InputAssistantCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAssistantCollectionView.swift; sourceTree = "<group>"; };
+		CDFF76A522B990A10022D9FF /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,6 +463,7 @@
 				526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */,
 				5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */,
 				52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */,
+				CDFF76A522B990A10022D9FF /* Suggestions.swift */,
 				CD147C4F222F3D6E002A4696 /* InputAssistant */,
 				526EE31F204620C2004451E6 /* PanelKit */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
@@ -1068,6 +1071,7 @@
 				526EE359204620C2004451E6 /* PanelManager+Offscreen.swift in Sources */,
 				524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */,
 				526EE373204620C2004451E6 /* Constants.swift in Sources */,
+				CDFF76A622B990A10022D9FF /* Suggestions.swift in Sources */,
 				526EE372204620C2004451E6 /* PinnedPosition.swift in Sources */,
 				CD147C53222F3D6F002A4696 /* InputAssistantCollectionView.swift in Sources */,
 				526EE366204620C2004451E6 /* PanelViewController+Dragging.swift in Sources */,

@@ -29,7 +29,7 @@ class CodeViewController: UIViewController, UITextViewDelegate {
     var messageButtons = [CompilerMessageButton]()
     var bottomConstraint: NSLayoutConstraint?
     
-    let allSuggestions = ["int", "float", "while", "char", "typedef", "const", "for", "union", "unsigned", "long", "static", "bool"]
+    let allSuggestions = SuggestionList
     let fixedSuggestion = ["[ ]", "{ }"]
     var matchedSuggestions: [String] = []
     
