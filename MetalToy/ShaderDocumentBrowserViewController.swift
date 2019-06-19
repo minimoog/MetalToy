@@ -16,7 +16,7 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         
         allowsDocumentCreation = true
         allowsPickingMultipleItems = false
-        browserUserInterfaceStyle = .dark
+        //browserUserInterfaceStyle = .dark
     }
     
     // --- Create new document ---

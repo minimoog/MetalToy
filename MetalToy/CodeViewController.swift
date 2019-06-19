@@ -41,7 +41,7 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         textStorage.language = "cpp"
-        textStorage.highlightr.setTheme(to: "Pojoaque")
+        textStorage.highlightr.setTheme(to: "xcode")
         textStorage.highlightr.theme.setCodeFont(UIFont(name: "Menlo-Regular", size: 16)!)
         
         let layoutManager = NSLayoutManager()
@@ -214,7 +214,8 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         let lineNumberPlusOffset = lineNumber - 25 - 1 //FIX ME
         
         if let indexPos = linePosition(inString: codeView!.text, lastOccurence: lineNumberPlusOffset) {
-            rangeOfPrecedingNewLine = indexPos.encodedOffset
+            //rangeOfPrecedingNewLine = indexPos.encodedOffset
+            rangeOfPrecedingNewLine = indexPos.utf16Offset(in: codeView!.text)
         } else {
             rangeOfPrecedingNewLine = 0
         }
