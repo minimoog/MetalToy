@@ -209,7 +209,7 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         }
     }
     
-    func pointForMessage(lineNumber: Int, columnNumber: Int) -> CGPoint {
+    func pointForMessage(lineNumber: Int, columnNumber: Int) -> CGPoint? {
         let rangeOfPrecedingNewLine: Int
         let lineNumberPlusOffset = lineNumber - 25 - 1 //FIX ME
         
@@ -222,12 +222,13 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         
         let offendingCharacterIndex = rangeOfPrecedingNewLine + columnNumber
         
-        let errorStartPosition = codeView?.position(from: (codeView?.beginningOfDocument)!, offset: offendingCharacterIndex)
-        let errorStartPositionPlusOne = codeView?.position(from: errorStartPosition!, offset: 1)
-        let textRangeForError = codeView?.textRange(from: errorStartPosition!, to: errorStartPositionPlusOne!)
-        let offendingCharacterREct = codeView?.firstRect(for: textRangeForError!)
+        guard let beginningOfDocument = codeView?.beginningOfDocument else { return nil }
+        guard let errorStartPosition = codeView?.position(from: beginningOfDocument, offset: offendingCharacterIndex) else { return nil }
+        guard let errorStartPositionPlusOne = codeView?.position(from: errorStartPosition, offset: 1) else { return nil }
+        guard let textRangeForError = codeView?.textRange(from: errorStartPosition, to: errorStartPositionPlusOne) else { return nil }
+        guard let offendingCharacterREct = codeView?.firstRect(for: textRangeForError) else { return nil }
         
-        let y = floor((offendingCharacterREct?.midY)! - ButtonSize * 0.5)
+        let y = floor(offendingCharacterREct.midY - ButtonSize * 0.5)
         
         return CGPoint(x: 5, y: y)
     }
@@ -237,8 +238,8 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         messageButtons = []
         
         for message in messages {
-            let buttonOrigin = pointForMessage(lineNumber: message.lineNumber, columnNumber: message.columnNumber)
-            let buttonRect = CGRect(x: buttonOrigin.x, y: buttonOrigin.y, width: CGFloat(ButtonSize), height: CGFloat(ButtonSize))
+            guard let buttonOrigin = pointForMessage(lineNumber: message.lineNumber, columnNumber: message.columnNumber) else { continue }
+            let buttonRect = CGRect(x: buttonOrigin.x, y: buttonOrigin.y,width: CGFloat(ButtonSize), height: CGFloat(ButtonSize))
             
             let button = CompilerMessageButton(frame: buttonRect)
             button.message = message.message
