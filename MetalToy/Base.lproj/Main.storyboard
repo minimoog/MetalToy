@@ -96,6 +96,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="e58-Zb-Nxh" kind="show" identifier="TexSelectorToTextureSegue" id="50S-Uz-5SK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -119,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6u-Yt-X6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-512" y="1501"/>
+            <point key="canvasLocation" x="-556" y="1501"/>
         </scene>
         <!--Textures Collection View Controller-->
         <scene sceneID="TIl-aT-xLa">
@@ -166,7 +169,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15Z-dx-n3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-512" y="2254"/>
+            <point key="canvasLocation" x="145" y="1501"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="tne-QT-ifu">

@@ -20,8 +20,9 @@ struct TextureUnit {
     }
 }
 
-class TextureSelectorViewController: UIViewController, PanelContentDelegate, UITableViewDelegate, UITableViewDataSource {
-
+class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, KUIPopOverUsable {
+    internal var contentSize: CGSize = CGSize(width: 512, height: 600)
+    
     @IBOutlet weak var texSelectorTableView: UITableView!
     
     // closure invoke when user selects texture unit
@@ -38,20 +39,6 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: PanelContentDelegate
-    
-    var preferredPanelContentSize: CGSize {
-        return CGSize(width: 320, height: 500)
-    }
-    
-    var maximumPanelContentSize: CGSize {
-        return CGSize(width: 512, height: 600)
-    }
-    
-    var preferredPanelPinnedWidth: CGFloat {
-        return 500
-    }
-    
     /*
     // MARK: - Navigation
 
@@ -61,6 +48,43 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TexSelectorToTextureSegue" {
+            if let texturesCollectionViewController = segue.destination as? TexturesCollectionViewController {
+                
+                //setup closures from texture collection view controller
+                
+                // when user select texture from texture list
+                texturesCollectionViewController.selectedTexture = {
+                    filename in
+                    
+                    // pop the textures list
+                    //self.panelNavigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
+                    
+                    // update the current table view
+                    if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
+                        let selectedRow = selectedIndexPath.row
+                        
+                        self.textureUnits[selectedRow] = TextureUnit(filename: filename)
+                        self.texSelectorTableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+                        self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
+                        
+                        if let selectedTextureOnTextureUnit = self.selectedTextureOnTextureUnit {
+                            selectedTextureOnTextureUnit(filename, selectedRow)
+                        }
+                    }
+                }
+                
+                texturesCollectionViewController.dismissed = {
+                    if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
+                        self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
+                    }
+                }
+            }
+        }
+    }
     
     // MARK: Table View
     
@@ -76,41 +100,5 @@ class TextureSelectorViewController: UIViewController, PanelContentDelegate, UIT
         cell.textLabel?.text = textureUnits[row].textureName
         
         return cell
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // show the textures list
-        
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "TexturesCollectionViewController") as! TexturesCollectionViewController
-        
-        // when user select texture from texture list
-        viewController.selectedTexture = {
-            filename in
-            
-            // pop the textures list
-            self.panelNavigationController?.popViewController(animated: true)
-            
-            // update the current table view
-            if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
-                let selectedRow = selectedIndexPath.row
-                
-                self.textureUnits[selectedRow] = TextureUnit(filename: filename)
-                self.texSelectorTableView.reloadRows(at: [selectedIndexPath], with: .automatic)
-                self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
-                
-                if let selectedTextureOnTextureUnit = self.selectedTextureOnTextureUnit {
-                    selectedTextureOnTextureUnit(filename, selectedRow)
-                }
-            }
-        }
-        
-        // when user dismisses the texture lists
-        viewController.dismissed = {
-            if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
-                self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
-            }
-        }
-        
-        panelNavigationController?.pushViewController(viewController, animated: true)
     }
 }

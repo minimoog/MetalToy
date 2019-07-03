@@ -21,7 +21,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     var metalViewPanelVC: PanelViewController!
     
     var textureSelectorPanelContentVC: TextureSelectorViewController!
-    var textureSelectorPanelVC: PanelViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +47,6 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         
         //texture selector panel
         textureSelectorPanelContentVC = (storyboard?.instantiateViewController(withIdentifier: "TextureSelectorViewController") as! TextureSelectorViewController)
-    
-        textureSelectorPanelVC = PanelViewController(with: textureSelectorPanelContentVC, in: self)
         
         //connect texture selector with metal view
         textureSelectorPanelContentVC.selectedTextureOnTextureUnit = {
@@ -141,11 +138,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     @objc func onTexturesButtonTapped(sender: UIBarButtonItem) {
         
         //show texture selector
-        
-        textureSelectorPanelVC.modalPresentationStyle = .popover
-        textureSelectorPanelVC.popoverPresentationController?.barButtonItem = sender
-        
-        present(textureSelectorPanelVC, animated: true, completion: nil)
+        textureSelectorPanelContentVC.showPopover(withNavigationController: sender)
     }
     
     @objc func onSaveButtonTapped(sender: UIBarButtonItem) {
@@ -178,7 +171,7 @@ extension EditorViewController: PanelManager {
     }
     
     var panels: [PanelViewController] {
-        return [metalViewPanelVC, textureSelectorPanelVC]
+        return [metalViewPanelVC]
     }
     
 }
