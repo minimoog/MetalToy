@@ -21,7 +21,7 @@ struct TextureUnit {
 }
 
 class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, KUIPopOverUsable {
-    internal var contentSize: CGSize = CGSize(width: 512, height: 600)
+    internal var contentSize: CGSize = CGSize(width: 280, height: 600)
     
     @IBOutlet weak var texSelectorTableView: UITableView!
     
