@@ -25,6 +25,7 @@
                                 </constraints>
                             </mtkView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="25O-GC-V7a" firstAttribute="leading" secondItem="aoM-Nf-TYC" secondAttribute="leading" constant="20" id="NRq-6j-haF"/>
                             <constraint firstItem="25O-GC-V7a" firstAttribute="top" secondItem="aoM-Nf-TYC" secondAttribute="top" constant="20" id="lz3-d4-X65"/>
