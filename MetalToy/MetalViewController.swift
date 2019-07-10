@@ -91,7 +91,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         return .lightContent // .default
     }
     
-    func setRenderPipeline(fragmentShader: String) -> MTLRenderPipelineState? {
+    public func setRenderPipeline(fragmentShader: String) -> MTLRenderPipelineState? {
         if let pipelineStateDescriptor = loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: fragmentShader) {
             pipelineState = try? device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
             
@@ -101,7 +101,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         return nil
     }
     
-    func loadShaders(device: MTLDevice, vertexShader: String, fragmentShader: String) -> MTLRenderPipelineDescriptor? {
+    fileprivate func loadShaders(device: MTLDevice, vertexShader: String, fragmentShader: String) -> MTLRenderPipelineDescriptor? {
         
         do {
             let library = try device.makeLibrary(source: vertexShader + fragmentShader, options: nil)
@@ -130,21 +130,21 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         return nil
     }
     
-    func loadTexture(filename: String, index: Int) {
+    public func loadTexture(filename: String, index: Int) {
         print("filename: \(filename) at \(index)")
         
         let textureLoader: MTKTextureLoader = MTKTextureLoader(device: device)
         textures[index] = try? textureLoader.newTexture(URL: URL(fileURLWithPath: filename), options: nil)
     }
     
-    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
+    internal func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         viewPortData[0] = Float(size.width)
         viewPortData[1] = Float(size.height)
         
         //viewPortBuffer.contents().copyBytes(from: viewPortData, count: viewPortData.count * MemoryLayout<Float>.stride)
     }
     
-    func draw(in view: MTKView) {
+    internal func draw(in view: MTKView) {
         guard let drawable = view.currentDrawable else { return }
         guard let pipelineState = pipelineState else { return }
         
