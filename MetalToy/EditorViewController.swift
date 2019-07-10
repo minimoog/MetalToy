@@ -120,14 +120,15 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     
     @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
         if sender.title == "Play" {
-            sender.title = "Pause"
-            
-            metalViewController?.mtkView.isPaused = false
             
             if let text = codeViewController?.codeView?.text {
-                metalViewController?.setRenderPipeline(fragmentShader: text)
+                if  metalViewController?.setRenderPipeline(fragmentShader: text) != nil {
+                    sender.title = "Pause"
+                    metalViewController?.mtkView.isPaused = false
+                } else {
+                    metalViewController?.mtkView.isPaused = true
+                }
             }
-            
         } else {
             sender.title = "Play"
             

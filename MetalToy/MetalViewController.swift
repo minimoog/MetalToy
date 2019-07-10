@@ -42,7 +42,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     }
     
     var device: MTLDevice! = nil
-    var pipelineState: MTLRenderPipelineState! = nil
+    var pipelineState: MTLRenderPipelineState?
     var commandQueue: MTLCommandQueue! = nil
     var vertexBuffer: MTLBuffer!
     var uniformBuffer: MTLBuffer!
@@ -74,7 +74,9 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         //float2 + float size + padding = 4 floats
         uniformBuffer = device.makeBuffer(length: 4 * MemoryLayout<Float>.stride, options: [])
         
-        setRenderPipeline(fragmentShader: DefaultFragmentShader)
+        if setRenderPipeline(fragmentShader: DefaultFragmentShader) == nil {
+            fatalError("Default fragment shader has problem compiling")
+        }
         
         commandQueue = device.makeCommandQueue()
         
@@ -89,14 +91,14 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         return .lightContent // .default
     }
     
-    func setRenderPipeline(fragmentShader: String) {
-        do {
-            if let pipelineStateDescriptor = loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: fragmentShader) {
-                pipelineState = try device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
-            }
-        } catch {
-            print(error)
+    func setRenderPipeline(fragmentShader: String) -> MTLRenderPipelineState? {
+        if let pipelineStateDescriptor = loadShaders(device: device, vertexShader: DefaultVertexShader, fragmentShader: fragmentShader) {
+            pipelineState = try? device.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
+            
+            return pipelineState
         }
+        
+        return nil
     }
     
     func loadShaders(device: MTLDevice, vertexShader: String, fragmentShader: String) -> MTLRenderPipelineDescriptor? {
@@ -144,6 +146,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     
     func draw(in view: MTKView) {
         guard let drawable = view.currentDrawable else { return }
+        guard let pipelineState = pipelineState else { return }
         
         if (numFrames == 0) { startTime = CACurrentMediaTime() }
         
