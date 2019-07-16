@@ -9,8 +9,10 @@
 import UIKit
 
 class MetalViewPanelContentController: UIViewController, PanelContentDelegate {
-
+    
     var metalViewController: MetalViewController?
+
+    public var popping: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +22,7 @@ class MetalViewPanelContentController: UIViewController, PanelContentDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -47,5 +49,15 @@ class MetalViewPanelContentController: UIViewController, PanelContentDelegate {
     
     var preferredPanelPinnedWidth: CGFloat {
         return 500
+    }
+    
+    func dismissed() {
+        print("dismissed?")
+    }
+    
+    func popped() {
+        if let popping = popping {
+            popping()
+        }
     }
 }

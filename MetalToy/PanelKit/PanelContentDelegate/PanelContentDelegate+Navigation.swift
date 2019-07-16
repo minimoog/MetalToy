@@ -27,9 +27,11 @@ extension PanelContentDelegate {
 }
 
 extension PanelContentDelegate where Self: UIViewController {
-
-	func dismissPanel() {
-		panelNavigationController?.panelViewController?.dismiss(animated: true, completion: nil)
+    
+    func dismissPanel() {
+        panelNavigationController?.panelViewController?.dismiss(animated: true) {
+            self.dismissed()
+        }
 	}
 
 	func popPanel() {
@@ -40,6 +42,7 @@ extension PanelContentDelegate where Self: UIViewController {
 
 		panel.manager?.toggleFloatStatus(for: panel)
 
+        popped()
 	}
 
 	func panelFloatToggleBtnTitle() -> String {

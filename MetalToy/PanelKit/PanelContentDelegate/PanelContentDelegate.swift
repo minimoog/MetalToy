@@ -103,5 +103,7 @@ public protocol PanelContentDelegate: class {
 	/// 
 	/// This can be used to prevent the panel from dragging in certain areas.
 	func panelDragGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
-
+    
+    func dismissed()
+    func popped()
 }

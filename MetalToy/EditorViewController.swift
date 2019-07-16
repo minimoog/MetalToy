@@ -22,6 +22,10 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     
     var textureSelectorPanelContentVC: TextureSelectorViewController!
     
+    var playBarItem: UIBarButtonItem?
+    var viewBarItem: UIBarButtonItem?
+    var texturesBarItem: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -57,10 +61,10 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         }
         
         //setup buttons
-        let playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
-        let viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
-        let texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
-        navigationItem.rightBarButtonItems = [playBarItem, viewBarItem, texturesBarItem]
+        playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
+        viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
+        texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
+        navigationItem.rightBarButtonItems = [playBarItem!, viewBarItem!, texturesBarItem!]
         
         let backButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.onSaveButtonTapped)) // ### TODO: Implement action
         navigationItem.leftBarButtonItems = [backButton]
@@ -109,11 +113,15 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func onViewButtonTapped(sender: UIBarButtonItem) {
-        
         //show metal VC
         
         metalViewPanelVC.modalPresentationStyle = .popover
         metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
+        metalViewPanelVC.manager?.close(metalViewPanelVC)
+        
+        metalViewPanelContentVC.popping = {
+            sender.isEnabled = !sender.isEnabled
+        }
         
         present(metalViewPanelVC, animated: true, completion: nil)
     }

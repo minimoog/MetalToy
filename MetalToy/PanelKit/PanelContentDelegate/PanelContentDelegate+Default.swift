@@ -36,6 +36,14 @@ public extension PanelContentDelegate {
 	func updateUIForKeyboardHide() {
 
 	}
+    
+    func dismissed() {
+        
+    }
+    
+    func popped() {
+        
+    }
 
 	/// Defaults to false
 	var shouldAdjustForKeyboard: Bool {
