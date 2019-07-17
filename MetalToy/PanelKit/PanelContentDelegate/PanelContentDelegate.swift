@@ -105,5 +105,5 @@ public protocol PanelContentDelegate: class {
 	func panelDragGestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool
     
     func dismissed()
-    func popped()
+    func closed()
 }

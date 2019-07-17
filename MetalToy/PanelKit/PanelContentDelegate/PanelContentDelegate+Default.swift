@@ -41,7 +41,7 @@ public extension PanelContentDelegate {
         
     }
     
-    func popped() {
+    func closed() {
         
     }
 

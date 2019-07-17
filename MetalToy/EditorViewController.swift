@@ -119,8 +119,12 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
         metalViewPanelVC.manager?.close(metalViewPanelVC)
         
-        metalViewPanelContentVC.popping = {
+        metalViewPanelContentVC.closing = {
             sender.isEnabled = !sender.isEnabled
+            
+            //pause mtk view when closing the panel
+            self.metalViewController?.mtkView.isPaused = true
+            self.playBarItem?.title = "Play"
         }
         
         present(metalViewPanelVC, animated: true, completion: nil)

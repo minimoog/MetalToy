@@ -42,7 +42,7 @@ extension PanelContentDelegate where Self: UIViewController {
 
 		panel.manager?.toggleFloatStatus(for: panel)
 
-        popped()
+        closed()
 	}
 
 	func panelFloatToggleBtnTitle() -> String {

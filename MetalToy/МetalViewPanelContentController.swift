@@ -12,7 +12,7 @@ class MetalViewPanelContentController: UIViewController, PanelContentDelegate {
     
     var metalViewController: MetalViewController?
 
-    public var popping: (() -> ())?
+    public var closing: (() -> ())?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,13 +51,9 @@ class MetalViewPanelContentController: UIViewController, PanelContentDelegate {
         return 500
     }
     
-    func dismissed() {
-        print("dismissed?")
-    }
-    
-    func popped() {
-        if let popping = popping {
-            popping()
+    func closed() {
+        if let closing = closing {
+            closing()
         }
     }
 }
