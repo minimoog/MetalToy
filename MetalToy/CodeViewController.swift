@@ -24,6 +24,9 @@ class CodeViewController: UIViewController, UITextViewDelegate {
     var document: ShaderDocument?
     
     var codeView: UITextView?
+    var previousBarItems: [UIBarButtonItem] = []
+    var undoBarItem: UIBarButtonItem?
+    var redoBarItem: UIBarButtonItem?
     let textStorage = CodeAttributedString()
     let inputAssistantView: InputAssistantView = InputAssistantView()
     var messageButtons = [CompilerMessageButton]()
@@ -89,13 +92,29 @@ class CodeViewController: UIViewController, UITextViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        //install undo/redo buttons
+        undoBarItem = UIBarButtonItem(barButtonSystemItem: .undo, target: self, action: #selector(self.onUndoButtonTapped))
+        redoBarItem = UIBarButtonItem(barButtonSystemItem: .redo, target: self, action: #selector(self.onRedoButtonTapped))
+        
+        if let parent = parent, let leftBarItems = parent.navigationItem.leftBarButtonItems {
+            previousBarItems = leftBarItems
+            parent.navigationItem.leftBarButtonItems = previousBarItems + [undoBarItem!, redoBarItem!]
+        }
+        
         guard let doc = document else { fatalError("document is null") }
         
         codeView?.text = doc.shaderInfo?.fragment
+        
+        updateUndoButtons()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        
+        //remove undo/redo buttons
+        if let parent = parent {
+            parent.navigationItem.leftBarButtonItems = previousBarItems
+        }
         
         guard let doc = document else { fatalError("document is null") }
         
@@ -132,6 +151,16 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         
     }
     
+    @objc func onUndoButtonTapped(sender: UIBarButtonItem) {
+        codeView?.undoManager?.undo()
+        updateUndoButtons()
+    }
+    
+    @objc func onRedoButtonTapped(sender: UIBarButtonItem) {
+        codeView?.undoManager?.redo()
+        updateUndoButtons()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -152,6 +181,11 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         doc.updateChangeCount(.done)
     }
     
+    func updateUndoButtons() {
+        undoBarItem?.isEnabled = codeView?.undoManager?.canUndo ?? false
+        redoBarItem?.isEnabled = codeView?.undoManager?.canRedo ?? false
+    }
+    
     // MARK: - UITextViewDelegate
     
     func textViewDidChange(_ textView: UITextView) {
@@ -159,6 +193,8 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         
         doc.shaderInfo?.fragment = textView.text
         doc.updateChangeCount(.done)
+        
+        updateUndoButtons()
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {

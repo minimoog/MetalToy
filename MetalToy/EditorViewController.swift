@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditorViewController: UIViewController, UITextFieldDelegate {
+class EditorViewController: UIViewController {
     var document: ShaderDocument?
     
     @IBOutlet weak var contentWrapperView: UIView!
@@ -66,7 +66,7 @@ class EditorViewController: UIViewController, UITextFieldDelegate {
         texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
         navigationItem.rightBarButtonItems = [playBarItem!, viewBarItem!, texturesBarItem!]
         
-        let backButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.onSaveButtonTapped)) // ### TODO: Implement action
+        let backButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.onSaveButtonTapped))
         navigationItem.leftBarButtonItems = [backButton]
     }
 
