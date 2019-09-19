@@ -22,7 +22,9 @@ func parseCompilerOutput(_ compilerOutput: String) -> [CompilerErrorMessage] {
     for index in components.indices.dropFirst() {
         let splitted = components[index].split(separator: ":")
         
-        guard splitted.count < 5 else { return outMessages }
+        if splitted.count < 4 {
+            return outMessages
+        }
         
         if let line: Int = Int(splitted[0]),
            let column: Int = Int(splitted[1]) {
