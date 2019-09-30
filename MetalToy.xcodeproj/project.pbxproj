@@ -13,8 +13,6 @@
 		5241E99D1F49E55000107886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99B1F49E55000107886 /* Main.storyboard */; };
 		5241E99F1F49E55000107886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99E1F49E55000107886 /* Assets.xcassets */; };
 		5241E9A21F49E55000107886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E9A01F49E55000107886 /* LaunchScreen.storyboard */; };
-		5241E9AD1F49E55000107886 /* MetalToyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9AC1F49E55000107886 /* MetalToyTests.swift */; };
-		5241E9B81F49E55000107886 /* MetalToyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241E9B71F49E55000107886 /* MetalToyUITests.swift */; };
 		5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C61F49F0A600107886 /* Metal.framework */; };
 		5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C81F49F0B000107886 /* MetalKit.framework */; };
 		524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */; };
@@ -214,11 +212,7 @@
 		5241E9A11F49E55000107886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5241E9A31F49E55000107886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5241E9A81F49E55000107886 /* MetalToyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalToyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5241E9AC1F49E55000107886 /* MetalToyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalToyTests.swift; sourceTree = "<group>"; };
-		5241E9AE1F49E55000107886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5241E9B31F49E55000107886 /* MetalToyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MetalToyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5241E9B71F49E55000107886 /* MetalToyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalToyUITests.swift; sourceTree = "<group>"; };
-		5241E9B91F49E55000107886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5241E9C61F49F0A600107886 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		5241E9C81F49F0B000107886 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureSelectorViewController.swift; sourceTree = "<group>"; };
@@ -423,8 +417,6 @@
 			isa = PBXGroup;
 			children = (
 				5241E9961F49E55000107886 /* MetalToy */,
-				5241E9AB1F49E55000107886 /* MetalToyTests */,
-				5241E9B61F49E55000107886 /* MetalToyUITests */,
 				5241E9951F49E55000107886 /* Products */,
 				5241E9C51F49F0A600107886 /* Frameworks */,
 			);
@@ -471,24 +463,6 @@
 				5266188821092A0800F12D9D /* textures */,
 			);
 			path = MetalToy;
-			sourceTree = "<group>";
-		};
-		5241E9AB1F49E55000107886 /* MetalToyTests */ = {
-			isa = PBXGroup;
-			children = (
-				5241E9AC1F49E55000107886 /* MetalToyTests.swift */,
-				5241E9AE1F49E55000107886 /* Info.plist */,
-			);
-			path = MetalToyTests;
-			sourceTree = "<group>";
-		};
-		5241E9B61F49E55000107886 /* MetalToyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5241E9B71F49E55000107886 /* MetalToyUITests.swift */,
-				5241E9B91F49E55000107886 /* Info.plist */,
-			);
-			path = MetalToyUITests;
 			sourceTree = "<group>";
 		};
 		5241E9C51F49F0A600107886 /* Frameworks */ = {
@@ -868,10 +842,9 @@
 			};
 			buildConfigurationList = 5241E98F1F49E55000107886 /* Build configuration list for PBXProject "MetalToy" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -1097,7 +1070,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5241E9AD1F49E55000107886 /* MetalToyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,7 +1077,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5241E9B81F49E55000107886 /* MetalToyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

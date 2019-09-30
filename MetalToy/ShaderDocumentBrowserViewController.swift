@@ -97,6 +97,7 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         
         //load editor view
         editorNavigationController.loadViewIfNeeded()
+        editorNavigationController.modalPresentationStyle = .fullScreen
         
         let doc = ShaderDocument(fileURL: url)
         

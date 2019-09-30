@@ -44,7 +44,13 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         textStorage.language = "cpp"
-        textStorage.highlightr.setTheme(to: "xcode")
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            textStorage.highlightr.setTheme(to: "qtcreator_dark")
+        } else {
+            textStorage.highlightr.setTheme(to: "qtcreator_light")
+        }
+        
         textStorage.highlightr.theme.setCodeFont(UIFont(name: "Menlo-Regular", size: 16)!)
         
         let layoutManager = NSLayoutManager()
