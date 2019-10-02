@@ -104,8 +104,20 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         
         //install undo/redo buttons
-        undoBarItem = UIBarButtonItem(barButtonSystemItem: .undo, target: self, action: #selector(self.onUndoButtonTapped))
-        redoBarItem = UIBarButtonItem(barButtonSystemItem: .redo, target: self, action: #selector(self.onRedoButtonTapped))
+        if #available(iOS 13.0, *) {
+            undoBarItem = UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.left.circle"),
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(self.onUndoButtonTapped))
+            
+            redoBarItem = UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.right.circle"),
+                                          style: .plain,
+                                          target: self,
+                                          action: #selector(self.onRedoButtonTapped))
+        } else {
+            undoBarItem = UIBarButtonItem(barButtonSystemItem: .undo, target: self, action: #selector(self.onUndoButtonTapped))
+            redoBarItem = UIBarButtonItem(barButtonSystemItem: .redo, target: self, action: #selector(self.onRedoButtonTapped))
+        }
         
         if let parent = parent, let leftBarItems = parent.navigationItem.leftBarButtonItems {
             previousBarItems = leftBarItems
