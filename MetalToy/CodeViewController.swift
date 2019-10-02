@@ -148,6 +148,20 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         }
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        if traitCollection.userInterfaceStyle != previousTraitCollection?.userInterfaceStyle {
+            if traitCollection.userInterfaceStyle == .dark {
+                textStorage.highlightr.setTheme(to: "qtcreator_dark")
+                textStorage.highlightr.theme.setCodeFont(UIFont(name: "Menlo-Regular", size: 16)!) //yeah sets need to be set again
+            } else {
+                textStorage.highlightr.setTheme(to: "qtcreator_light")
+                textStorage.highlightr.theme.setCodeFont(UIFont(name: "Menlo-Regular", size: 16)!)
+            }
+        }
+    }
+    
     @objc func keyboardWasShown(notification: NSNotification) {
         let info = notification.userInfo!
         let keyboardFrame: CGRect = (info[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue

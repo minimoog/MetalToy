@@ -69,7 +69,12 @@ class EditorViewController: UIViewController {
             playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
         }
         
-        viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
+        if #available(iOS 13.0, *) {
+            viewBarItem = UIBarButtonItem(image: UIImage(systemName: "eye"), style: .plain, target: self, action: #selector(self.onViewButtonTapped))
+        } else {
+            viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
+        }
+        
         texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
         navigationItem.rightBarButtonItems = [playBarItem!, viewBarItem!, texturesBarItem!]
         
