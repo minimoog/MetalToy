@@ -26,6 +26,8 @@ class EditorViewController: UIViewController {
     var viewBarItem: UIBarButtonItem?
     var texturesBarItem: UIBarButtonItem?
     
+    var isPlaying: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,7 +63,12 @@ class EditorViewController: UIViewController {
         }
         
         //setup buttons
-        playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
+        if #available(iOS 13.0, *) {
+            playBarItem = UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
+        } else {
+            playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
+        }
+        
         viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
         texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
         navigationItem.rightBarButtonItems = [playBarItem!, viewBarItem!, texturesBarItem!]
@@ -131,20 +138,35 @@ class EditorViewController: UIViewController {
     }
     
     @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
-        if sender.title == "Play" {
+        if !isPlaying {
             
             if let text = codeViewController?.codeView?.text {
                 if  metalViewController?.setRenderPipeline(fragmentShader: text) != nil {
-                    sender.title = "Pause"
-                    metalViewController?.mtkView.isPaused = false
+                    
+                    if #available(iOS 13.0, *) {
+                        sender.image = UIImage(systemName: "pause.fill")
+                    } else {
+                        sender.title = "Pause"
+                    }
+                    
+                    metalViewController?.mtkView.isPaused = false // ### TODO: Merge maybe binding with isPlaying state
                 } else {
                     metalViewController?.mtkView.isPaused = true
                 }
             }
+            
+            isPlaying = true
+            
         } else {
-            sender.title = "Play"
+            if #available(iOS 13.0, *) {
+                sender.image = UIImage(systemName: "play.fill")
+            } else {
+                sender.title = "Play"
+            }
             
             metalViewController?.mtkView.isPaused = true
+            
+            isPlaying = false
         }
     }
     
