@@ -23,7 +23,7 @@
                                 </constraints>
                             </mtkView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="25O-GC-V7a" firstAttribute="leading" secondItem="aoM-Nf-TYC" secondAttribute="leading" constant="20" id="NRq-6j-haF"/>
                             <constraint firstItem="25O-GC-V7a" firstAttribute="top" secondItem="aoM-Nf-TYC" secondAttribute="top" constant="20" id="lz3-d4-X65"/>
@@ -179,7 +179,7 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1112" height="784"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="tBs-2A-rYT"/>
                     </view>
                 </viewController>

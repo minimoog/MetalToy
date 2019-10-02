@@ -68,7 +68,12 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         codeView?.text = DefaultFragmentShader
         codeView?.translatesAutoresizingMaskIntoConstraints = false
         codeView?.textContainerInset = UIEdgeInsets(top: 10, left: GutterWidth, bottom: 8, right: 0)
-        codeView?.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
+        
+        if #available(iOS 13.0, *) {
+            codeView?.backgroundColor = UIColor.systemBackground
+        } else {
+            codeView?.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
+        }
  
         //constraints
         codeView?.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor).isActive = true
