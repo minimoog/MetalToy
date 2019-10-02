@@ -28,4 +28,17 @@ class BlockBarButtonItem: UIBarButtonItem {
 		actionHandler?()
 	}
 
+    //hacky
+    override var title: String? {
+        didSet {
+            
+            if #available(iOS 13.0, *) {
+                if self.title == "Close" {
+                    self.image = UIImage(systemName: "xmark.circle")
+                } else if self.title == "⬇︎" {
+                    self.image = UIImage(systemName: "arrow.down.circle")
+                }
+            }
+        }
+    }
 }
