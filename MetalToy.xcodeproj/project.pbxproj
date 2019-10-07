@@ -18,7 +18,6 @@
 		524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */; };
 		525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D82E120168F0B00B16618 /* ShaderDocument.swift */; };
 		525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C061F79BA0900FADC46 /* MetalViewController.swift */; };
-		52607BEA2048B5D30014130F /* МetalViewPanelContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52607BE92048B5D30014130F /* МetalViewPanelContentController.swift */; };
 		52619EB51FF1BDAD00490EF9 /* CompilerMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */; };
 		5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5264C0351F4E3610001B9EEC /* Shaders.swift */; };
 		526618A621092A8A00F12D9D /* cube_basilica.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5266188921092A8800F12D9D /* cube_basilica.jpg */; };
@@ -49,43 +48,6 @@
 		526618C121092A8A00F12D9D /* tex_gray_noise_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = 526618A421092A8A00F12D9D /* tex_gray_noise_medium.png */; };
 		526618C221092A8A00F12D9D /* tex_organic_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 526618A521092A8A00F12D9D /* tex_organic_3.jpg */; };
 		526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */; };
-		526EE34E204620C2004451E6 /* UIViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE322204620C2004451E6 /* UIViewController+Popover.swift */; };
-		526EE34F204620C2004451E6 /* CGRect+Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE323204620C2004451E6 /* CGRect+Center.swift */; };
-		526EE350204620C2004451E6 /* BlockBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE324204620C2004451E6 /* BlockBarButtonItem.swift */; };
-		526EE351204620C2004451E6 /* PanelContentDelegate+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE326204620C2004451E6 /* PanelContentDelegate+Navigation.swift */; };
-		526EE352204620C2004451E6 /* PanelContentDelegate+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE327204620C2004451E6 /* PanelContentDelegate+Default.swift */; };
-		526EE353204620C2004451E6 /* PanelContentDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE328204620C2004451E6 /* PanelContentDelegate.swift */; };
-		526EE354204620C2004451E6 /* PanelManager+Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE32A204620C2004451E6 /* PanelManager+Dragging.swift */; };
-		526EE355204620C2004451E6 /* PanelManager+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE32B204620C2004451E6 /* PanelManager+State.swift */; };
-		526EE356204620C2004451E6 /* PanelManager+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE32C204620C2004451E6 /* PanelManager+AutoLayout.swift */; };
-		526EE357204620C2004451E6 /* PanelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE32D204620C2004451E6 /* PanelManager.swift */; };
-		526EE358204620C2004451E6 /* PanelManager+Pinning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE32E204620C2004451E6 /* PanelManager+Pinning.swift */; };
-		526EE359204620C2004451E6 /* PanelManager+Offscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE32F204620C2004451E6 /* PanelManager+Offscreen.swift */; };
-		526EE35A204620C2004451E6 /* PanelManager+Closing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE330204620C2004451E6 /* PanelManager+Closing.swift */; };
-		526EE35B204620C2004451E6 /* PanelManager+Floating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE331204620C2004451E6 /* PanelManager+Floating.swift */; };
-		526EE35C204620C2004451E6 /* PanelManager+Expose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE332204620C2004451E6 /* PanelManager+Expose.swift */; };
-		526EE35D204620C2004451E6 /* PanelManager+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE333204620C2004451E6 /* PanelManager+Default.swift */; };
-		526EE35E204620C2004451E6 /* CornerHandleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE335204620C2004451E6 /* CornerHandleView.swift */; };
-		526EE360204620C2004451E6 /* PanelViewController+States.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE338204620C2004451E6 /* PanelViewController+States.swift */; };
-		526EE361204620C2004451E6 /* PanelViewController+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE339204620C2004451E6 /* PanelViewController+Resize.swift */; };
-		526EE362204620C2004451E6 /* PanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE33A204620C2004451E6 /* PanelViewController.swift */; };
-		526EE363204620C2004451E6 /* PanelViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE33B204620C2004451E6 /* PanelViewController+Keyboard.swift */; };
-		526EE364204620C2004451E6 /* PanelNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE33C204620C2004451E6 /* PanelNavigationController.swift */; };
-		526EE365204620C2004451E6 /* PanelViewController+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE33D204620C2004451E6 /* PanelViewController+Appearance.swift */; };
-		526EE366204620C2004451E6 /* PanelViewController+Dragging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE33E204620C2004451E6 /* PanelViewController+Dragging.swift */; };
-		526EE367204620C2004451E6 /* PanelViewController+Offscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE33F204620C2004451E6 /* PanelViewController+Offscreen.swift */; };
-		526EE368204620C2004451E6 /* PanelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE341204620C2004451E6 /* PanelState.swift */; };
-		526EE369204620C2004451E6 /* PanelStateCoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE342204620C2004451E6 /* PanelStateCoder.swift */; };
-		526EE36A204620C2004451E6 /* ResizeStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE344204620C2004451E6 /* ResizeStart.swift */; };
-		526EE36B204620C2004451E6 /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE345204620C2004451E6 /* LogLevel.swift */; };
-		526EE36C204620C2004451E6 /* PanelFloatingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE346204620C2004451E6 /* PanelFloatingState.swift */; };
-		526EE36D204620C2004451E6 /* PanelPinSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE347204620C2004451E6 /* PanelPinSide.swift */; };
-		526EE36E204620C2004451E6 /* UnpinningMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE348204620C2004451E6 /* UnpinningMetadata.swift */; };
-		526EE36F204620C2004451E6 /* PanelPinnedMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE349204620C2004451E6 /* PanelPinnedMetadata.swift */; };
-		526EE370204620C2004451E6 /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE34A204620C2004451E6 /* AssociatedObject.swift */; };
-		526EE371204620C2004451E6 /* BlockGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE34B204620C2004451E6 /* BlockGestureRecognizer.swift */; };
-		526EE372204620C2004451E6 /* PinnedPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE34C204620C2004451E6 /* PinnedPosition.swift */; };
-		526EE373204620C2004451E6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526EE34D204620C2004451E6 /* Constants.swift */; };
 		526F72D9212387EE0068F574 /* TexturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */; };
 		526F72DB21238A610068F574 /* TextureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526F72DA21238A610068F574 /* TextureCollectionViewCell.swift */; };
 		5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A9981FEC7C49000D2449 /* KUIPopOver.swift */; };
@@ -199,7 +161,6 @@
 		524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureSelectorViewController.swift; sourceTree = "<group>"; };
 		525D82E120168F0B00B16618 /* ShaderDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderDocument.swift; sourceTree = "<group>"; };
 		525F0C061F79BA0900FADC46 /* MetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
-		52607BE92048B5D30014130F /* МetalViewPanelContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "МetalViewPanelContentController.swift"; sourceTree = "<group>"; };
 		52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerMessageButton.swift; sourceTree = "<group>"; };
 		5264C0351F4E3610001B9EEC /* Shaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shaders.swift; sourceTree = "<group>"; };
 		5266188921092A8800F12D9D /* cube_basilica.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cube_basilica.jpg; sourceTree = "<group>"; };
@@ -230,44 +191,6 @@
 		526618A421092A8A00F12D9D /* tex_gray_noise_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tex_gray_noise_medium.png; sourceTree = "<group>"; };
 		526618A521092A8A00F12D9D /* tex_organic_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tex_organic_3.jpg; sourceTree = "<group>"; };
 		526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerOutputParser.swift; sourceTree = "<group>"; };
-		526EE320204620C2004451E6 /* PanelKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelKit.h; sourceTree = "<group>"; };
-		526EE322204620C2004451E6 /* UIViewController+Popover.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Popover.swift"; sourceTree = "<group>"; };
-		526EE323204620C2004451E6 /* CGRect+Center.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Center.swift"; sourceTree = "<group>"; };
-		526EE324204620C2004451E6 /* BlockBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockBarButtonItem.swift; sourceTree = "<group>"; };
-		526EE326204620C2004451E6 /* PanelContentDelegate+Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelContentDelegate+Navigation.swift"; sourceTree = "<group>"; };
-		526EE327204620C2004451E6 /* PanelContentDelegate+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelContentDelegate+Default.swift"; sourceTree = "<group>"; };
-		526EE328204620C2004451E6 /* PanelContentDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelContentDelegate.swift; sourceTree = "<group>"; };
-		526EE32A204620C2004451E6 /* PanelManager+Dragging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+Dragging.swift"; sourceTree = "<group>"; };
-		526EE32B204620C2004451E6 /* PanelManager+State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+State.swift"; sourceTree = "<group>"; };
-		526EE32C204620C2004451E6 /* PanelManager+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+AutoLayout.swift"; sourceTree = "<group>"; };
-		526EE32D204620C2004451E6 /* PanelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelManager.swift; sourceTree = "<group>"; };
-		526EE32E204620C2004451E6 /* PanelManager+Pinning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+Pinning.swift"; sourceTree = "<group>"; };
-		526EE32F204620C2004451E6 /* PanelManager+Offscreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+Offscreen.swift"; sourceTree = "<group>"; };
-		526EE330204620C2004451E6 /* PanelManager+Closing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+Closing.swift"; sourceTree = "<group>"; };
-		526EE331204620C2004451E6 /* PanelManager+Floating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+Floating.swift"; sourceTree = "<group>"; };
-		526EE332204620C2004451E6 /* PanelManager+Expose.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+Expose.swift"; sourceTree = "<group>"; };
-		526EE333204620C2004451E6 /* PanelManager+Default.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelManager+Default.swift"; sourceTree = "<group>"; };
-		526EE335204620C2004451E6 /* CornerHandleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerHandleView.swift; sourceTree = "<group>"; };
-		526EE338204620C2004451E6 /* PanelViewController+States.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelViewController+States.swift"; sourceTree = "<group>"; };
-		526EE339204620C2004451E6 /* PanelViewController+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelViewController+Resize.swift"; sourceTree = "<group>"; };
-		526EE33A204620C2004451E6 /* PanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelViewController.swift; sourceTree = "<group>"; };
-		526EE33B204620C2004451E6 /* PanelViewController+Keyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelViewController+Keyboard.swift"; sourceTree = "<group>"; };
-		526EE33C204620C2004451E6 /* PanelNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelNavigationController.swift; sourceTree = "<group>"; };
-		526EE33D204620C2004451E6 /* PanelViewController+Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelViewController+Appearance.swift"; sourceTree = "<group>"; };
-		526EE33E204620C2004451E6 /* PanelViewController+Dragging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelViewController+Dragging.swift"; sourceTree = "<group>"; };
-		526EE33F204620C2004451E6 /* PanelViewController+Offscreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PanelViewController+Offscreen.swift"; sourceTree = "<group>"; };
-		526EE341204620C2004451E6 /* PanelState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelState.swift; sourceTree = "<group>"; };
-		526EE342204620C2004451E6 /* PanelStateCoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelStateCoder.swift; sourceTree = "<group>"; };
-		526EE344204620C2004451E6 /* ResizeStart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResizeStart.swift; sourceTree = "<group>"; };
-		526EE345204620C2004451E6 /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
-		526EE346204620C2004451E6 /* PanelFloatingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelFloatingState.swift; sourceTree = "<group>"; };
-		526EE347204620C2004451E6 /* PanelPinSide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelPinSide.swift; sourceTree = "<group>"; };
-		526EE348204620C2004451E6 /* UnpinningMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnpinningMetadata.swift; sourceTree = "<group>"; };
-		526EE349204620C2004451E6 /* PanelPinnedMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PanelPinnedMetadata.swift; sourceTree = "<group>"; };
-		526EE34A204620C2004451E6 /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
-		526EE34B204620C2004451E6 /* BlockGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockGestureRecognizer.swift; sourceTree = "<group>"; };
-		526EE34C204620C2004451E6 /* PinnedPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinnedPosition.swift; sourceTree = "<group>"; };
-		526EE34D204620C2004451E6 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexturesCollectionViewController.swift; sourceTree = "<group>"; };
 		526F72DA21238A610068F574 /* TextureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCollectionViewCell.swift; sourceTree = "<group>"; };
 		5272A9981FEC7C49000D2449 /* KUIPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOver.swift; sourceTree = "<group>"; };
@@ -404,7 +327,6 @@
 				52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */,
 				520C76512044CB1100F39EA1 /* EditorViewController.swift */,
 				5241E9991F49E55000107886 /* CodeViewController.swift */,
-				52607BE92048B5D30014130F /* МetalViewPanelContentController.swift */,
 				525F0C061F79BA0900FADC46 /* MetalViewController.swift */,
 				525D82E120168F0B00B16618 /* ShaderDocument.swift */,
 				527B1F17212E189A003494BF /* ShaderInfo.swift */,
@@ -422,7 +344,6 @@
 				52619EB41FF1BDAD00490EF9 /* CompilerMessageButton.swift */,
 				CDFF76A522B990A10022D9FF /* Suggestions.swift */,
 				CD147C4F222F3D6E002A4696 /* InputAssistant */,
-				526EE31F204620C2004451E6 /* PanelKit */,
 				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
 				5266188821092A0800F12D9D /* textures */,
@@ -471,107 +392,6 @@
 				5266189B21092A8900F12D9D /* tex_font_1.png */,
 			);
 			path = textures;
-			sourceTree = "<group>";
-		};
-		526EE31F204620C2004451E6 /* PanelKit */ = {
-			isa = PBXGroup;
-			children = (
-				526EE320204620C2004451E6 /* PanelKit.h */,
-				526EE321204620C2004451E6 /* Utils */,
-				526EE325204620C2004451E6 /* PanelContentDelegate */,
-				526EE329204620C2004451E6 /* PanelManager */,
-				526EE334204620C2004451E6 /* View */,
-				526EE337204620C2004451E6 /* Controller */,
-				526EE340204620C2004451E6 /* State Restoration */,
-				526EE343204620C2004451E6 /* Model */,
-			);
-			path = PanelKit;
-			sourceTree = "<group>";
-		};
-		526EE321204620C2004451E6 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				526EE322204620C2004451E6 /* UIViewController+Popover.swift */,
-				526EE323204620C2004451E6 /* CGRect+Center.swift */,
-				526EE324204620C2004451E6 /* BlockBarButtonItem.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		526EE325204620C2004451E6 /* PanelContentDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				526EE326204620C2004451E6 /* PanelContentDelegate+Navigation.swift */,
-				526EE327204620C2004451E6 /* PanelContentDelegate+Default.swift */,
-				526EE328204620C2004451E6 /* PanelContentDelegate.swift */,
-			);
-			path = PanelContentDelegate;
-			sourceTree = "<group>";
-		};
-		526EE329204620C2004451E6 /* PanelManager */ = {
-			isa = PBXGroup;
-			children = (
-				526EE32A204620C2004451E6 /* PanelManager+Dragging.swift */,
-				526EE32B204620C2004451E6 /* PanelManager+State.swift */,
-				526EE32C204620C2004451E6 /* PanelManager+AutoLayout.swift */,
-				526EE32D204620C2004451E6 /* PanelManager.swift */,
-				526EE32E204620C2004451E6 /* PanelManager+Pinning.swift */,
-				526EE32F204620C2004451E6 /* PanelManager+Offscreen.swift */,
-				526EE330204620C2004451E6 /* PanelManager+Closing.swift */,
-				526EE331204620C2004451E6 /* PanelManager+Floating.swift */,
-				526EE332204620C2004451E6 /* PanelManager+Expose.swift */,
-				526EE333204620C2004451E6 /* PanelManager+Default.swift */,
-			);
-			path = PanelManager;
-			sourceTree = "<group>";
-		};
-		526EE334204620C2004451E6 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				526EE335204620C2004451E6 /* CornerHandleView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		526EE337204620C2004451E6 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				526EE338204620C2004451E6 /* PanelViewController+States.swift */,
-				526EE339204620C2004451E6 /* PanelViewController+Resize.swift */,
-				526EE33A204620C2004451E6 /* PanelViewController.swift */,
-				526EE33B204620C2004451E6 /* PanelViewController+Keyboard.swift */,
-				526EE33C204620C2004451E6 /* PanelNavigationController.swift */,
-				526EE33D204620C2004451E6 /* PanelViewController+Appearance.swift */,
-				526EE33E204620C2004451E6 /* PanelViewController+Dragging.swift */,
-				526EE33F204620C2004451E6 /* PanelViewController+Offscreen.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		526EE340204620C2004451E6 /* State Restoration */ = {
-			isa = PBXGroup;
-			children = (
-				526EE341204620C2004451E6 /* PanelState.swift */,
-				526EE342204620C2004451E6 /* PanelStateCoder.swift */,
-			);
-			path = "State Restoration";
-			sourceTree = "<group>";
-		};
-		526EE343204620C2004451E6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				526EE344204620C2004451E6 /* ResizeStart.swift */,
-				526EE345204620C2004451E6 /* LogLevel.swift */,
-				526EE346204620C2004451E6 /* PanelFloatingState.swift */,
-				526EE347204620C2004451E6 /* PanelPinSide.swift */,
-				526EE348204620C2004451E6 /* UnpinningMetadata.swift */,
-				526EE349204620C2004451E6 /* PanelPinnedMetadata.swift */,
-				526EE34A204620C2004451E6 /* AssociatedObject.swift */,
-				526EE34B204620C2004451E6 /* BlockGestureRecognizer.swift */,
-				526EE34C204620C2004451E6 /* PinnedPosition.swift */,
-				526EE34D204620C2004451E6 /* Constants.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		5272A9971FEC7C1F000D2449 /* KUIPopOver */ = {
@@ -900,68 +720,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				526EE36F204620C2004451E6 /* PanelPinnedMetadata.swift in Sources */,
-				526EE36B204620C2004451E6 /* LogLevel.swift in Sources */,
 				52997B4E2176A27000E4983B /* ShaderDocumentBrowserViewController.swift in Sources */,
 				52FF7416219251ED0056FFC4 /* EditorNavigationController.swift in Sources */,
 				52619EB51FF1BDAD00490EF9 /* CompilerMessageButton.swift in Sources */,
-				526EE36D204620C2004451E6 /* PanelPinSide.swift in Sources */,
 				52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */,
 				5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */,
 				CD147C52222F3D6F002A4696 /* InputAssistantView.swift in Sources */,
-				526EE352204620C2004451E6 /* PanelContentDelegate+Default.swift in Sources */,
-				526EE356204620C2004451E6 /* PanelManager+AutoLayout.swift in Sources */,
-				526EE351204620C2004451E6 /* PanelContentDelegate+Navigation.swift in Sources */,
-				526EE360204620C2004451E6 /* PanelViewController+States.swift in Sources */,
 				5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */,
-				526EE367204620C2004451E6 /* PanelViewController+Offscreen.swift in Sources */,
-				526EE364204620C2004451E6 /* PanelNavigationController.swift in Sources */,
-				526EE36A204620C2004451E6 /* ResizeStart.swift in Sources */,
-				526EE365204620C2004451E6 /* PanelViewController+Appearance.swift in Sources */,
 				526F72D9212387EE0068F574 /* TexturesCollectionViewController.swift in Sources */,
-				526EE36E204620C2004451E6 /* UnpinningMetadata.swift in Sources */,
-				526EE35C204620C2004451E6 /* PanelManager+Expose.swift in Sources */,
-				526EE355204620C2004451E6 /* PanelManager+State.swift in Sources */,
 				5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */,
-				526EE369204620C2004451E6 /* PanelStateCoder.swift in Sources */,
-				526EE358204620C2004451E6 /* PanelManager+Pinning.swift in Sources */,
-				526EE350204620C2004451E6 /* BlockBarButtonItem.swift in Sources */,
 				525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */,
 				52E7C42B1FC7851200087B15 /* CodeAttributedString.swift in Sources */,
 				5264C0361F4E3610001B9EEC /* Shaders.swift in Sources */,
 				5241E9981F49E55000107886 /* AppDelegate.swift in Sources */,
-				526EE35A204620C2004451E6 /* PanelManager+Closing.swift in Sources */,
-				526EE361204620C2004451E6 /* PanelViewController+Resize.swift in Sources */,
 				52E7C42C1FC7851200087B15 /* Highlightr.swift in Sources */,
-				526EE35B204620C2004451E6 /* PanelManager+Floating.swift in Sources */,
 				527B1F18212E189A003494BF /* ShaderInfo.swift in Sources */,
-				526EE35D204620C2004451E6 /* PanelManager+Default.swift in Sources */,
-				526EE354204620C2004451E6 /* PanelManager+Dragging.swift in Sources */,
-				526EE371204620C2004451E6 /* BlockGestureRecognizer.swift in Sources */,
 				52E7C42F1FC7851200087B15 /* Theme.swift in Sources */,
-				526EE370204620C2004451E6 /* AssociatedObject.swift in Sources */,
-				526EE359204620C2004451E6 /* PanelManager+Offscreen.swift in Sources */,
 				524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */,
-				526EE373204620C2004451E6 /* Constants.swift in Sources */,
 				CDFF76A622B990A10022D9FF /* Suggestions.swift in Sources */,
-				526EE372204620C2004451E6 /* PinnedPosition.swift in Sources */,
 				CD147C53222F3D6F002A4696 /* InputAssistantCollectionView.swift in Sources */,
-				526EE366204620C2004451E6 /* PanelViewController+Dragging.swift in Sources */,
-				526EE35E204620C2004451E6 /* CornerHandleView.swift in Sources */,
 				525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */,
-				52607BEA2048B5D30014130F /* МetalViewPanelContentController.swift in Sources */,
-				526EE368204620C2004451E6 /* PanelState.swift in Sources */,
 				520C76522044CB1100F39EA1 /* EditorViewController.swift in Sources */,
 				5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */,
 				526F72DB21238A610068F574 /* TextureCollectionViewCell.swift in Sources */,
-				526EE34E204620C2004451E6 /* UIViewController+Popover.swift in Sources */,
-				526EE357204620C2004451E6 /* PanelManager.swift in Sources */,
-				526EE34F204620C2004451E6 /* CGRect+Center.swift in Sources */,
-				526EE363204620C2004451E6 /* PanelViewController+Keyboard.swift in Sources */,
 				526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */,
-				526EE353204620C2004451E6 /* PanelContentDelegate.swift in Sources */,
-				526EE36C204620C2004451E6 /* PanelFloatingState.swift in Sources */,
-				526EE362204620C2004451E6 /* PanelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

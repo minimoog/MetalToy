@@ -17,9 +17,6 @@ class EditorViewController: UIViewController {
     var codeViewController: CodeViewController?
     var metalViewController: MetalViewController?
 
-    var metalViewPanelContentVC: MetalViewPanelContentController!
-    var metalViewPanelVC: PanelViewController!
-    
     var textureSelectorPanelContentVC: TextureSelectorViewController!
     
     var playBarItem: UIBarButtonItem?
@@ -33,10 +30,7 @@ class EditorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        metalViewPanelContentVC = (storyboard?.instantiateViewController(withIdentifier: "MetalViewPanelContentController") as! MetalViewPanelContentController)
-        metalViewPanelVC = PanelViewController(with: metalViewPanelContentVC, in: self)
-        
-        metalViewController = metalViewPanelContentVC.metalViewController
+        //metalViewController = metalViewPanelContentVC.metalViewController
         
         //on shader successfull compiling invoke codeviewcontroller
         metalViewController?.finishedCompiling = { result, compilerMessages in
@@ -103,23 +97,6 @@ class EditorViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        
-        coordinator.animate(alongsideTransition: { (context) in
-            
-        }) { (context) in
-            
-            if !self.allowFloatingPanels {
-                self.closeAllFloatingPanels()
-            }
-            
-            if !self.allowPanelPinning {
-                self.closeAllPinnedPanels()
-            }
-        }
-    }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -127,19 +104,19 @@ class EditorViewController: UIViewController {
     @objc func onViewButtonTapped(sender: UIBarButtonItem) {
         //show metal VC
         
-        metalViewPanelVC.modalPresentationStyle = .popover
-        metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
-        metalViewPanelVC.manager?.close(metalViewPanelVC)
-        
-        metalViewPanelContentVC.closing = {
-            sender.isEnabled = !sender.isEnabled
-            
-            //pause mtk view when closing the panel
-            self.metalViewController?.mtkView.isPaused = true
-            self.playBarItem?.title = "Play"
-        }
-        
-        present(metalViewPanelVC, animated: true, completion: nil)
+//        metalViewPanelVC.modalPresentationStyle = .popover
+//        metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
+//        metalViewPanelVC.manager?.close(metalViewPanelVC)
+//        
+//        metalViewPanelContentVC.closing = {
+//            sender.isEnabled = !sender.isEnabled
+//            
+//            //pause mtk view when closing the panel
+//            self.metalViewController?.mtkView.isPaused = true
+//            self.playBarItem?.title = "Play"
+//        }
+//        
+//        present(metalViewPanelVC, animated: true, completion: nil)
     }
     
     @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
@@ -197,21 +174,3 @@ class EditorViewController: UIViewController {
     }
 }
 
-/*
- * PanelKit
- */
-extension EditorViewController: PanelManager {
-    
-    var panelContentWrapperView: UIView {
-        return contentWrapperView
-    }
-    
-    var panelContentView: UIView {
-        return contentView
-    }
-    
-    var panels: [PanelViewController] {
-        return [metalViewPanelVC]
-    }
-    
-}
