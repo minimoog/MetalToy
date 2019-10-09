@@ -11,9 +11,6 @@ import UIKit
 class EditorViewController: UIViewController {
     var document: ShaderDocument?
     
-    @IBOutlet weak var contentWrapperView: UIView!
-    @IBOutlet weak var contentView: UIView!
-    
     var codeViewController: CodeViewController?
     var metalViewController: MetalViewController?
 
@@ -23,6 +20,11 @@ class EditorViewController: UIViewController {
     var viewBarItem: UIBarButtonItem?
     var texturesBarItem: UIBarButtonItem?
     
+    @IBOutlet weak var trailingMVCconstraint: NSLayoutConstraint!
+    @IBOutlet weak var topMVCconstraint: NSLayoutConstraint!
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
+    
     var isPlaying: Bool = false
     
     override func viewDidLoad() {
@@ -30,7 +32,16 @@ class EditorViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        //metalViewController = metalViewPanelContentVC.metalViewController
+        guard let codeController = children.first as? CodeViewController else {
+            fatalError("Check storyboard for CodeViewController")
+        }
+        
+        guard let metalController = children.last as? MetalViewController else {
+            fatalError("Check storyboard for MetalViewController")
+        }
+        
+        codeViewController = codeController
+        metalViewController = metalController
         
         //on shader successfull compiling invoke codeviewcontroller
         metalViewController?.finishedCompiling = { result, compilerMessages in
@@ -104,19 +115,7 @@ class EditorViewController: UIViewController {
     @objc func onViewButtonTapped(sender: UIBarButtonItem) {
         //show metal VC
         
-//        metalViewPanelVC.modalPresentationStyle = .popover
-//        metalViewPanelVC.popoverPresentationController?.barButtonItem = sender
-//        metalViewPanelVC.manager?.close(metalViewPanelVC)
-//        
-//        metalViewPanelContentVC.closing = {
-//            sender.isEnabled = !sender.isEnabled
-//            
-//            //pause mtk view when closing the panel
-//            self.metalViewController?.mtkView.isPaused = true
-//            self.playBarItem?.title = "Play"
-//        }
-//        
-//        present(metalViewPanelVC, animated: true, completion: nil)
+        // ### TODO
     }
     
     @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
@@ -162,15 +161,26 @@ class EditorViewController: UIViewController {
             dismiss(animated: true, completion: nil)        // this is top view controller so no problem here
     }
     
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination
+    @IBAction func metalVCPanning(_ panGestureRecognizer: UIPanGestureRecognizer) {
+        guard let view = panGestureRecognizer.view else { return }
         
-        if let codeViewController = destination as? CodeViewController {
-            self.codeViewController = codeViewController
-        }
+        let translation = panGestureRecognizer.translation(in: view)
+        
+        trailingMVCconstraint.constant -= translation.x
+        topMVCconstraint.constant += translation.y
+        
+        panGestureRecognizer.setTranslation(.zero, in: view)
     }
+    
+    @IBAction func metalVCPinching(_ pinchGestureRecognizer: UIPinchGestureRecognizer) {
+        let scale = pinchGestureRecognizer.scale
+        
+        heightConstraint.constant *= scale
+        widthConstraint.constant *= scale
+        
+        pinchGestureRecognizer.scale = 1.0
+    }
+    
+    // MARK: - Navigation
 }
 
