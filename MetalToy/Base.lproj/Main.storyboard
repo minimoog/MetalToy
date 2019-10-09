@@ -23,7 +23,7 @@
                                 </constraints>
                             </mtkView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="25O-GC-V7a" firstAttribute="leading" secondItem="aoM-Nf-TYC" secondAttribute="leading" constant="20" id="NRq-6j-haF"/>
                             <constraint firstItem="25O-GC-V7a" firstAttribute="top" secondItem="aoM-Nf-TYC" secondAttribute="top" constant="20" id="lz3-d4-X65"/>
@@ -175,7 +175,7 @@
                                     <segue destination="BYZ-38-t0r" kind="embed" id="QqX-mR-tYi"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXU-Mf-RR2" userLabel="MetalVC Container View">
+                            <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXU-Mf-RR2" userLabel="MetalVC Container View">
                                 <rect key="frame" x="836" y="70" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="7Jd-q1-9oc"/>
@@ -191,10 +191,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="MXU-Mf-RR2" firstAttribute="top" secondItem="1Gj-Ut-c37" secondAttribute="top" constant="20" id="U9U-ai-tW2"/>
+                            <constraint firstItem="1Gj-Ut-c37" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="MXU-Mf-RR2" secondAttribute="bottom" constant="20" id="F8I-8n-8M4"/>
+                            <constraint firstItem="MXU-Mf-RR2" firstAttribute="top" secondItem="1Gj-Ut-c37" secondAttribute="top" priority="999" constant="20" id="U9U-ai-tW2"/>
                             <constraint firstItem="r4d-B6-rro" firstAttribute="trailing" secondItem="1Gj-Ut-c37" secondAttribute="trailing" id="X8Z-RC-BIa"/>
                             <constraint firstItem="r4d-B6-rro" firstAttribute="top" secondItem="1Gj-Ut-c37" secondAttribute="top" id="a8d-PQ-R8c"/>
-                            <constraint firstItem="1Gj-Ut-c37" firstAttribute="trailing" secondItem="MXU-Mf-RR2" secondAttribute="trailing" constant="20" id="cih-zV-tJI"/>
+                            <constraint firstItem="1Gj-Ut-c37" firstAttribute="trailing" secondItem="MXU-Mf-RR2" secondAttribute="trailing" priority="999" constant="20" id="cih-zV-tJI"/>
+                            <constraint firstItem="MXU-Mf-RR2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Gj-Ut-c37" secondAttribute="leading" constant="20" id="lhU-Xm-mZ3"/>
                             <constraint firstItem="1Gj-Ut-c37" firstAttribute="bottom" secondItem="r4d-B6-rro" secondAttribute="bottom" id="sZw-i1-TPr"/>
                             <constraint firstItem="r4d-B6-rro" firstAttribute="leading" secondItem="1Gj-Ut-c37" secondAttribute="leading" id="yGa-PZ-ZiB"/>
                         </constraints>
@@ -203,6 +205,7 @@
                     <navigationItem key="navigationItem" id="mGB-Yi-M3n"/>
                     <connections>
                         <outlet property="heightConstraint" destination="8sf-l1-7ox" id="AMh-Rw-SqF"/>
+                        <outlet property="metalContainerView" destination="MXU-Mf-RR2" id="45W-le-pft"/>
                         <outlet property="topMVCconstraint" destination="U9U-ai-tW2" id="Bz2-Td-dSa"/>
                         <outlet property="trailingMVCconstraint" destination="cih-zV-tJI" id="nLz-qW-Wxm"/>
                         <outlet property="widthConstraint" destination="7Jd-q1-9oc" id="OKE-Vb-Bvh"/>

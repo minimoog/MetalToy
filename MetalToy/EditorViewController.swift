@@ -25,6 +25,8 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var widthConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var metalContainerView: UIView!
+    
     var isPlaying: Bool = false
     
     override func viewDidLoad() {
@@ -115,7 +117,24 @@ class EditorViewController: UIViewController {
     @objc func onViewButtonTapped(sender: UIBarButtonItem) {
         //show metal VC
         
-        // ### TODO
+        if metalContainerView.isHidden {
+            metalContainerView.isHidden = false
+            
+            if #available(iOS 13.0, *) {
+                sender.image = UIImage(systemName: "eye.slash")
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        } else {
+            metalContainerView.isHidden = true
+            
+            if #available(iOS 13.0, *) {
+                sender.image = UIImage(systemName: "eye")
+            } else {
+                // Fallback on earlier versions
+            }
+        }
     }
     
     @objc func onPlayButtonTapped(sender: UIBarButtonItem) {
@@ -167,7 +186,14 @@ class EditorViewController: UIViewController {
         let translation = panGestureRecognizer.translation(in: view)
         
         trailingMVCconstraint.constant -= translation.x
+        if trailingMVCconstraint.constant < 20 {
+            trailingMVCconstraint.constant = 20
+        }
+        
         topMVCconstraint.constant += translation.y
+        if topMVCconstraint.constant < 20 {
+            topMVCconstraint.constant = 20
+        }
         
         panGestureRecognizer.setTranslation(.zero, in: view)
     }
@@ -176,7 +202,14 @@ class EditorViewController: UIViewController {
         let scale = pinchGestureRecognizer.scale
         
         heightConstraint.constant *= scale
+        
+        if heightConstraint.constant < 200 { heightConstraint.constant = 200 }
+        if heightConstraint.constant > 600 { heightConstraint.constant = 600 }
+        
         widthConstraint.constant *= scale
+        
+        if widthConstraint.constant < 200 { widthConstraint.constant = 200 }
+        if widthConstraint.constant > 600 { widthConstraint.constant = 600 }
         
         pinchGestureRecognizer.scale = 1.0
     }
