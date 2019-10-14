@@ -45,6 +45,15 @@ class EditorViewController: UIViewController {
         codeViewController = codeController
         metalViewController = metalController
         
+        if #available(iOS 13.0, *) {
+            metalContainerView.layer.shadowColor = UIColor.systemBackground.cgColor
+        } else {
+            metalContainerView.layer.shadowColor = UIColor.gray.cgColor
+        }
+        
+        metalContainerView.layer.shadowOpacity = 0.8
+        metalContainerView.layer.shadowRadius = 20.0
+        
         //on shader successfull compiling invoke codeviewcontroller
         metalViewController?.finishedCompiling = { result, compilerMessages in
             if result {
