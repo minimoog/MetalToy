@@ -145,7 +145,6 @@
 		CD147C52222F3D6F002A4696 /* InputAssistantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD147C50222F3D6E002A4696 /* InputAssistantView.swift */; };
 		CD147C53222F3D6F002A4696 /* InputAssistantCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD147C51222F3D6E002A4696 /* InputAssistantCollectionView.swift */; };
 		CD3D2D56237CB99500AE703F /* ExamplesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD3D2D55237CB99500AE703F /* ExamplesViewController.swift */; };
-		CD3F7306237E06110079286B /* Larval.shader in Resources */ = {isa = PBXBuildFile; fileRef = CD3F7305237E06110079286B /* Larval.shader */; };
 		CD3F7309237E06DC0079286B /* examples in Resources */ = {isa = PBXBuildFile; fileRef = CD3F7308237E06DC0079286B /* examples */; };
 		CDFF76A622B990A10022D9FF /* Suggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDFF76A522B990A10022D9FF /* Suggestions.swift */; };
 /* End PBXBuildFile section */
@@ -291,7 +290,6 @@
 		CD147C50222F3D6E002A4696 /* InputAssistantView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAssistantView.swift; sourceTree = "<group>"; };
 		CD147C51222F3D6E002A4696 /* InputAssistantCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputAssistantCollectionView.swift; sourceTree = "<group>"; };
 		CD3D2D55237CB99500AE703F /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
-		CD3F7305237E06110079286B /* Larval.shader */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Larval.shader; sourceTree = "<group>"; };
 		CD3F7308237E06DC0079286B /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = examples; sourceTree = "<group>"; };
 		CDFF76A522B990A10022D9FF /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -329,7 +327,6 @@
 		5241E9961F49E55000107886 /* MetalToy */ = {
 			isa = PBXGroup;
 			children = (
-				CD3F7305237E06110079286B /* Larval.shader */,
 				5241E9971F49E55000107886 /* AppDelegate.swift */,
 				52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */,
 				520C76512044CB1100F39EA1 /* EditorViewController.swift */,
@@ -682,7 +679,6 @@
 				526618A921092A8A00F12D9D /* tex_organic_4.jpg in Resources */,
 				52E7C4741FC7851200087B15 /* googlecode.min.css in Resources */,
 				52E7C44F1FC7851200087B15 /* color-brewer.min.css in Resources */,
-				CD3F7306237E06110079286B /* Larval.shader in Resources */,
 				52E7C47B1FC7851200087B15 /* sunburst.min.css in Resources */,
 				52E7C47E1FC7851200087B15 /* darcula.min.css in Resources */,
 				52E7C4531FC7851200087B15 /* tomorrow-night.min.css in Resources */,
