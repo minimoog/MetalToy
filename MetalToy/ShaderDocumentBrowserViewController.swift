@@ -16,7 +16,10 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         
         allowsDocumentCreation = true
         allowsPickingMultipleItems = false
-        //browserUserInterfaceStyle = .dark
+        
+        let examplesBarButton = UIBarButtonItem(title: "Examples", style: .plain, target: self, action: #selector(self.onExamplesButtonTapped))
+        
+        additionalTrailingNavigationBarButtonItems = [examplesBarButton]
     }
     
     // --- Create new document ---
@@ -109,6 +112,24 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
             }
             
             self?.present(editorNavigationController, animated: true, completion: nil)
+        }
+    }
+    
+    // examples
+    
+    @objc func onExamplesButtonTapped(sender: UIBarButtonItem) {
+        
+        guard let examplesVC = (storyboard?.instantiateViewController(withIdentifier: "ExamplesViewController") as? ExamplesViewController) else { fatalError("Cannot instantiate ExampleViewController") }
+        
+        examplesVC.showPopover(barButtonItem: sender) {
+            url in
+            
+            self.revealDocument(at: url, importIfNeeded: true) {
+                url, error in
+                
+                //if let url = url { print(url) }
+                //if let error = error { print(error) }
+            }
         }
     }
 }
