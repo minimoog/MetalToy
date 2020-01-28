@@ -38,6 +38,9 @@ public let DefaultVertexShader = """
     """
 
 public let DefaultFragmentShader = """
+    #include <metal_stdlib>
+    using namespace metal;
+
     typedef struct
     {
        float2 resolution;
@@ -46,14 +49,19 @@ public let DefaultFragmentShader = """
 
     constexpr sampler textureSampler (mag_filter::linear, min_filter::linear);
 
-    fragment float4 fragmentShader(FragmentData in [[stage_in]],
-                                   texture2d<float> texture0 [[texture(0)]],
-                                   texture2d<float> texture1 [[texture(1)]],
-                                   texture2d<float> texture2 [[texture(2)]],
-                                   texture2d<float> texture3 [[texture(3)]],
-                                   constant Uniforms& uniforms [[buffer(1)]])
+    kernel void computeShader(texture2d<float, access::read> texture0 [[texture(0)]],
+                              texture2d<float, access::read> texture1 [[texture(1)]],
+                              texture2d<float, access::read> texture2 [[texture(2)]],
+                              texture2d<float, access::read> texture3 [[texture(3)]],
+                              texture2d<float, access::write> output [[texture(4)]],
+                              constant Uniforms& uniforms [[buffer(1)]],
+                              uint2 gid [[thread_position_in_grid]])
     {
-        float2 uv = in.fragCoord.xy / uniforms.resolution;
-        return float4(uv, 0.5 + 0.5 * sin(uniforms.time), 1.0);
+        int width = output.get_width();
+        int height = output.get_height();
+        float2 uv = float2(gid) / float2(width, height);
+
+        float4 result = float4(uv, 0.5 + 0.5 * sin(uniforms.time), 1.0);
+        output.write(result, gid);
     }
     """
