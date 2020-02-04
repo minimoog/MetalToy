@@ -284,7 +284,7 @@ class CodeViewController: UIViewController, UITextViewDelegate {
     
     func pointForMessage(lineNumber: Int, columnNumber: Int) -> CGPoint? {
         let rangeOfPrecedingNewLine: Int
-        let lineNumberPlusOffset = lineNumber - 25 - 1 //FIX ME
+        let lineNumberPlusOffset = lineNumber - 1
         
         if let indexPos = linePosition(inString: codeView!.text, lastOccurence: lineNumberPlusOffset) {
             //rangeOfPrecedingNewLine = indexPos.encodedOffset
