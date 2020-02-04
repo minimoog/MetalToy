@@ -11,21 +11,17 @@ import Metal
 import MetalKit
 
 class MetalViewController: UIViewController, MTKViewDelegate {
-    var viewPortData: [Float] = [Float](repeating: 0, count: 2)
     
     @IBOutlet weak var mtkView: MTKView! {
         didSet {
             mtkView.delegate = self
             mtkView.preferredFramesPerSecond = 60
-            //mtkView.clearColor = MTLClearColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         }
     }
     
     var device: MTLDevice! = nil
-    var pipelineState: MTLRenderPipelineState?
-    var cps: MTLComputePipelineState?
+    var computePipelineState: MTLComputePipelineState?
     var commandQueue: MTLCommandQueue! = nil
-    var vertexBuffer: MTLBuffer!
     var uniformBuffer: MTLBuffer!
     var textures: [MTLTexture?] = [MTLTexture?](repeating: nil, count: 4)
     
@@ -45,7 +41,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         //start paused
         mtkView.isPaused = true
         
-        //float2 + float size + padding = 4 floats
+        //float size + padding = 4 floats
         uniformBuffer = device.makeBuffer(length: 4 * MemoryLayout<Float>.stride, options: [])
         
         if setComputePipeline(computeShader: DefaultFragmentShader) == nil {
@@ -67,9 +63,9 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     
     public func setComputePipeline(computeShader: String) -> MTLComputePipelineState? {
         if let computeProgram = loadShaders(device: device, computeShader: computeShader) {
-            cps = try? device.makeComputePipelineState(function: computeProgram)
+            computePipelineState = try? device.makeComputePipelineState(function: computeProgram)
             
-            return cps
+            return computePipelineState
         }
         
         return nil
@@ -78,7 +74,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     fileprivate func loadShaders(device: MTLDevice, computeShader: String) -> MTLFunction? {
         do {
             let library = try device.makeLibrary(source: computeShader, options: nil)
-            let computeProgram = library.makeFunction(name: "computeShader")
+            let computeProgram = library.makeFunction(name: "shader")
             
             if let onCompilerResult = finishedCompiling {
                 onCompilerResult(true, nil)
@@ -97,17 +93,12 @@ class MetalViewController: UIViewController, MTKViewDelegate {
     }
     
     public func loadTexture(filename: String, index: Int) {
-        print("filename: \(filename) at \(index)")
-        
         let textureLoader: MTKTextureLoader = MTKTextureLoader(device: device)
         textures[index] = try? textureLoader.newTexture(URL: URL(fileURLWithPath: filename), options: nil)
     }
     
-    internal func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        viewPortData[0] = Float(size.width)
-        viewPortData[1] = Float(size.height)
+    func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         
-        //viewPortBuffer.contents().copyBytes(from: viewPortData, count: viewPortData.count * MemoryLayout<Float>.stride)
     }
     
     internal func draw(in view: MTKView) {
@@ -115,23 +106,17 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         
         if (numFrames == 0) { startTime = CACurrentMediaTime() }
         
-        //ios 11 MTKView bug or not, drawableSizeWillChange is not called, so we need here the viewport sizes
-        viewPortData[0] = Float(view.drawableSize.width)
-        viewPortData[1] = Float(view.drawableSize.height)
-        
         let currentTime = CACurrentMediaTime()
         let timeToShader = Float(currentTime - startTime)
         
-        let pointerUniformBuffer = uniformBuffer.contents().bindMemory(to: Float.self, capacity: 3)
-        let arrayPointer = UnsafeMutableBufferPointer(start: pointerUniformBuffer, count: 3)
-        arrayPointer[0] = viewPortData[0]
-        arrayPointer[1] = viewPortData[1]
-        arrayPointer[2] = timeToShader
+        let pointerUniformBuffer = uniformBuffer.contents().bindMemory(to: Float.self, capacity: 1)
+        let arrayPointer = UnsafeMutableBufferPointer(start: pointerUniformBuffer, count: 1)
+        arrayPointer[0] = timeToShader
         
         let commandBuffer = commandQueue.makeCommandBuffer()
         let computeEncoder = commandBuffer?.makeComputeCommandEncoder()
-        computeEncoder?.setComputePipelineState(cps!)
-        computeEncoder?.setBuffer(uniformBuffer, offset: 0, index: 1)
+        computeEncoder?.setComputePipelineState(computePipelineState!)
+        computeEncoder?.setBuffer(uniformBuffer, offset: 0, index: 0)
         computeEncoder?.setTextures(textures, range: 0 ..< textures.count)
         computeEncoder?.setTexture(drawable.texture, index: 4)
         

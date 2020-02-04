@@ -43,19 +43,18 @@ public let DefaultFragmentShader = """
 
     typedef struct
     {
-       float2 resolution;
        float time;
     } Uniforms;
 
     constexpr sampler textureSampler (mag_filter::linear, min_filter::linear);
 
-    kernel void computeShader(texture2d<float, access::read> texture0 [[texture(0)]],
-                              texture2d<float, access::read> texture1 [[texture(1)]],
-                              texture2d<float, access::read> texture2 [[texture(2)]],
-                              texture2d<float, access::read> texture3 [[texture(3)]],
-                              texture2d<float, access::write> output [[texture(4)]],
-                              constant Uniforms& uniforms [[buffer(1)]],
-                              uint2 gid [[thread_position_in_grid]])
+    kernel void shader(texture2d<float, access::read> texture0 [[texture(0)]],
+                       texture2d<float, access::read> texture1 [[texture(1)]],
+                       texture2d<float, access::read> texture2 [[texture(2)]],
+                       texture2d<float, access::read> texture3 [[texture(3)]],
+                       texture2d<float, access::write> output [[texture(4)]],
+                       constant Uniforms& uniforms [[buffer(0)]],
+                       uint2 gid [[thread_position_in_grid]])
     {
         int width = output.get_width();
         int height = output.get_height();
