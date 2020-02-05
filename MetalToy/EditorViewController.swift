@@ -150,7 +150,7 @@ class EditorViewController: UIViewController {
         if !isPlaying {
             
             if let text = codeViewController?.codeView?.text {
-                if  metalViewController?.setRenderPipeline(fragmentShader: text) != nil {
+                if  metalViewController?.setComputePipeline(computeShader: text) != nil {
                     
                     if #available(iOS 13.0, *) {
                         sender.image = UIImage(systemName: "pause.fill")
