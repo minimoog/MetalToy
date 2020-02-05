@@ -44,7 +44,7 @@ class MetalViewController: UIViewController, MTKViewDelegate {
         //float size + padding = 4 floats
         uniformBuffer = device.makeBuffer(length: 4 * MemoryLayout<Float>.stride, options: [])
         
-        if setComputePipeline(computeShader: DefaultFragmentShader) == nil {
+        if setComputePipeline(computeShader: DefaultComputeShader) == nil {
             fatalError("Default fragment shader has problem compiling")
         }
         

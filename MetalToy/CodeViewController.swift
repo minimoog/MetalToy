@@ -65,7 +65,7 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         codeView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         codeView?.autocorrectionType = .no
         codeView?.autocapitalizationType = .none
-        codeView?.text = DefaultFragmentShader
+        codeView?.text = DefaultComputeShader
         codeView?.translatesAutoresizingMaskIntoConstraints = false
         codeView?.textContainerInset = UIEdgeInsets(top: 10, left: GutterWidth, bottom: 8, right: 0)
         

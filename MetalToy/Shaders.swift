@@ -37,7 +37,7 @@ public let DefaultVertexShader = """
 
     """
 
-public let DefaultFragmentShader = """
+public let DefaultComputeShader = """
     #include <metal_stdlib>
     using namespace metal;
 
