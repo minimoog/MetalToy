@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ExamplesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, KUIPopOverUsable {
+class ExamplesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
     var contentSize = CGSize(width: 280, height: 600)
@@ -52,18 +52,22 @@ class ExamplesViewController: UIViewController, UITableViewDelegate, UITableView
         let folderUrl = Bundle.main.resourceURL!.appendingPathComponent("examples", isDirectory: true)
         let fileUrl = folderUrl.appendingPathComponent(examples[row])
         
-        dismissPopover(animated: true)
-        
-        if let closure = selectedHandler {
-            closure(fileUrl)
+        dismiss(animated: true) {
+            if let closure = self.selectedHandler {
+                closure(fileUrl)
+            }
         }
     }
 }
 
 extension ExamplesViewController {
-    func showPopover(barButtonItem: UIBarButtonItem, selectedClosure: ((URL) -> ())?) {
+    func showPopover(rootViewController: UIViewController, barButtonItem: UIBarButtonItem, selectedClosure: ((URL) -> ())?) {
         selectedHandler = selectedClosure
         
-        showPopover(barButtonItem: barButtonItem)
+        self.modalPresentationStyle = .popover
+        let popoverPc = self.popoverPresentationController
+        popoverPc?.barButtonItem = barButtonItem
+        
+        rootViewController.present(self, animated: true)
     }
 }

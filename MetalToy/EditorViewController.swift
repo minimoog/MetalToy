@@ -180,9 +180,13 @@ class EditorViewController: UIViewController {
     }
     
     @objc func onTexturesButtonTapped(sender: UIBarButtonItem) {
+        let nc = UINavigationController(rootViewController: textureSelectorPanelContentVC)
+        nc.modalPresentationStyle = .popover
+        nc.setViewControllers([textureSelectorPanelContentVC], animated: true)
+        let popover: UIPopoverPresentationController = nc.popoverPresentationController!
+        popover.barButtonItem = sender
         
-        //show texture selector
-        textureSelectorPanelContentVC.showPopover(withNavigationController: sender)
+        present(nc, animated: true)
     }
     
     @objc func onSaveButtonTapped(sender: UIBarButtonItem) {

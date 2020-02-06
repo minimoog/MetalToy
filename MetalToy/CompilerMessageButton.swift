@@ -13,6 +13,7 @@ import UIKit
 class CompilerMessageButton: UIView {
     open var message: String?
     fileprivate var button: UIButton?
+    internal var rootvc: UIViewController? = nil
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("not implemented")
@@ -29,6 +30,13 @@ class CompilerMessageButton: UIView {
         addSubview(button!)
     }
     
+    convenience init(frame: CGRect, rootViewController: UIViewController) {
+        self.init(frame: frame)
+        self.rootvc = rootViewController
+    }
+    
+    // ### TODO: Actually this should be closure instead passing root view controller
+    
     @objc func buttonTapped(sender: UIButton) {
         
         // Show the error message when button is tapped
@@ -36,7 +44,12 @@ class CompilerMessageButton: UIView {
         if let message = message {
             let messageViewController = PopupMessageViewController()
             messageViewController.message = message
-            messageViewController.showPopover(sourceView: button!)
+            
+            messageViewController.modalPresentationStyle = .popover
+            let popVc = messageViewController.popoverPresentationController
+            popVc?.sourceView = button
+            
+            rootvc?.present(messageViewController, animated: true)
         }
     }
 }

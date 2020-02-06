@@ -15,7 +15,7 @@ let ButtonSize: CGFloat = 16.0
 let MaxWidth: CGFloat = 640.0
 let MinHeight: CGFloat = 44.0
 
-class PopupMessageViewController: UIViewController, KUIPopOverUsable {
+class PopupMessageViewController: UIViewController {
     internal var contentSize = CGSize()
     fileprivate var messageLabel: UILabel?
     

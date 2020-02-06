@@ -50,8 +50,6 @@
 		526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */; };
 		526F72D9212387EE0068F574 /* TexturesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */; };
 		526F72DB21238A610068F574 /* TextureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526F72DA21238A610068F574 /* TextureCollectionViewCell.swift */; };
-		5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A9981FEC7C49000D2449 /* KUIPopOver.swift */; };
-		5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */; };
 		5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */; };
 		527B1F18212E189A003494BF /* ShaderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527B1F17212E189A003494BF /* ShaderInfo.swift */; };
 		52997B4E2176A27000E4983B /* ShaderDocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52997B4D2176A27000E4983B /* ShaderDocumentBrowserViewController.swift */; };
@@ -195,8 +193,6 @@
 		526D8CAE1FE9D0E100FB80FC /* CompilerOutputParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompilerOutputParser.swift; sourceTree = "<group>"; };
 		526F72D8212387EE0068F574 /* TexturesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TexturesCollectionViewController.swift; sourceTree = "<group>"; };
 		526F72DA21238A610068F574 /* TextureCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureCollectionViewCell.swift; sourceTree = "<group>"; };
-		5272A9981FEC7C49000D2449 /* KUIPopOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOver.swift; sourceTree = "<group>"; };
-		5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KUIPopOverUsable.swift; sourceTree = "<group>"; };
 		5272A99C1FEC8126000D2449 /* PopupMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageViewController.swift; sourceTree = "<group>"; };
 		527B1F17212E189A003494BF /* ShaderInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderInfo.swift; sourceTree = "<group>"; };
 		52997B4D2176A27000E4983B /* ShaderDocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderDocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -350,7 +346,6 @@
 				CDFF76A522B990A10022D9FF /* Suggestions.swift */,
 				CD3F7308237E06DC0079286B /* examples */,
 				CD147C4F222F3D6E002A4696 /* InputAssistant */,
-				5272A9971FEC7C1F000D2449 /* KUIPopOver */,
 				52E7C31D1FC7851100087B15 /* Highlightr */,
 				5266188821092A0800F12D9D /* textures */,
 			);
@@ -398,15 +393,6 @@
 				5266189B21092A8900F12D9D /* tex_font_1.png */,
 			);
 			path = textures;
-			sourceTree = "<group>";
-		};
-		5272A9971FEC7C1F000D2449 /* KUIPopOver */ = {
-			isa = PBXGroup;
-			children = (
-				5272A9981FEC7C49000D2449 /* KUIPopOver.swift */,
-				5272A99A1FEC7C55000D2449 /* KUIPopOverUsable.swift */,
-			);
-			path = KUIPopOver;
 			sourceTree = "<group>";
 		};
 		52E7C31D1FC7851100087B15 /* Highlightr */ = {
@@ -733,7 +719,6 @@
 				52E7C42E1FC7851200087B15 /* HTMLUtils.swift in Sources */,
 				5272A99D1FEC8126000D2449 /* PopupMessageViewController.swift in Sources */,
 				CD147C52222F3D6F002A4696 /* InputAssistantView.swift in Sources */,
-				5272A9991FEC7C49000D2449 /* KUIPopOver.swift in Sources */,
 				526F72D9212387EE0068F574 /* TexturesCollectionViewController.swift in Sources */,
 				5241E99A1F49E55000107886 /* CodeViewController.swift in Sources */,
 				525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */,
@@ -749,7 +734,6 @@
 				CD147C53222F3D6F002A4696 /* InputAssistantCollectionView.swift in Sources */,
 				525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */,
 				520C76522044CB1100F39EA1 /* EditorViewController.swift in Sources */,
-				5272A99B1FEC7C55000D2449 /* KUIPopOverUsable.swift in Sources */,
 				526F72DB21238A610068F574 /* TextureCollectionViewCell.swift in Sources */,
 				526D8CAF1FE9D0E100FB80FC /* CompilerOutputParser.swift in Sources */,
 			);
@@ -894,12 +878,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
 				INFOPLIST_FILE = MetalToy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = antonie.jovanoski.MetalToy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -911,12 +895,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
 				INFOPLIST_FILE = MetalToy/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.5;
+				MARKETING_VERSION = 2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = antonie.jovanoski.MetalToy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;

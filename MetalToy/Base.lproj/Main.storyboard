@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5kM-7O-Odp">
     <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -88,13 +87,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Iqn-3b-3Q6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="w5d-yD-3p7"/>
                     <connections>
                         <outlet property="texSelectorTableView" destination="uff-C4-H77" id="TwG-yA-WV4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6u-Yt-X6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-556" y="1501"/>
+            <point key="canvasLocation" x="910.25179856115108" y="1500.7194244604318"/>
         </scene>
         <!--Textures Collection View Controller-->
         <scene sceneID="TIl-aT-xLa">
@@ -140,10 +140,11 @@
                             <outlet property="delegate" destination="e58-Zb-Nxh" id="DIl-01-f9O"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" id="shc-mh-eFO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15Z-dx-n3O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="145" y="1501"/>
+            <point key="canvasLocation" x="1620.3237410071943" y="1500.7194244604318"/>
         </scene>
         <!--Code View Controller-->
         <scene sceneID="tne-QT-ifu">

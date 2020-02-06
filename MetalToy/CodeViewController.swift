@@ -314,7 +314,7 @@ class CodeViewController: UIViewController, UITextViewDelegate {
             guard let buttonOrigin = pointForMessage(lineNumber: message.lineNumber, columnNumber: message.columnNumber) else { continue }
             let buttonRect = CGRect(x: buttonOrigin.x, y: buttonOrigin.y,width: CGFloat(ButtonSize), height: CGFloat(ButtonSize))
             
-            let button = CompilerMessageButton(frame: buttonRect)
+            let button = CompilerMessageButton(frame: buttonRect, rootViewController: self)
             button.message = message.message
             
             codeView?.addSubview(button)
