@@ -184,22 +184,24 @@ open class Highlightr
     {
         let scanner = Scanner(string: string)
         scanner.charactersToBeSkipped = nil
-        var scannedString: NSString?
+        var scannedString: String?
         let resultString = NSMutableAttributedString(string: "")
         var propStack = ["hljs"]
         
         while !scanner.isAtEnd
         {
             var ended = false
-            if scanner.scanUpTo(htmlStart, into: &scannedString)
+            if let scanned = scanner.scanUpToString(htmlStart)
             {
+                scannedString = scanned
+                
                 if scanner.isAtEnd
                 {
                     ended = true
                 }
             }
             
-            if scannedString != nil && scannedString!.length > 0 {
+            if scannedString != nil && scannedString!.count > 0 {
                 let attrScannedString = theme.applyStyleToString(scannedString! as String, styleList: propStack)
                 resultString.append(attrScannedString)
                 if ended
@@ -208,26 +210,31 @@ open class Highlightr
                 }
             }
             
-            scanner.scanLocation += 1
+            scanner.currentIndex = scanner.string.index(after: scanner.currentIndex)
             
-            let string = scanner.string as NSString
-            let nextChar = string.substring(with: NSMakeRange(scanner.scanLocation, 1))
+            //let string = scanner.string as NSString
+            
+            let nextChar = string[scanner.currentIndex ..< scanner.string.index(after: scanner.currentIndex)]
             if(nextChar == "s")
             {
-                scanner.scanLocation += (spanStart as NSString).length
-                scanner.scanUpTo(spanStartClose, into:&scannedString)
-                scanner.scanLocation += (spanStartClose as NSString).length
+                scanner.currentIndex = scanner.string.index(scanner.currentIndex, offsetBy: spanStart.count)
+                
+                if let scanned = scanner.scanUpToString(spanStartClose) {
+                    scannedString = scanned
+                }
+                
+                scanner.currentIndex = scanner.string.index(scanner.currentIndex, offsetBy: spanStartClose.count)
                 propStack.append(scannedString! as String)
             }
             else if(nextChar == "/")
             {
-                scanner.scanLocation += (spanEnd as NSString).length
+                scanner.currentIndex = scanner.string.index(scanner.currentIndex, offsetBy: spanEnd.count)
                 propStack.removeLast()
             }else
             {
                 let attrScannedString = theme.applyStyleToString("<", styleList: propStack)
                 resultString.append(attrScannedString)
-                scanner.scanLocation += 1
+                scanner.currentIndex = scanner.string.index(after: scanner.currentIndex)
             }
             
             scannedString = nil
