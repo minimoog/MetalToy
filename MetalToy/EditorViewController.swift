@@ -45,12 +45,7 @@ class EditorViewController: UIViewController {
         codeViewController = codeController
         metalViewController = metalController
         
-        if #available(iOS 13.0, *) {
-            metalContainerView.layer.shadowColor = UIColor.systemBackground.cgColor
-        } else {
-            metalContainerView.layer.shadowColor = UIColor.gray.cgColor
-        }
-        
+        metalContainerView.layer.shadowColor = UIColor.systemBackground.cgColor
         metalContainerView.layer.shadowOpacity = 0.8
         metalContainerView.layer.shadowRadius = 20.0
         
@@ -79,17 +74,8 @@ class EditorViewController: UIViewController {
         }
         
         //setup buttons
-        if #available(iOS 13.0, *) {
-            playBarItem = UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
-        } else {
-            playBarItem = UIBarButtonItem(title: "Play", style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
-        }
-        
-        if #available(iOS 13.0, *) {
-            viewBarItem = UIBarButtonItem(image: UIImage(systemName: "eye"), style: .plain, target: self, action: #selector(self.onViewButtonTapped))
-        } else {
-            viewBarItem = UIBarButtonItem(title: "View", style: .plain, target: self, action: #selector(self.onViewButtonTapped))
-        }
+        playBarItem = UIBarButtonItem(image: UIImage(systemName: "play.fill"), style: .plain, target: self, action: #selector(self.onPlayButtonTapped))
+        viewBarItem = UIBarButtonItem(image: UIImage(systemName: "eye"), style: .plain, target: self, action: #selector(self.onViewButtonTapped))
         
         texturesBarItem = UIBarButtonItem(title: "Textures", style: .plain, target: self, action: #selector(self.onTexturesButtonTapped))
         navigationItem.rightBarButtonItems = [playBarItem!, viewBarItem!, texturesBarItem!]
@@ -129,20 +115,11 @@ class EditorViewController: UIViewController {
         if metalContainerView.isHidden {
             metalContainerView.isHidden = false
             
-            if #available(iOS 13.0, *) {
-                sender.image = UIImage(systemName: "eye.slash")
-            } else {
-                // Fallback on earlier versions
-            }
-            
+            sender.image = UIImage(systemName: "eye.slash")
         } else {
             metalContainerView.isHidden = true
             
-            if #available(iOS 13.0, *) {
-                sender.image = UIImage(systemName: "eye")
-            } else {
-                // Fallback on earlier versions
-            }
+            sender.image = UIImage(systemName: "eye")
         }
     }
     
@@ -152,11 +129,7 @@ class EditorViewController: UIViewController {
             if let text = codeViewController?.codeView?.text {
                 if  metalViewController?.setComputePipeline(computeShader: text) != nil {
                     
-                    if #available(iOS 13.0, *) {
-                        sender.image = UIImage(systemName: "pause.fill")
-                    } else {
-                        sender.title = "Pause"
-                    }
+                    sender.image = UIImage(systemName: "pause.fill")
                     
                     metalViewController?.mtkView.isPaused = false // ### TODO: Merge maybe binding with isPlaying state
                 } else {
@@ -167,11 +140,7 @@ class EditorViewController: UIViewController {
             isPlaying = true
             
         } else {
-            if #available(iOS 13.0, *) {
-                sender.image = UIImage(systemName: "play.fill")
-            } else {
-                sender.title = "Play"
-            }
+            sender.image = UIImage(systemName: "play.fill")
             
             metalViewController?.mtkView.isPaused = true
             
@@ -182,15 +151,13 @@ class EditorViewController: UIViewController {
     @objc func onTexturesButtonTapped(sender: UIBarButtonItem) {
         let nc = UINavigationController(rootViewController: textureSelectorPanelContentVC)
         nc.modalPresentationStyle = .popover
-        nc.setViewControllers([textureSelectorPanelContentVC], animated: true)
-        let popover: UIPopoverPresentationController = nc.popoverPresentationController!
-        popover.barButtonItem = sender
+        nc.popoverPresentationController!.barButtonItem = sender
         
         present(nc, animated: true)
     }
     
     @objc func onSaveButtonTapped(sender: UIBarButtonItem) {
-            dismiss(animated: true, completion: nil)        // this is top view controller so no problem here
+        dismiss(animated: true, completion: nil)        // this is top view controller so no problem here
     }
     
     @IBAction func metalVCPanning(_ panGestureRecognizer: UIPanGestureRecognizer) {

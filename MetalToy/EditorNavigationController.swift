@@ -21,7 +21,6 @@ class EditorNavigationController: UINavigationController {
         if let editorViewController = topViewController as? EditorViewController {
             
             //pass document to editor view controller
-            
             editorViewController.document = document
         }
     }

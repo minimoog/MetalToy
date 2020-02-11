@@ -60,7 +60,6 @@ class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITa
                     filename in
                     
                     // pop the textures list
-                    //self.panelNavigationController?.popViewController(animated: true)
                     self.navigationController?.popViewController(animated: true)
                     
                     // update the current table view

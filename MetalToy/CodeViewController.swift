@@ -68,12 +68,7 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         codeView?.text = DefaultComputeShader
         codeView?.translatesAutoresizingMaskIntoConstraints = false
         codeView?.textContainerInset = UIEdgeInsets(top: 10, left: GutterWidth, bottom: 8, right: 0)
-        
-        if #available(iOS 13.0, *) {
-            codeView?.backgroundColor = UIColor.systemBackground
-        } else {
-            codeView?.backgroundColor = textStorage.highlightr.theme.themeBackgroundColor
-        }
+        codeView?.backgroundColor = UIColor.systemBackground
  
         //constraints
         codeView?.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor).isActive = true
@@ -104,20 +99,15 @@ class CodeViewController: UIViewController, UITextViewDelegate {
         super.viewWillAppear(animated)
         
         //install undo/redo buttons
-        if #available(iOS 13.0, *) {
-            undoBarItem = UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.left.circle"),
-                                          style: .plain,
-                                          target: self,
-                                          action: #selector(self.onUndoButtonTapped))
-            
-            redoBarItem = UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.right.circle"),
-                                          style: .plain,
-                                          target: self,
-                                          action: #selector(self.onRedoButtonTapped))
-        } else {
-            undoBarItem = UIBarButtonItem(barButtonSystemItem: .undo, target: self, action: #selector(self.onUndoButtonTapped))
-            redoBarItem = UIBarButtonItem(barButtonSystemItem: .redo, target: self, action: #selector(self.onRedoButtonTapped))
-        }
+        undoBarItem = UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.left.circle"),
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(self.onUndoButtonTapped))
+        
+        redoBarItem = UIBarButtonItem(image: UIImage(systemName: "arrow.uturn.right.circle"),
+                                      style: .plain,
+                                      target: self,
+                                      action: #selector(self.onRedoButtonTapped))
         
         if let parent = parent, let leftBarItems = parent.navigationItem.leftBarButtonItems {
             previousBarItems = leftBarItems
