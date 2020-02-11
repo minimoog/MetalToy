@@ -121,7 +121,7 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         
         guard let examplesVC = (storyboard?.instantiateViewController(withIdentifier: "ExamplesViewController") as? ExamplesViewController) else { fatalError("Cannot instantiate ExampleViewController") }
         
-        examplesVC.showPopover(barButtonItem: sender) {
+        examplesVC.showPopover(rootViewController: self, barButtonItem: sender) {
             url in
             
             self.revealDocument(at: url, importIfNeeded: true) {

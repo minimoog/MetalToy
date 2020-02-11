@@ -20,7 +20,7 @@ struct TextureUnit {
     }
 }
 
-class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, KUIPopOverUsable {
+class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     internal var contentSize: CGSize = CGSize(width: 280, height: 600)
     
     @IBOutlet weak var texSelectorTableView: UITableView!
@@ -60,7 +60,6 @@ class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITa
                     filename in
                     
                     // pop the textures list
-                    //self.panelNavigationController?.popViewController(animated: true)
                     self.navigationController?.popViewController(animated: true)
                     
                     // update the current table view
