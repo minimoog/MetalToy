@@ -14,10 +14,7 @@ class TexturesCollectionViewController: UICollectionViewController {
 
     // closure invoked when texture is selected
     public var selectedTexture: ((String) -> ())?
-    
-    // closure invoked when VC is dismissed
-    public var dismissed: (() -> ())?
-    
+
     let texturePaths: [String] = {
         let fm = FileManager.default
         let path = Bundle.main.resourcePath!
@@ -34,12 +31,6 @@ class TexturesCollectionViewController: UICollectionViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        if self.isMovingFromParent {
-            if let dismissed = dismissed {
-                dismissed()
-            }
-        }
     }
     
     
@@ -83,9 +74,13 @@ class TexturesCollectionViewController: UICollectionViewController {
         let row = indexPath.row
         
         collectionView.deselectItem(at: indexPath, animated: true)
-        
-        if let selectedTexture = selectedTexture {
-            selectedTexture(texturePaths[row])
+                
+        if let nc = navigationController {
+            nc.popViewController(animated: true)
+            
+            if let selectedTexture = self.selectedTexture {
+                selectedTexture(self.texturePaths[row])
+            }
         }
     }
     

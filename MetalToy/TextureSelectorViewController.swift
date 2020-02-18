@@ -22,6 +22,7 @@ struct TextureUnit {
 
 class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     internal var contentSize: CGSize = CGSize(width: 280, height: 600)
+    internal var selectedFilename: String? = nil
     
     @IBOutlet weak var texSelectorTableView: UITableView!
     
@@ -34,52 +35,42 @@ class TextureSelectorViewController: UIViewController, UITableViewDelegate, UITa
         super.viewDidLoad()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        // update the current table view
+        if let selectedIndexPath = texSelectorTableView.indexPathForSelectedRow {
+            let selectedRow = selectedIndexPath.row
+            texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
+            
+            if let filename = selectedFilename {
+                textureUnits[selectedRow] = TextureUnit(filename: filename)
+                texSelectorTableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+                
+                if let selectedTextureOnTextureUnit = selectedTextureOnTextureUnit {
+                    selectedTextureOnTextureUnit(filename, selectedRow)
+                }
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "TexSelectorToTextureSegue" {
             if let texturesCollectionViewController = segue.destination as? TexturesCollectionViewController {
+                selectedFilename = nil
                 
                 //setup closures from texture collection view controller
                 
                 // when user select texture from texture list
                 texturesCollectionViewController.selectedTexture = {
-                    filename in
-                    
-                    // pop the textures list
-                    self.navigationController?.popViewController(animated: true)
-                    
-                    // update the current table view
-                    if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
-                        let selectedRow = selectedIndexPath.row
-                        
-                        self.textureUnits[selectedRow] = TextureUnit(filename: filename)
-                        self.texSelectorTableView.reloadRows(at: [selectedIndexPath], with: .automatic)
-                        self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
-                        
-                        if let selectedTextureOnTextureUnit = self.selectedTextureOnTextureUnit {
-                            selectedTextureOnTextureUnit(filename, selectedRow)
-                        }
-                    }
-                }
-                
-                texturesCollectionViewController.dismissed = {
-                    if let selectedIndexPath = self.texSelectorTableView.indexPathForSelectedRow {
-                        self.texSelectorTableView.deselectRow(at: selectedIndexPath, animated: true)
-                    }
+                    self.selectedFilename = $0
                 }
             }
         }
