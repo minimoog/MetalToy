@@ -13,8 +13,6 @@
 		5241E99D1F49E55000107886 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99B1F49E55000107886 /* Main.storyboard */; };
 		5241E99F1F49E55000107886 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5241E99E1F49E55000107886 /* Assets.xcassets */; };
 		5241E9A21F49E55000107886 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5241E9A01F49E55000107886 /* LaunchScreen.storyboard */; };
-		5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C61F49F0A600107886 /* Metal.framework */; };
-		5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5241E9C81F49F0B000107886 /* MetalKit.framework */; };
 		524B4C31211A46C700CFC6FC /* TextureSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */; };
 		525D82E220168F0B00B16618 /* ShaderDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525D82E120168F0B00B16618 /* ShaderDocument.swift */; };
 		525F0C071F79BA0900FADC46 /* MetalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525F0C061F79BA0900FADC46 /* MetalViewController.swift */; };
@@ -156,8 +154,6 @@
 		5241E99E1F49E55000107886 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5241E9A11F49E55000107886 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5241E9A31F49E55000107886 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5241E9C61F49F0A600107886 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
-		5241E9C81F49F0B000107886 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		524B4C30211A46C700CFC6FC /* TextureSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureSelectorViewController.swift; sourceTree = "<group>"; };
 		525D82E120168F0B00B16618 /* ShaderDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderDocument.swift; sourceTree = "<group>"; };
 		525F0C061F79BA0900FADC46 /* MetalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalViewController.swift; sourceTree = "<group>"; };
@@ -295,8 +291,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5241E9C91F49F0B000107886 /* MetalKit.framework in Frameworks */,
-				5241E9C71F49F0A600107886 /* Metal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,8 +349,6 @@
 		5241E9C51F49F0A600107886 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5241E9C81F49F0B000107886 /* MetalKit.framework */,
-				5241E9C61F49F0A600107886 /* Metal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
