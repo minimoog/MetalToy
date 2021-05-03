@@ -83,6 +83,14 @@ class ShaderDocumentBrowserViewController: UIDocumentBrowserViewController, UIDo
         presentDocument(at: url)
     }
     
+    func documentBrowser(_ controller: UIDocumentBrowserViewController, didPickDocumentsAt documentURLs: [URL]) {
+        
+        guard let url = documentURLs.first else {
+            fatalError(" no url? ")
+        }
+        presentDocument(at: url)
+    }
+    
     // -------- Present document -------
     // - Load main storyboard
     // - instatiate navigation controller
