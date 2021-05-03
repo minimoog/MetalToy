@@ -284,6 +284,7 @@
 		CD3D2D55237CB99500AE703F /* ExamplesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplesViewController.swift; sourceTree = "<group>"; };
 		CD3F7308237E06DC0079286B /* examples */ = {isa = PBXFileReference; lastKnownFileType = folder; path = examples; sourceTree = "<group>"; };
 		CDFF76A522B990A10022D9FF /* Suggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suggestions.swift; sourceTree = "<group>"; };
+		D21AE4F52640410700B07A72 /* MetalToy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MetalToy.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +318,7 @@
 		5241E9961F49E55000107886 /* MetalToy */ = {
 			isa = PBXGroup;
 			children = (
+				D21AE4F52640410700B07A72 /* MetalToy.entitlements */,
 				5241E9971F49E55000107886 /* AppDelegate.swift */,
 				52FF7415219251ED0056FFC4 /* EditorNavigationController.swift */,
 				520C76512044CB1100F39EA1 /* EditorViewController.swift */,
@@ -870,6 +872,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MetalToy/MetalToy.entitlements;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
 				INFOPLIST_FILE = MetalToy/Info.plist;
@@ -878,8 +881,10 @@
 				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = antonie.jovanoski.MetalToy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -887,6 +892,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MetalToy/MetalToy.entitlements;
 				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 9XA2D6V342;
 				INFOPLIST_FILE = MetalToy/Info.plist;
@@ -895,8 +901,10 @@
 				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = antonie.jovanoski.MetalToy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
